@@ -1,0 +1,150 @@
+/* body and mainbox */
+
+body
+{
+    background-image: linear-gradient(to left, blue, orange);
+    background-color: blue;
+    text-align: start;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.mainbox
+{
+    width: 1044px;
+    background-color: white;
+
+    border: 2px solid black;
+    padding: 20px;
+
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    box-shadow: 2px 2px;
+}
+
+/* navigation and links */
+
+nav
+{
+    position: sticky;
+    top: 0;
+    background-color: lightcoral;
+}
+
+nav a:link, a:visited
+{
+    color: black;
+    font-size: 20pt;
+    text-decoration: underline overline;
+    font-weight: 800;
+}
+
+nav a:hover
+{
+    color: green;
+    background-color: black;
+}
+
+main a:link, a:visited
+{
+    color: purple;
+    text-decoration: none;
+}
+
+main a:hover
+{
+    color: red;
+    background-color: black;
+    text-decoration: none;
+}
+
+/* headers, paragraphs, lists */
+
+h1
+{
+    font-family: 'Ariel Blank', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+    background-color: silver;
+    padding: 20px;
+    font-size: 32pt;
+}
+
+h3
+{
+font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
+color: blue;
+background-color: greenyellow;
+font-size: 20pt;
+}
+
+p, li
+{
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 16pt;
+    line-height: 1.2em;
+}
+
+/* specific boxe styles */
+
+.chocobox
+{
+    background-color: chocolate;
+}
+
+.memoventbox
+{
+    background-image: linear-gradient(to bottom, orange,violet);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.listbox
+{
+    width: 600px;
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+    margin: auto;
+}
+
+.quotebox
+{
+    background-color: slategrey;
+    color: white;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28pt;
+}
+
+/* specific text styles */
+
+.bolditext
+{
+    font-style: italic;
+    font-weight: 600;
+}
+
+.phrasetext
+{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    font-size: 14pt;
+}
+
+.underline
+{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* my feature, CSS animation */
+
+@keyframes fadeIn {
+    0% { opacity: 0; } /* Start invisible */
+    100% { opacity: 1; } /* Fully visible */
+}
+
+.fade-in {
+    opacity: 0; /* Start as invisible */
+    animation: fadeIn 2s ease-in forwards; /* Apply fade-in animation */
+}

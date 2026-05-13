@@ -1,0 +1,131 @@
+Inputs:
+
+Current Date
+Site Number
+
+Member Name
+Street Adress
+City
+Province
+Postal Code
+Home Phone
+Cell Phone
+
+MembType = Membership type (S for standard, E for executive)
+NumbAltMemb = Number of alt members
+SiteClean = Weekly site cleaning (Y/N)
+VidSurv = Video Surveillance (Y/N)
+
+Constants:
+
+EVEN_SITE_RATE = 80.00
+ODD_SITE_RATE = 120.00
+ALT_MEMB_RATE = 5.00
+HST_RATE = 0.15
+
+STAND_MEM_RATE = 75.00
+EXEC_MEM_RATE = 150.00
+
+SITE_CLEAN_RATE = 50.00
+VID_SURV_RATE = 35.00
+
+STAND_DUES_RATE = 75.00
+EXEC_DUES_RATE = 150.00
+
+PROCESS_FEE = 59.99
+CANCL_FEE = 0.60
+
+Calculations:
+
+if MembType == E:
+	MembCharge = ODD_SITE_RATE
+else:
+	MembCharge = EVEN_SITE_RATE
+
+AltMembCost = NumbAltMemb * ALT_MEMB_RATE
+SiteCharge = MembCharge + AltMembCost
+
+if SiteClean == "Y":
+	SiteCharge = SITE_CLEAN_RATE
+else:
+	SiteCharge = 0
+
+if VidSurv == "Y":
+	VidCharge = VID_SURV_RATE
+else:
+	VidCharge = 0
+
+ExtraCharge = SiteCleanCharge + VidSurvCharge
+
+SubTot = MembCharge + SiteCharge + VidCharge
+HST = SubTot * HST_RATE
+TotMonthCharge = SubTot + HST
+
+if MembType == E:
+	MembDues = EXEC_DUES_RATE
+else:
+	MembDues = STAND_DUES_RATE
+
+TotMonthFee = TotMonthCharge + MembDues
+
+TotYearFee = TotMonthFee * 12
+MonthlyPay = (YearFee + PROCESS_FEE) / 12
+CancelFee = TotYearFee * CANCL_FEE
+
+Outputs:
+
+		St. John's Marina & Yacht Club
+		     Yearly Member Recipt
+----------------------------------------------------------
+
+Client Name and Address:
+
+----------------------------------------------------------
+Name
+Address
+City, Province, Postal Code
+
+Phone: Home
+       Cell
+----------------------------------------------------------
+Site #: (1-100)			Member Type: if MembType = "E":
+						print("Executive")
+					     else:
+						print("Standard")
+----------------------------------------------------------
+
+Alternate Members:				##
+Weekly Site Cleaning				(Y/N)
+Video Surveillance:				(Y/N)
+
+----------------------------------------------------------
+
+Site Charges:					$#,###.##
+Extra Charges:					  $###.##
+
+----------------------------------------------------------
+
+Subtotal:					$#,###.##
+Sales Tax:					  $###.##
+
+----------------------------------------------------------
+
+Total Monthly Charges:				$#,###.##
+Monthly Dues:				  	  $###.##
+
+----------------------------------------------------------
+
+Total Monthly Fees:				$#,###.##
+Total Yearly Fees:				  $###.##
+
+----------------------------------------------------------
+
+Monthly Payment:				$#,###.##
+
+----------------------------------------------------------
+
+Issued:						YYYY-MM-DD
+
+HST Reg No:				    549-33-5849-47
+
+Cancellation Fee:				$#,###.##

@@ -1,0 +1,242 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body
+{
+    background-color: white;
+}
+
+.mainbox
+{
+    width: 1000px;
+    height: 1000px;
+    background-color: white;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+header, .greybox
+{
+    width: 1000px;
+    height: 30px;
+    background-color: grey;   
+}
+
+/* title format */
+h1, h2, h3
+{
+    font-weight: 600;
+}
+
+/* text */
+.whitetext
+{
+    color: white;
+    font-weight: 600;
+}
+
+.copyright
+{
+    color: black;
+    font-weight: 600;
+}
+
+/*nav and grid for images */
+.navbox
+{
+    width: 1000px;
+    height: 580px;
+    background-color: white;
+    padding: 30px;
+    box-sizing: border-box;
+
+    font-weight: 500;
+    font-size: 1.4em;
+}
+
+.grid {                                         /* I decided to using grid-template because it does the same thing as creating 3 boxes for 8 images but makes it easier to format */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 960px;
+    height: 100%;
+    gap: 2px;
+}
+
+.grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                          /* ensures the image fits properly into the blocks created by the grid template */
+}
+
+/* nav links */
+nav a:link
+{
+    color: white;
+    font-size: 15pt;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:visited
+{
+    color: black;
+    font-size: 15pt;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav a:hover
+{
+    color: white;
+    font-size: 15pt;
+    background-color: darkblue;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* purple box with links */
+.purplebox
+{
+    color: white;
+    background-color: purple;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* text format */
+
+.text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+}
+
+/* bottom section */
+.bottomsection
+{
+    width: 1000px;
+    height: 340px;
+    background-color: lightgrey;
+    padding: 25px;
+    box-sizing: border-box;
+
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.bottombox1
+{
+    width: 230px;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 10px;
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+}
+
+.bottombox2
+{
+    width: 230px;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 10px;
+}
+
+
+.bottombox3
+{
+    width: 230px;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 10px;
+}
+
+.bottombox4
+{
+    width: 230px;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    float: left;
+}
+
+/* button in bottom box 1 */
+.bottombox1 a:link
+{
+  color: white;
+  background-color: darkblue;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.bottombox1 a:visited
+{
+  color: white;
+  background-color: dar;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.bottombox1 a:hover
+{
+  color: orange;
+  background-color: black;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* links in footer */
+
+.socialmedialink
+{
+    color: black;
+    font-size: 14pt;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.socialmedialink a:link
+{
+    color: black;
+    font-size: 14pt;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.socialmedialink a:visited
+{
+    color: darkblue;
+    font-size: 14pt;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.socialmedialink a:hover
+{
+    color: grey;
+    font-size: 14pt;
+    background-color: darkblue;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+

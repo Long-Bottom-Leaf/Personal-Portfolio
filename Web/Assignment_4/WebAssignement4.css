@@ -1,0 +1,52 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.mainbox {
+    width: 1000px;
+    background-color: white;
+    border: 3px solid gray;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 2px;
+}
+
+.receipttable {
+    width: 500px;
+    margin: auto;
+    font-size: 18pt;
+}
+
+.receipttable .mainhead {
+    text-align: center;
+    font-size: 22pt !important;
+    background-color: lightblue;
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Space between label and value */
+    align-items: center; /* Center the items vertically */
+    width: 100%;
+}
+
+.righttext {
+    text-align: right;
+    margin-left: 10px; /* Optional spacing for clarity */
+    flex-shrink: 0; /* Prevents shrinking and maintains space */
+}
