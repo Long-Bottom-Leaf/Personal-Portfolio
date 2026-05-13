@@ -1,0 +1,14 @@
+Records = [
+    {"StartDate": "2024-01-01", "EndDate": "2024-01-31", "Revenue": 38450.00, "Expenses": 22300.00},
+    {"StartDate": "2024-02-01", "EndDate": "2024-02-29", "Revenue": 41920.00, "Expenses": 24180.00},
+    {"StartDate": "2024-03-01", "EndDate": "2024-03-31", "Revenue": 45275.00, "Expenses": 26140.00},
+    {"StartDate": "2024-04-01", "EndDate": "2024-04-30", "Revenue": 47830.00, "Expenses": 25600.00},
+    {"StartDate": "2024-05-01", "EndDate": "2024-05-31", "Revenue": 50125.00, "Expenses": 27200.00},
+    {"StartDate": "2024-06-01", "EndDate": "2024-06-30", "Revenue": 52680.00, "Expenses": 28750.00},
+    {"StartDate": "2024-07-01", "EndDate": "2024-07-31", "Revenue": 55390.00, "Expenses": 30100.00},
+    {"StartDate": "2024-08-01", "EndDate": "2024-08-31", "Revenue": 58740.00, "Expenses": 32450.00},
+    {"StartDate": "2024-09-01", "EndDate": "2024-09-30", "Revenue": 54210.00, "Expenses": 29980.00},
+    {"StartDate": "2024-10-01", "EndDate": "2024-10-31", "Revenue": 51670.00, "Expenses": 28400.00},
+    {"StartDate": "2024-11-01", "EndDate": "2024-11-30", "Revenue": 48950.00, "Expenses": 26700.00},
+    {"StartDate": "2024-12-01", "EndDate": "2024-12-31", "Revenue": 60120.00, "Expenses": 35100.00},
+]

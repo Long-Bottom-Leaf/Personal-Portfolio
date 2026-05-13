@@ -1,0 +1,4 @@
+EmployeeNumber,Name,Address,Phone,LicenseNumber,LicenseExpiry,InsuranceCompany,PolicyNumber,OwnCar,BalanceDue
+1919,Harry Mackie,1 Brother Street,7097388888,12345,2026-12-13,Blue Cross,10000001,Y,0.0
+1920,Archie Mackie,2 Brother Street,7097539486,23456,2027-07-11,Blue Cross,10000002,Y,0.0
+1921,Harry Mackie,3 Brother Street,7097545002,34567,2026-01-14,Blue Cross,10000003,Y,0.0
