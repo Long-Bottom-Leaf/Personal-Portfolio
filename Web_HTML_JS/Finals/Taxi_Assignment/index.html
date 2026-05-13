@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Always set up the title and link to the style sheet up front. -->
+    <title>HAB Taxi Services</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="mainbox">
+      <header>
+        <!--Leah-->
+        <div class="tophead">
+          <div id="top-header-bar">
+            <span id="greeting"></span>
+            <span id="quote"></span>
+            <span id="date"></span>
+          </div>
+        </div> 
+        <!--Stephen-->
+        <img
+          src="Images/Taxi 1.jpg"
+          id="ImgSlide"
+          width="1000px"
+          height="160px"
+        />
+      </header>
+
+      <nav>
+        <!--Kass-->
+        <div class="navleft">
+          <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="services.html" target="_self">Services</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="about.html" target="_self">About</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="contact.html" target="_self">Contact</a>
+        </div>
+        <div class="navright">
+          <div class="progresscontainer">
+            <div class="progressbar" id="progressBar"></div>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <div class="maintopleft"></div>
+
+        <div class="mainright">
+          <!--Stephen-->
+          <button id="btnLoanButton" onclick="LoanButton();">
+            Loan Analysis
+          </button>
+
+          <p id="LoanButton"></p>
+        </div>
+
+        <div class="mainbottomleft">
+          <!--Kass-->
+
+          <h2>HAB Taxi Driving Playlist</h2>
+          <ul id="playlist">
+            <div id="leftsong">
+              <li data-src="Songs/FastCar.mp3">Fast Car</li>
+              <li data-src="Songs/HighwayToHell.mp3">Highway to Hell</li>
+              <li data-src="Songs/WhiteFerrari.mp3">White Ferrari</li>
+            </div>
+            <div id="rightsong">
+              <li data-src="Songs/GetawayCar.mp3">Getaway Car</li>
+              <li data-src="Songs/ChasingPavements.mp3">Chasing Pavements</li>
+              <li data-src="Songs/LifeIsAHighway.mp3">Life Is A Highway</li>
+            </div>
+          </ul>
+
+          <div id="nowPlaying">Now Playing: None</div>
+          <audio id="audioPlayer" controls></audio>
+        </div>
+      </main>
+
+      <footer>
+        <!--Kass-->
+        <div class="centerfooter">
+          <img src="Images/habcab.png" />
+          <h1>HAB Taxi Services</h1>
+        </div>
+        <div class="footerbottomleft">
+          <p id="copyright">
+            &nbsp;&copy; Copyright <span id="year"></span> | HAB Taxi Services |
+            All Rights Reserved
+          </p>
+        </div>
+        <div class="footerbottomright">
+          <a href="facebook.html">
+            <img src="Images/facebook.png" />
+          </a>
+          <a href="instagram.html">
+            <img src="Images/instagram.png" />
+          </a>
+          <a href="x.html">
+            <img src="Images/x.png" />
+          </a>
+          <button id="scrollToTop">Back to Top</button>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

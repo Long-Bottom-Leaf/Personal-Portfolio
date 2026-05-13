@@ -1,0 +1,283 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14pt;
+}
+
+body {
+  background-color: white;
+}
+
+.mainbox {
+  width: 1006px;
+  background-color: lightslategrey;
+  border: 3px solid gray;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* The header section. */
+header {
+  width: 1000px;
+  height: 200px;
+  background-color: lightgreen;
+}
+
+/* The header is made up of a message bar and the banner image. */
+.tophead {
+  width: 1000px;
+  height: 40px;
+  background-color: gray;
+  border-bottom: 3px solid gray;
+}
+
+/* The navigation section. */
+
+nav {
+  width: 1000px;
+  height: 50px;
+  background-color: black;
+  border-top: 3px solid gray;
+  border-bottom: 3px solid gray;
+  position: sticky;
+  top: 0;
+}
+/* navleft contains the links*/
+.navleft {
+  width: 497px;
+  height: 45px;
+  padding-top: 10px;
+  padding-left: 40px;
+  float: left;
+}
+
+nav a:link {
+  color: rgb(255, 210, 61);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:visited {
+  color: rgb(255, 210, 61);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: black;
+  background: rgb(255, 210, 61);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* navright contains a progress bar to shown how far the user has scrolled down*/
+.navright {
+  width: 497px;
+  height: 45px;
+  margin-left: 5px;
+  float: right;
+}
+
+.navright .progresscontainer {
+  width: 300px;
+  height: 15px;
+  background-color: white;
+  margin-top: 15px;
+  margin-left: 100px;
+  border: 5px solid rgb(255, 210, 61);
+}
+
+.navright .progressbar {
+  height: 100%;
+  background-color: rgb(114, 113, 113);
+  transition: width 0.3s ease;
+}
+
+main {
+  width: 1000px;
+  height: 625px;
+  background-color: lightslategrey;
+}
+
+/* The main section will contain 3 divs. */
+
+.maintopleft {
+  width: 490px;
+  height: 300px;
+  background-color: cyan;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  float: left;
+}
+
+.mainright {
+  width: 490px;
+  height: 610px;
+  background-color: lightgray;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  float: right;
+}
+
+.loantable {
+  width: 470px;
+  margin: auto;
+  font-family: "Courier New";
+}
+
+.loantable .mainhead {
+  text-align: center;
+  font-size: 18pt;
+  background-color: lightblue;
+  font-weight: 700;
+}
+
+.loantable .lefttext {
+  text-align: left;
+}
+
+.loantable .righttext {
+  text-align: right;
+}
+/* main bottom left section*/
+.mainbottomleft {
+  width: 490px;
+  height: 300px;
+  background-color: rgb(255, 210, 61);
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  float: left;
+  text-align: center;
+}
+
+.mainbottomleft h2 {
+  font-size: 19pt;
+  font-weight: bold;
+  color: black;
+}
+
+.mainbottomleft ul {
+  list-style-type: none;
+}
+
+.mainbottomleft li {
+  margin-bottom: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(68, 65, 65);
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.mainbottomleft li:hover {
+  color: rgb(255, 210, 61);
+  background-color: rgb(68, 65, 65);
+}
+
+#leftsong,
+#rightsong {
+  width: 220px;
+  height: 150px;
+  padding-top: 10px;
+  float: left;
+}
+
+#nowPlaying {
+  margin-bottom: 15px;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+/* footer section */
+
+footer {
+  width: 1000px;
+  height: 200px;
+  background-color: black;
+  border-top: 3px solid gray;
+}
+
+.centerfooter {
+  width: 200px;
+  height: 165px;
+  margin-right: 400px;
+  margin-left: 400px;
+}
+
+.centerfooter img {
+  width: 150px;
+  height: 125px;
+  margin-left: 25px;
+  float: left;
+}
+
+.centerfooter h1 {
+  float: left;
+  color: rgb(255, 210, 61);
+  text-align: center;
+}
+
+.footerbottomleft {
+  height: 25px;
+  width: 500px;
+  float: left;
+  margin-top: 11px;
+  padding-left: 5px;
+}
+
+.footerbottomright {
+  height: 25px;
+  width: 500px;
+  float: left;
+  padding-right: 5px;
+}
+
+.footerbottomleft  p {
+  color: grey;
+  text-align: left;
+  font-size: 8pt;
+}
+
+.footerbottomright img {
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin-left: 7px;
+}
+
+#scrollToTop {
+  background-color:  rgb(255, 210, 61);
+  color: black;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  float: right;
+  margin-right: 10px;
+}
+
+#scrollToTop:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+#year {
+  font-size: 8pt;
+}
+
+#top-header-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  margin: 0.5rem;
+ }
+ 

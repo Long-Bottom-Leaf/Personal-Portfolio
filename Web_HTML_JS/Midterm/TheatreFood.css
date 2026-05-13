@@ -1,0 +1,128 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+}
+
+body
+{
+    background-color: white;
+}
+
+.mainbox
+{
+    width: 1000px;
+    background-color: rgb(68, 24, 24);
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* navigation and header*/
+nav
+{
+    width: 1000px;
+    height: 80px;
+    background-color: rgb(29, 29, 85);
+}
+
+nav a:link
+{
+    color: white;
+    text-decoration: none;
+}
+
+nav a:visited
+{
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: black;
+    background: white;
+    text-decoration: none;
+}
+
+header
+{
+    width: 1000px;
+    height: 250px;
+    padding: 20px;
+}
+
+footer
+{
+    width: 1000px;
+    height: 80px;
+    background-color: rgb(29, 29, 85);
+}
+
+
+/* food menu sections */
+.foodmenusection
+{
+    width: 1000px;
+    height: 300px;
+    background-color: rgb(68, 24, 24);
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    display: flex;                          /* Enables flexbox */
+    justify-content: space-between;         /* Pushes items to the edges */
+    align-items: flex-start;                /* Aligns the menu boxes to the top */
+    padding: 10px;
+}
+
+
+/* food menu boxes */
+.foodmenuleft, .foodmenuright
+{
+    width: 400px;
+    height: 300px;
+    background-color: green;
+    border: 2px solid black;                /* remove when done styling */
+
+    text-align: left;
+    
+
+    display: flex;
+    flex-direction: column;                   /* Stacks content vertically */
+    justify-content: flex-start;              /* Aligns text to the top */
+    padding: 10px;
+}
+
+.foodmenuleft ul, .foodmenuright ul
+{
+    list-style-position: inside;              /* Moves bullet points inside the box */
+    padding-left: 0;                          /* Removes default padding */
+    margin-left: 0;                           /* Ensures text aligns properly */
+}
+
+.foodmenuleft h1, h2, h3, .foodmenuright h1, h2, h3
+{
+    text-align: center;
+}
+
+/* image specific boxes */
+.foodmenuleftimg, .foodmenurightimg
+{
+    width: 400px;
+    height: 300px;
+    background-color: green;
+    border: 2px solid black;                      /* remove when done styling */
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.foodmenuleftimg img, .foodmenurightimg img
+{
+    border-radius: 10px;                            /* ensures the image inside the box has a border */
+}

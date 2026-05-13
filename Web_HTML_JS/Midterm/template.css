@@ -1,0 +1,104 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(29, 29, 85);
+}
+
+body {
+  background-color: rgb(68, 24, 24);
+}
+
+.mainbox {
+  width: 1000px;
+  height: 1500px; /*To be removed once site is done */
+  background-color: burlywood;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Styles for Navigation */
+
+nav {
+  width: 1000px;
+  height: 80px;
+  padding-top: 10px;
+  font-size: 30px;
+  background-color: burlywood;
+}
+
+.navleft {
+  width: 500px;
+  padding-left: 20px;
+  float: left;
+}
+
+.navright {
+  width: 500px;
+  padding-right: 20px;
+  text-align: right;
+  float: left;
+  padding-top: 15px;
+}
+
+nav a:link {
+  text-decoration: none;
+}
+
+nav a:visited {
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: burlywood;
+  background: rgb(29, 29, 85);
+  text-decoration: none;
+}
+
+/*Styles for footer*/
+
+footer {
+  width: 1000px;
+  background-color: burlywood;
+  padding-top: 40px;
+  float: left;
+  font-size: 20px;
+}
+
+.footerleft {
+  width: 400px;
+  padding-left: 20px;
+  padding-top: 20px;
+  float: left;
+}
+
+.footercenter {
+  width: 200px;
+  float: left;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footerright {
+  width: 400px;
+  float: left;
+}
+
+footer a:link {
+  text-decoration: none;
+}
+
+footer a:visited {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: burlywood;
+  background: rgb(29, 29, 85);
+  text-decoration: none;
+}
+.footerright img {
+  float: right;
+}
