@@ -1,0 +1,164 @@
+.grid-item {
+  border: 1px solid silver;
+}
+
+.mainbox {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 100px 260px 620px 400px 65px;
+    grid-template-areas:
+        "header header header header header"
+        "box1 box2 box3 box4 box5"
+        "left1 left1 right1 right1 right1"
+        "left2 left2 left2 right2 right2"
+        "footer footer footer footer footer";
+}
+
+/* Assigning grid areas */
+.grid-item1 {
+    grid-area: header;
+    background-color: lightyellow;
+    color: black;
+}
+
+.grid-item2 {
+    grid-area: box1;
+    padding: 0%;
+}
+
+.grid-item3 {
+    grid-area: box2;
+    padding: 0%;
+}
+
+.grid-item4 {
+    grid-area: box3;
+    padding: 0%;
+}
+
+.grid-item5 {
+    grid-area: box4;
+    padding: 0%;
+}
+
+.grid-item6 {
+    grid-area: box5;
+    padding: 0%;
+}
+
+.grid-item7 {
+    grid-area: left1;
+    padding-left: 10px;
+}
+
+.grid-item8 {
+    grid-area: right1;
+    padding: 0%;
+}
+
+.grid-item9 {
+    grid-area: left2;
+    padding: 0%;
+}
+
+.grid-item10 {
+    grid-area: right2;
+    border: 2px solid silver;
+    padding: 10px;
+}
+
+.grid-item11 {
+    grid-area: footer;
+    padding: 0%;
+}
+
+/* Quote styling */
+.quotebox {
+  position: relative;
+  padding: 20px;
+  background-color: black !important;
+  color: white;
+  font-family: 'Georgia', serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quotetext {
+  font-style: italic;
+  font-size: 1.4em;
+  line-height: 1.5;
+  margin-bottom: 40px; /* space for author */
+}
+
+.quoteauthor {
+  align-self: flex-end;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: silver !important;
+  margin: 0;
+}
+
+/* logo box */
+.logobox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.logoimg {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+.logotext {
+    color: gold;
+    font-size: 2em;
+    display: block;
+}
+
+/* Image */
+.designimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 15px;
+}
+
+/* Design Specs */
+.designspecs {
+    padding: 5px; 
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Design Description */
+.designtext {
+    font-size: 1.3em;
+}
+
+/* Table */
+.carSpecs {
+    width: 100%;
+    height: 350px;
+    border-collapse: collapse;
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+.tabletitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+}
+
+/* grid container */
+
+.grid-item {
+  color: black;
+  padding: 3px;
+  border: 2px solid black;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.mainbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px 300px;
+  grid-template-areas:
+    "content1 content2 content3 content3 content3"
+    "content4 content5 content6 content7 content8"
+    "content9 content10 content11 content12 content12";
+}
+
+.grid-item1 {
+  grid-area: content1;
+  background-color: rgb(11, 185, 11);
+}
+
+.grid-item2 {
+  grid-area: content2;
+  background-color: rgb(106, 106, 228);
+}
+
+.grid-item3 {
+  grid-area: content3;
+  background-color: red;
+}
+
+.grid-item4 {
+  grid-area: content4;
+  background-color: yellow;
+}
+
+.grid-item5 {
+  grid-area: content5;
+  background-color: orange;
+}
+
+.grid-item6 {
+  grid-area: content6;
+  background-color: darkorchid;
+}
+
+.grid-item7 {
+  grid-area: content7;
+  background-color: lightskyblue;
+}
+
+.grid-item8 {
+  grid-area: content8;
+  background-color: lightcoral;
+}
+
+.grid-item9 {
+  grid-area: content9;
+  background-color: lightgreen;
+}
+
+.grid-item10 {
+  grid-area: content10;
+  background-color: seagreen;
+}
+
+.grid-item11 {
+  grid-area: content11;
+  background-color: peru;
+}
+
+.grid-item12 {
+  grid-area: content12;
+  background-color: magenta;
+}
+
+/* random image for fun */
+
+img {
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,490 @@
+:root {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000000;
+  background-color: #f5f5f5;
+
+  --teal: rgb(87, 128, 136);
+  --gray: rgb(116, 148, 140);
+  --beige: #cfb580;
+  --brown: #864e3e;
+  --orange: #ca7c4c;
+  --white: rgb(245, 245, 245);
+  --black: #000000;
+  --shadow: 0 1px 5px rgba(73, 73, 73, 0.8);
+  --textShadow: 3px 3px 4px #000;
+  --transparent: rgba(238, 236, 236, 0.5);
+
+  max-width: 100%;
+}
+
+.homeWrapper {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Slide Category Section*/
+
+.slide {
+  width: 100%;
+  height: 40rem;
+  padding: 1rem 5rem;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: scroll;
+  margin-bottom: 2rem;
+}
+
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(87, 128, 136, 0.8);
+  color: var(--white);
+  font-family: "Roboto Slab", serif;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 40rem;
+  height: 22rem;
+  margin-top: 15rem;
+}
+
+.slideContent h1 {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+.slideContent p {
+  font-size: 1.7rem;
+}
+
+.slideContent button {
+  background-color: var(--brown);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1.3rem;
+  transition: background-color 0.25s;
+  color: var(--white);
+}
+
+.slideContent button:hover {
+  background-color: var(--orange);
+}
+
+/*Mom and Pop Story Section*/
+
+.momPopContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: no-repeat center top;
+  background-size: contain;
+  width: 1290px;
+  height: 580px;
+  margin: auto;
+}
+
+.momPopDesc {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.7rem;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+.momPopDesc h3 {
+  font-size: 2.5rem;
+  width: 50%;
+  margin: 0;
+}
+
+.desc1 {
+  width: 55%;
+  margin: 0.5rem 0 0 0;
+}
+
+.desc2 {
+  width: 40%;
+  margin: 1rem 0 0 0;
+}
+
+/* Contact Section*/
+
+.contactContainer {
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+iframe {
+  border: 2px solid var(--black);
+  border-radius: 16px;
+}
+
+.contactInfoContainer {
+  margin-right: 5rem;
+}
+
+.contactInfoContainer h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.getInTouchContent {
+  background-color: rgb(116, 148, 140, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 120%;
+  border: 2px solid var(--black);
+  font-size: 1.2rem;
+}
+
+.storeHoursContent {
+  background-color: rgb(116, 148, 140, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 120%;
+  border: 2px solid var(--black);
+  font-size: 1.2rem;
+}
+
+.storeHours ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.storeHours li {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Review Section */
+
+.scrollBar {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1% 0;
+  height: 27rem;
+  width: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-color: var(--gray) var(--brown);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.scrollBar:hover {
+  scrollbar-color: white var(--brown);
+}
+
+
+.itemBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(245, 245, 245, 0.6);
+  width: 45rem;
+  height: 22rem;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  text-align: right;
+  border-radius: 16px;
+}
+
+.itemBox img {
+  max-width: 100%;
+  height: 70%;
+}
+
+.itemText {
+  padding: 2rem;
+}
+
+.itemBox p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.itemBox span {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@media (max-width: 1600px) {
+  .slide {
+    height: 35rem;
+  }
+
+  .slideContent {
+    margin-top: 6rem;
+  }
+
+  .momPopContainer {
+    width: 1100px;
+    height: 495px;
+  }
+
+  .momPopDesc {
+    font-size: 1.35rem;
+  }
+  .momPopDesc h3 {
+    font-size: 1.8rem;
+  }
+
+  .scrollBar {
+    height: 24rem;
+  }
+
+  .itemBox {
+    width: 40rem;
+    height: 20rem;
+  }
+
+  .itemBox img {
+    padding-left: 1rem;
+  }
+
+  .itemBox p {
+    font-size: 1.3rem;
+  }
+
+  .itemBox span {
+    font-size: 1.3rem;
+  }
+
+  .contactInfoContainer {
+    margin-right: 4rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .slide{
+    height: 30rem;
+  }
+  .slideContent {
+    margin-top: 6rem;
+  }
+
+  .momPopContainer {
+    width: 900px;
+    height: 405px;
+  }
+
+  .momPopDesc {
+    font-size: 1.15rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
+
+  .momPopDesc h3 {
+    font-size: 1.5rem;
+  }
+
+  .scrollBar {
+    height: 19rem;
+  }
+
+  .itemBox {
+    width: 35rem;
+    height: 15rem;
+  }
+
+  .itemBox img {
+    padding-left: 1rem;
+  }
+
+  .itemBox p {
+    font-size: 1rem;
+  }
+
+  .itemBox span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide {
+    height: 20rem;
+  }
+
+  .slideContent {
+    padding: 1rem;
+    width: 25rem;
+    height: 12rem;
+  }
+
+  .slideContent h1 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .slideContent p {
+    font-size: 1rem;
+  }
+
+  .slideContent button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .momPopContainer {
+    width: 600px;
+    height: 270px;
+  }
+
+  .momPopDesc {
+    font-size: 0.75rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .momPopDesc h3 {
+    font-size: 0.9rem;
+  }
+
+  .contactContainer {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  iframe {
+    border: 2px solid var(--black);
+    width: 400px;
+    height: 300px;
+  }
+
+  .contactInfoContainer {
+    margin-right: 5rem;
+  }
+
+  .contactInfoContainer h3 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .getInTouchContent {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .storeHoursContent {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .scrollBar {
+    height: 18rem;
+  }
+
+  .itemBox {
+    width: 25rem;
+    height: 14rem;
+    padding: 0;
+  }
+
+  .itemBox img {
+    height: 60%;
+  }
+
+  .itemBox p {
+    font-size: 0.9rem;
+  }
+
+  .itemBox span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+    .slide {
+    padding: 10rem 1rem 1rem 1rem;
+    height: 15rem;
+  }
+
+  .momPopContainer {
+    width: 400px;
+    height: 200px;
+  }
+
+  .momPopDesc {
+    font-size: 0.52rem;
+  }
+
+  .momPopDesc h3 {
+    font-size: 0.7rem;
+  }
+
+  .contactContainer {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  iframe {
+    border: 2px solid var(--black);
+    width: 300px;
+    height: 200px;
+  }
+
+  .contactInfoContainer {
+    margin-right: 3rem;
+  }
+
+  .contactInfoContainer h3 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .getInTouchContent {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .storeHoursContent {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .scrollBar {
+    height: 15rem;
+  }
+
+  .itemBox {
+    width: 20rem;
+    height: 11rem;
+    padding: 0;
+  }
+
+  .itemBox p {
+    font-size: 0.7rem;
+  }
+
+  .itemBox span {
+    font-size: 0.7rem;
+  }
+}

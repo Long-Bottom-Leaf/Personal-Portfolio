@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+    <title>Convert String to Lower Snake Case</title>
+</head>
+    <body>
+        <mainbox class="mainbox">
+            <div class="grid-item grid-item1">
+                <h1 id="title">
+                    1. Convert String to Lower Snake Case
+                </h1>
+
+                <div id="inputcontainter">
+                    <p id="pinput1">
+                        Convert to Snake Case: <input type="text" id="input1" placeholder="enter a string"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn1">Convert</button>
+                    <p id="p1">
+                        <!-- converted text appears here -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item2">
+                 <h1 id="title">
+                    2. Upload and embed a video URL
+                </h1>
+
+                <div id="inputcontainter">
+                    <p id="pinput2">
+                        Enter URL here: <input type="text" id="input2" placeholder="enter a video url"/>
+                    </p>
+                    <p>
+                        Enter video width: <input type="text" id="width" placeholder="width in px"/>
+                    </p>
+                    <p>
+                        Would you like controls?: <input type="checkbox" id="controls"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn2">Embed</button>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item3">
+                <div id="videoembed">
+                        <!-- video embeded here -->
+                </div>
+            </div>
+
+            <div class="grid-item grid-item4">
+                <h1 id="title">
+                    3. Extract Date from date string
+                </h1>
+
+                <div id="inputcontainer">
+                    <p id="pinput3">
+                        Enter a date in format YYYY-MM-DD: <input type="text" id="input3" placeholder="YYYY-MM-DD"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn3">Parse Date</button>
+                    <p id="poutput3">
+                        <!-- Extracted date and error messages print here -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item5">
+                <h1 id="title">
+                    4. Extract Date from date string
+                </h1>
+
+                <div id="inputcontainer">
+                    <p id="pinput4">
+                        Enter a date: <input type="text" id="input4" placeholder="ex: January 2 2010"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn4">Convert Date</button>
+                    <p id="poutput4">
+                        <!-- Converted date prints here -->
+                    </p>
+                </div>
+                
+            </div>
+
+            <div class="grid-item grid-item6">
+                <h1 id="title">
+                    5. Format Coordinates
+                </h1>
+
+                <div id="inputcontainer">
+                    <p id="pinput5">
+                        Enter Latitude: <input type="text" id="inputLat1" placeholder="ex: 60.33"/>
+                        </br>
+                        Enter Longitude: <input type="text" id="inputLng1" placeholder="ex: -33.66"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn5">Format Coordinates</button>
+                    <p id="poutput5">
+                        <!-- Formated coordinates print here -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item7">
+                <h1 id="title">
+                    6. Create a list of Coordinates
+                </h1>
+
+                <div id="inputcontainer">
+                    <p id="pinput6">
+                        Enter Latitude: <input type="text" id="inputCoords" placeholder="format: ##.##, ##.##;"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn6">Create list, input more coordinates after clicking here!</button>
+                    <p id="poutput6">
+                        <!-- List of coordinates print here -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item8">
+                <h1 id="title">
+                    7. Check MIME Type
+                </h1>
+
+                <div id="inputcontainer">
+                    <p id="pinput7">
+                    File Link: <input type="text" id="input7" placeholder="Enter file link here"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn7">Check MIME Type</button>
+                    <p id="poutput7">
+                    <!-- MIME type output will show here -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item9">
+                <h1 id="title">
+                    8. Get liscense Information
+                </h1>
+
+                <div id="inputcontainer">
+                    <p id="pinput8">
+                        Enter the copyright code: <input type="text" id="input8" placeholder="ex: CC-BY-NC-SA"/>
+                    </p>
+                    <p>
+                        Open link in new tab: <input type="checkbox" id="newTabCheck"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn8">Click Here for Copyright Link</button>
+                    <p id="poutput8">
+                        <!-- Copyright description and link print here -->
+                    </p>
+                </div>
+            </div>
+                
+            <div class="grid-item grid-item10">
+                <h1 id="title">
+                    9. Boolean and List Verification
+                </h1>
+
+                <div id="inputcontainer">
+                    <p id="pinput9">
+                        Input your value: <input type="text" id="input9" placeholder="Any String, Number, Boolean"/>
+                    </p>
+                    <p id="pinput10">
+                        Enter your list: <input type="text" id="input10" placeholder="(asd, 123, N)"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn9">Verify if true Boolean</button>
+                    <button id="btn10">Check list</button>
+                    <p id="poutput9">
+                        <!-- part 1 verification is output here -->
+                    </p>
+                    <p id="poutput10">
+                        <!-- part 2 verification is output here -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item11">
+                <h1 id="title">
+                    10. Create a URL
+                </h1>
+
+                <div id="inputcontainer">
+                    <p id="pinputQuery">
+                        Enter Query: <input type="text" id="inputQuery" placeholder="ex: butterfly"/>
+                    </p>
+                    <p id="pinputOrder">
+                        Input Sort Order: <input type="text" id="inputOrder" placeholder="enter asc or desc"/>
+                    </p>
+                    <p id="pinputCount">
+                        Input Result Count: <input type="text" id="inputCount" placeholder="1-50"/>
+                    </p>
+                    <p id="pinputLiscense">
+                        Input Copyright Liscense: <input type="text" id="inputLiscense" placeholder="ex: CC-BY-ND"/>
+                    </p>
+                </div>
+
+                <div id="outputcontainer">
+                    <button id="btn11">Creat your URL!</button>
+                    <p id="poutput11">
+                        <!-- url output prints here -->
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item12">
+                <img src="Image/Sun Tzu quote.jpg">
+            </div>
+        </mainbox>
+        <script src="qap2.js"></script>
+    </body>
+</html>

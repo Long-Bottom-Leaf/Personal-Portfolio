@@ -1,0 +1,39 @@
+Questionaire for QAP
+
+1. How many hours?
+
+    20ish hours
+
+2. What online ressources?
+
+    Youtube:
+        https://www.youtube.com/watch?v=l0YKb6RRuxg - top gear review of Maserati GranTurismo Fulgore all electric car
+        https://www.youtube.com/watch?v=lEHFnW0F-z4 - Maserati official youtube
+
+    Image sites:
+        https://unsplash.com/s/photos/maserati - copyright free stock images, acredation required
+        https://archive.izmostock.com/gallery-collection/Maserati-Stock-Photos/C0000_JbQSbIQ2f8 - copyright free images, acredation required
+        https://www.flaticon.com/ - copyright free logos
+
+    Research:
+        https://www.maserati.com/global/en - official global maserati site
+        https://www.britannica.com/money/Maserati - britannica encyclopedia money focuses more on busines history and financial info
+        https://en.wikipedia.org/wiki/Maserati - used for sources
+
+    Code Help:
+        https://www.w3schools.com - great ressource for coding help
+        https://www.chatgpt.com - used for a couple things like some design suggestions and bit of help with some things I just couldn't get to work
+                                  ex: some help fitting the slideshow into the box grid
+
+3. Did you ask a classmate for help? (mention name)
+
+    Bounced some ideas off of Kass and chatted about the project a bit with Leah before she went on her trip.
+
+4. Did you ask for help from instructors or use any help sessions?
+
+    Unfortunately I was not able to make TA help sessions
+
+5 Rate the difficulty
+
+    I don't think the project was particularly difficult, just a lot of work as the project was what three/four people did last term.
+    I actually had a lot of fun doing the project and figuring out how to manipulate the grid boxex and getting images to fit.

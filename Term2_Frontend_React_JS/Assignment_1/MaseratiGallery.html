@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Maserati Gallery Page</title>
+        <link rel="stylesheet" href="GeneralCss.css"/>
+        <link rel="stylesheet" href="GalleryPage.css"/>
+        <script src="MaseratiJavaScript.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <div class="navleft">
+                <a href="MaseratiMain.html">Home</a>
+                <a href="MaseratiDesign.html">Design</a>
+                <a href="MaseratiGallery.html">Gallery</a>
+            </div>
+
+            <div class="navcenter">
+                <img src="Images/Nav Image/Maserati Text.jpg">
+            </div>
+
+            <div class="navright">
+                <script>
+                    showGreeting();
+                </script>
+            </div>
+    </nav>
+
+        <div class="mainbox">
+            <div class="grid-item grid-item1">
+                <h1>
+                    GranTurismo Image Gallery
+                </h1>
+            </div>
+
+            <div class="grid-item grid-item2">
+                <figure>
+                    <img src="Images/Gallery Page/Maserati Interior.jpg" class="grid-itemgallery" alt="Maserati Interior">
+                    <figcaption class="figcaption">
+                        Interior
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/Gallery Page/Maserati Exterior.jpg" class="grid-itemgallery" alt="Maserati Exterior">
+                    <figcaption class="figcaption">
+                        Exterior
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/Gallery Page/Maserati V6.jpg" class="grid-itemgallery" alt="Maserati V6 Engine">
+                    <figcaption class="figcaption">
+                        Engine
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid-item grid-item3">
+                <h2 class="audio-box-title">Maserati Engine Sounds</h2>
+                <div class="audio-row">
+                    <span class="audio-title">Engine Start</span>
+                    <audio controls>
+                        <source src="Sounds/Sound 1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-row">
+                    <span class="audio-title">Drive By</span>
+                    <audio controls>
+                        <source src="Sounds/Sound 2.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="grid-item grid-item4">
+                <div class="slideshow-container">
+                    <img id="ImgSlide" src="Images/Gallery Page/Slideshow/GT Engine.jpg" alt="Slideshow" style="width:100%; height:auto;">
+                </div>
+            </div>
+
+            <div class="grid-item grid-item5">
+                <div class="footercontainer">
+                    <div class="footerleft">
+                        <p>Follow Maserati on social media:
+                            <a href="https://x.com/maseratimsg" target="_blank">
+                                <img src="Images/Footer Image/twitter.png" alt="Twitter" class="social-icon">
+                            </a>
+                            <a href="https://www.facebook.com/Maserati/" target="_blank">
+                                <img src="Images/Footer Image/facebook.png" alt="Facebook" class="social-icon">
+                            </a>
+                            <a href="https://www.instagram.com/maserati/" target="_blank">
+                                <img src="Images/Footer Image/instagram.png" alt="Instagram" class="social-icon">
+                            </a>             
+                        </p>
+                    </div>
+                        
+                    <div class="footercenter">
+                        <a href="#top">Back to Top</a>
+                    </div>
+
+                    <div class="footerright">
+                        <script>
+                            showGreeting();
+                        </script>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </body>
+</html>

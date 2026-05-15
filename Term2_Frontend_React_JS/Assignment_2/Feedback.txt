@@ -1,0 +1,22 @@
+1.	How many hours did it take you to complete this assessment?
+
+    Answer: roughly 14-16 hours (timer stopped for a bit so I'm not sure exactly)
+
+2.	What online resources you have used? (My lectures, YouTube, Stack overflow etc.)
+
+    Answer: Class lectures/review
+            https://www.w3schools.com/
+            chatGPT/copilot for figuring out why code isn't working and explain some steps
+                ex: couldn't figure out why trim() was returned as undefined in console, turns out I had the same id for the <p> and <button>
+
+3.	Did you need to ask any of your friends in solving the problems. (If yes, please mention name of the friend. They must be amongst your class fellows.)
+
+    Answer: Nope not this time.
+
+4.	Did you need to ask questions to any of your instructors? If so, how many questions did you ask (or how many help sessions did you require)?
+
+    Answer: I did but I realized I was just overthinking/misinterpreting the problem.
+
+5.	Rate (subjectively) the difficulty of Making this all! from your own perspective, and whether you feel confident that you can solve a similar but different problem requiring some of the same techniques in the future now that you’ve completed this one.
+
+    Answer: QAP 2 was definitely very difficult, however most of that difficulty was with the coordinate list/array I found that... so difficult it took me hours and I'll admit I needed chatGPT/Copilot to help quite a bit with building and debugging the function. Problem 9 part 2 was also a tough one, I cold figure out how to do it without the 3 functions but for some reason trying to split it into three functions just.. did not click with me for a long time.
