@@ -1,0 +1,24 @@
+Data normalization explanation!
+
+-------------------------------------------------------------------------
+
+1. First Normal Form (1NF)
+
+- Each table has a clear primary key (like speaker_id, attendee_id, etc.)
+- Every column stores a single value — no lists or repeating data
+- Example: each attendee’s email is one value in one column
+
+2. Second Normal Form (2NF)
+
+- All non-key columns depend on the whole primary key
+- Since most tables use a single-column primary key, there are no partial dependencies
+- The registrations table connects attendees and sessions with its own registration_id key and
+  a UNIQUE(attendee_id, session_id) rule to prevent duplicate registrations
+
+3. Third Normal Form (3NF)
+
+- No column depends on another non-key column
+- speakers: name, email, topic all depend only on speaker_id
+- attendees: name, email, organization depend only on attendee_id
+- sessions: title, date, time, and speaker_id depend only on session_id
+- registrations: links attendee_id and session_id, with no extra information

@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<main class="main-content index_container">
+    <h1>Mood Summary 📅</h1>
+    <p>Current positive streak: <%= streak %> days</p>
+
+    <h2>Last 5 Days</h2>
+    <ul>
+        <% if (recent.length === 0) { %>
+            <li>No entries yet!</li>
+
+        <% } else { %>
+            <% recent.forEach(entry => { %>
+                <li><%= entry.date %>: <%= entry.mood %></li>
+                
+            <% }) %>
+        <% } %>
+    </ul>
+
+    <a href="/">Back Home</a>
+</main>
+</body>
+</html>

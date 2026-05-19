@@ -1,0 +1,19 @@
+<%- include('partials/header', { title: "User Dashboard" }) %>
+    <h1>Welcome <%= user.username %></h1>
+
+    <div class="main-content">
+        <h2>Your RSVP Status</h2>
+
+        <% if (!user.hasRSVPed) { %>
+            <form action="/userLanding/rsvp" method="POST">
+                <button type="submit">RSVP to this event</button>
+            </form>
+
+        <% } else { %>
+            <p>You have RSVP'd to the event at <%= new Date(user.rsvpTime).toLocaleString() %></p>
+            
+        <% } %>
+    </div>
+
+    <a href="/logout">Logout</a>
+<%- include('partials/footer') %>

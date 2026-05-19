@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<main class="main-content index_container">
+    <h1>Welcome to the Mood Tracker 🌤️</h1>
+    <% if (hasEntries) { %>
+        <p>Current positive streak: <%= streak %> days 🎉</p>
+
+    <% } else { %>
+        <p>No entries yet. Start by adding your first mood!</p>
+
+    <% } %>
+    
+    <div class="navigation__container">
+        <a href="/mood">Log Today's Mood</a>
+    </div>
+</main>
+</body>
+</html>
