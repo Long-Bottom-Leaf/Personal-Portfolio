@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="/gameLibrary.css" />
+<div class="game-grid">
+  <% VideoGames.forEach((game) => { %>
+  <a href="/game/<%= game.id %>">
+    <div class="game-box <%= showDescription ? 'show-description' : '' %>">
+      <img src="<%= game.image %>" alt="<%= game.title %>" class="game-image" />
+      <div class="game-img-overlay"></div>
+
+      <div class="game-details">
+        <div class="game-info-container">
+          <div class="game-title-container">
+            <h2 class="game-title"><%= game.title %></h2>
+          </div>
+          <div class="game-desc-container">
+            <p class="game-desc"><%= game.description %></p>
+          </div>
+        </div>
+
+        <div class="game-footer">
+          <div class="game-rating">
+            <% const rating = game.averageRating / 2 || 0; %> <% for (let i = 1;
+            i <= 5; i++) { %> <% if (rating >= i) { %>
+            <span class="star full">&#9733;</span>
+            <% } else if (rating >= i - 0.5) { %>
+            <span class="star half">&#9733;</span>
+            <% } else { %>
+            <span class="star empty">&#9733;</span>
+            <% } %> <% } %>
+            <span class="rating-number"
+              ><%= rating ? rating.toFixed(1) : 'N/A' %></span
+            >
+          </div>
+          <h3 class="game-year"><%= game.releaseYear %></h3>
+        </div>
+      </div>
+    </div>
+  </a>
+  <% }) %>
+</div>

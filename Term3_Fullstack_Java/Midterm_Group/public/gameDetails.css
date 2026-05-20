@@ -1,0 +1,138 @@
+.about-game-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* ensure equal height */
+  gap: 1rem;
+  width: 100vw;
+  padding: 1rem;
+}
+
+.about-game-img-container,
+.about-game-details {
+  width: 35rem;
+  height: 30rem; /* fixed equal height */
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.about-game-img-container {
+  text-align: center;
+}
+
+.about-game-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 3px solid var(--main-accent);
+}
+
+.about-game-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  background-color: var(--shadow-colour);
+  padding: 1.4rem;
+  text-align: left;
+}
+
+.center-about {
+  display: flex;
+  width: 70rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* game details */
+.about-game-details {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--shadow-colour);
+  padding: 1.4rem;
+  border-radius: 1rem;
+  width: 35rem;
+  text-align: left;
+}
+
+.about-game-details p {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.separator {
+  display: inline-block;
+  width: 3rem;
+}
+
+.recommended-games-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 1.5rem;
+  background-color: var(--shadow-colour); /* Example background color */
+  align-items: center;
+  justify-content: center;
+}
+
+.recommended-games-container .title {
+  color: var(--second-accent);
+  font-size: 2.2rem;
+}
+
+/* Base star shape */
+.details-star {
+  position: relative;
+  display: inline-block;
+  font-size: 3.5rem;
+  color: #333; /* default empty color */
+}
+
+/* Full stars */
+.details-star.full {
+  color: var(--main-accent);
+}
+
+/* Half stars — real half-filled look */
+.details-star.half {
+  color: #333; /* start empty */
+}
+
+.details-star.half::before {
+  content: "★";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* only fill half */
+  overflow: hidden;
+  color: var(--main-accent);
+}
+
+/* Empty stars */
+.details-star.empty {
+  color: #333;
+}
+
+/* Rating number beside stars */
+.details-rating-number {
+  font-weight: 600;
+  font-size: 2rem;
+  color: color-mix(in oklch, var(--main-accent), white 40%);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  margin-left: 0.2rem;
+}
+
+.details-game-rating {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.detail-title {
+  color: var(--second-accent);
+}
+
+.num-of-reviews {
+  font-size: 2rem;
+  color: var(--second-accent);
+}

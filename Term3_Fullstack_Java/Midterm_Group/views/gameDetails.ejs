@@ -1,0 +1,71 @@
+<html lang="en">
+  <head>
+    <title>Game Details</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/gameDetails.css" />
+  </head>
+  <body>
+    <%- include('partials/header') %>
+
+    <main class="main-content">
+      <div class="title-box">
+        <h1 class="title"><%= game.title %></h1>
+      </div>
+      <div class="center-about">
+      <div class="about-game-container">
+        <div class="about-game-img-container">
+          <img
+            src="<%= game.image || '/images/gameImages/pumpkin-placeholder.png' %>"
+            alt="<%= game.title %> cover"
+            class="game-image"
+          />
+        </div>
+
+        <div class="about-game-details">
+
+          <p class="genre"><span class="detail-title">Genre:</span> <%= game.genre %></p>
+
+          <div class="details-row">
+            <div class="rating">
+              <div class="details-game-rating">
+                <% const rating = game.averageRating / 2 || 0; %> <% for (let i = 1;
+                i <= 5; i++) { %> <% if (rating >= i) { %>
+                <span class="details-star full">&#9733;</span>
+                <% } else if (rating >= i - 0.5) { %>
+                <span class="details-star half">&#9733;</span>
+                <% } else { %>
+                <span class="details-star empty">&#9733;</span>
+                <% } %> <% } %>
+
+                <span class="details-rating-number"
+                ><%= rating ? rating.toFixed(1) : 'N/A' %></span
+                >
+               <span class="num-of-reviews">(<%= game.numberOfReviews || 0%> Reviews)</span>
+              </div>
+              
+
+            
+          </div>
+
+          <p class="release"><span class="detail-title">Status:</span> <%= game.released ? 'Released' : 'Unreleased' %></p>
+        <p class="release"><span class="detail-title">Release Year:</span> <%= game.releaseYear %></p>
+        <p class="description">
+            <span class="detail-title">Description:</span> <%= game.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+    </main>
+    <div class="container-squared">
+      <div class="recommended-games-container">
+        <h2 class="title">More from this Genre</h2>
+        <% if (recommendedGames.length > 0) { %> <%- include('partials/game', {
+        VideoGames: recommendedGames }) %> <% } else { %>
+        <h2 class="no-recs-msg">No other games in genre</h2>
+        <% } %>
+      </div>
+    </div>  
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

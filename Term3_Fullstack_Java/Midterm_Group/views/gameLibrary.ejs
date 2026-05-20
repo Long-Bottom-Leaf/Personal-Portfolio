@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <title>Game Gallery</title>
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <link rel="stylesheet" type="text/css" href="./gameLibrary.css">
+    </head>
+    <body>
+        <%- include('partials/header') %>
+
+        <main class="main-content">
+            <div class="title-box">
+                <h1 class="title">Game Library</h1>
+            </div>
+
+            <div class="genre-filter">
+                <a href="/games"><button class="filter-btn <% if(Genre === null){ %>active<% }%>" data-genre="All">All</button></a>
+                <% Object.entries(Genres).forEach(([genreId, genre]) => { %>
+                    <a href="?genre=<%= genre %>"><button class="filter-btn <% if(Genre === genre){ %>active<% }%>" data-genre="<%= genre %>"><%= genre %></button></a>
+                <% }) %>
+            </div>
+                <%- include('partials/game', {VideoGames}) %>
+            </div>
+        </main>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

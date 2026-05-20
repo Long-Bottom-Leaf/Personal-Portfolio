@@ -1,0 +1,35 @@
+<html lang="en">
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <link rel="stylesheet" type="text/css" href="./home.css">
+        <link rel="stylesheet" type="text/css" href="./gameLibrary.css">
+    </head>
+    <body>
+        <%- include('partials/header') %>
+
+        <main class="main-content">
+            <% const shuffledGames = [...VideoGames].sort(() => 0.5 - Math.random());%>
+            <section class="hero-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                    <% shuffledGames.forEach(game => { %>
+                        <img src="<%= game.image %>" alt="<%= game.title %>">
+                    <% }) %>
+                    <% shuffledGames.forEach(game => { %> <!-- duplicate for loop -->
+                        <img src="<%= game.image %>" alt="<%= game.title %>">
+                    <% }) %>
+                </div>
+                <div class='hero-overlay'></div>
+                <div class="hero-text">
+                    <h1>GameVault</h1>
+                    <p>Lock in. Play hard.</p>
+                </div>
+            </section>
+                <%- include('partials/game', {VideoGames}) %>
+            </div>
+        </main>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

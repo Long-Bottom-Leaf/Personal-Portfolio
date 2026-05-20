@@ -1,0 +1,7 @@
+1, Paracetamol, 4.99, 500mg
+2, Ibuprofen, 7.49, 200mg
+3, Amoxicillin, 12.99, 250mg
+4, Omeprazole, 9.99, 20mg
+5, Loratadine, 6.49, 10mg
+6, Metformin, 8.99, 500mg
+7, Atorvastatin, 14.99, 10mg

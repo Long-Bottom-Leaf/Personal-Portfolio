@@ -1,0 +1,19 @@
+1. How many hours did it take you to complete this assessment? (Please estimate per problem if possible)
+
+    Roughly 8 hours I would say.
+
+2. What online resources did you use? (e.g., Lectures, YouTube, Stack Overflow, etc.)
+
+    we3schools, chatGPT, copilot, personal notes, class videos
+
+3. Did you get help from any classmates? (If yes, provide names; they must be enrolled in your class)
+
+    Nope!
+
+4. Did you ask for help from an instructor? (Mention the number of questions/help sessions)
+
+    Nope!
+
+5. Rate the difficulty of each problem and your confidence in solving similar problems in the future.
+
+    I would say the project was a bit difficult, a lot of things to remember and implement. I feel a lot beter about Database and java after this QAP

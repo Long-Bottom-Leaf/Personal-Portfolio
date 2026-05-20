@@ -1,0 +1,224 @@
+Project: Pharmacy Medication Tracking System
+Language: Java
+Developer(s): Leah Murphy and Stephen Fennelly -- Group 4
+Date: Nov 7th, 2025
+
+----------------------------------------------------------
+
+Source Code Directory Structure
+
+Logical folder structure for the project:
+
+JAVA-GROUP4-LEAH-STEPHEN/
+│
+├── MedicationTracking/
+│       ├── Person.java
+│       ├── Patient.java
+│       ├── Doctor.java
+│       ├── Medication.java
+│       ├── Prescription.java
+│       ├── MedicationTracking.java
+│       ├── Test.java
+│       └── Menu.java
+│
+├── docs/
+│   ├── UserDocumentation.pdf
+│   └── DevelopmentDocumentation.pdf
+│
+├── README.md
+└── .gitignore
+
+Folder details
+
+| Folder                    | Purpose                                                      |
+| ------------------------- | ------------------------------------------------------------ |
+| `/MedicationTracking`     | All core Java classes (source code).                         |
+| `/docs`                   | Contains documentation deliverables (PDF, Word, etc).        |
+| `README.md`               | Overview of project, instructions for compiling and running. |
+| `.gitignore`              | Ensures compiled `.class` files aren’t uploaded to GitHub.   |
+
+----------------------------------------------------------
+Class and Package Summary (Javadoc Overview)
+
+All source files are part of the package:
+
+    package MedicationTracking
+
+Each class includes Javadoc-style comments to describe its purpose and methods.
+
+Example:
+
+/**
+ * Represents a doctor in the pharmacy system.
+ * Each doctor has a specialization and manages a list of patients.
+ */
+public class Doctor extends Person {
+    private String specialization;
+    private List<Patient> patients;
+
+    public Doctor(String name, int age, String phoneNumber, String specialization) {
+        super(name, age, phoneNumber);
+        this.specialization = specialization;
+        this.patients = new ArrayList<>();
+    }
+
+    public String getSpecialization() { return specialization; }
+    public List<Patient> getPatients() { return patients; }
+
+    public void setSpecialization(String specialization) { this.specialization = specialization; }
+
+    public void addANewPatient(Patient patient) { this.patients.add(patient); }
+
+    @Override
+    public String toString() {
+        return String.format("Doctor ID:%d Name:%s Specialization:%s Patients:%d", 
+               getId(), getName(), specialization, patients.size());
+    }
+}
+
+----------------------------------------------------------
+Javadoc Generation
+
+These Javadocs can be compiled into HTML documentation using:
+
+    javadoc -d docs MedicationTracking/*.java
+
+----------------------------------------------------------
+Build Process
+
+1. Navigate to the source folder:
+
+    cd JAVA-GROUP4-LEAH-STEPHEN
+
+2. Compile all .java files:
+
+    javac MedicationTracking/*.java
+
+3. Run the program:
+
+    java MedicationTracking.Menu
+
+----------------------------------------------------------
+Compiler-Time Dependencies
+
+There are no external dependencies or third-party packages required.
+Everything used is part of the core Java SDK.
+
+| Library                       | Type     | Purpose                                              |
+| ----------------------------- | -------- | ---------------------------------------------------- |
+| `java.util`                   | Built-in | Lists, Scanner input, Random generation              |
+| `java.time`                   | Built-in | Date/time handling for expiry and prescription dates |
+| `java.util.concurrent.atomic` | Built-in | Generates unique incremental IDs safely              |
+
+----------------------------------------------------------
+Development Standards
+
+| Standard               | Description                                                        |
+| ---------------------- | ------------------------------------------------------------------ |
+| **Naming Conventions** | Classes use PascalCase, variables and methods use camelCase.       |
+| **File Organization**  | Each class resides in its own `.java` file under the same package. |
+| **Encapsulation**      | All attributes are `private` or `protected` with getters/setters.  |
+| **Javadoc Comments**   | Each class and method includes documentation comments.             |
+| **Error Handling**     | Input validated with `Scanner` checks and exception handling.      |
+| **No Hardcoding**      | IDs auto-generated with `AtomicInteger`.                           |
+| **Formatting**         | 4-space indentation, consistent braces, clear spacing.             |
+| **Version Control**    | GitHub used for commits and collaboration.                         |
+
+----------------------------------------------------------
+Theoretical Database Design
+
+While this project does not implement a database, the entities within the program have been structured so they can easily
+map to relational tables in a real-world scenario.
+
+Diagram:
+
+[Doctor] 1 --- * [Prescription] * --- 1 [Patient]
+                        |
+                        *
+                   [Medication]
+
+Potential Table Structure
+
+Doctor:
+
+| Column         | Type     | Description       |
+| -------------- | -------- | ----------------- |
+| doctor_id      | INT (PK) | Unique doctor ID  |
+| name           | VARCHAR  | Doctor’s name     |
+| age            | INT      | Age               |
+| phone          | VARCHAR  | Contact number    |
+| specialization | VARCHAR  | Area of expertise |
+
+Patient:
+
+| Column     | Type     |
+| ---------- | -------- |
+| patient_id | INT (PK) |
+| name       | VARCHAR  |
+| age        | INT      |
+| phone      | VARCHAR  |
+
+Medication:
+
+| Column        | Type     |
+| ------------- | -------- |
+| medication_id | INT (PK) |
+| name          | VARCHAR  |
+| dose          | VARCHAR  |
+| quantity      | INT      |
+| expiry_date   | DATE     |
+
+Prescription:
+
+| Column              | Type     | Description                    |
+| ------------------- | -------- | ------------------------------ |
+| prescription_id     | INT (PK) | Unique ID                      |
+| doctor_id           | INT (FK) | Linked to `Doctor`             |
+| patient_id          | INT (FK) | Linked to `Patient`            |
+| medication_id       | INT (FK) | Linked to `Medication`         |
+| prescription_expiry | DATE     | Defaults to 1 year after issue |
+
+Entity Relationships
+
+| Relationship              | Description                                                   |
+| ------------------------- | ------------------------------------------------------------- |
+| Doctor → Patient          | One doctor can manage multiple patients.                      |
+| Patient → Prescription    | One patient can have multiple prescriptions.                  |
+| Prescription → Medication | Each prescription references one medication.                  |
+| Medication                | Independent table used in prescriptions and stock management. |
+
+----------------------------------------------------------
+GitHub Access
+
+To share and collaborate, this project uses Git and GitHub.
+
+Initialize the Repository:
+
+    git init
+    git add .
+    git commit -m "Initial commit - Pharmacy Medication Tracking System"
+
+Connecting to GitHub:
+
+    git remote add origin https://github.com/<username>/JAVA-GROUP4-LEAH-STEPHEN.git
+    git push -u origin main
+
+Cloning Instructions for Other Developers:
+
+    git clone https://github.com/<username>/JAVA-GROUP4-LEAH-STEPHEN.git
+    cd JAVA-GROUP4-LEAH-STEPHEN
+    javac MedicationTracking/*.java
+    java MedicationTracking.Menu
+
+----------------------------------------------------------
+Summary
+
+This documentation provides a full development overview of the Pharmacy Medication Tracking System, covering:
+
+- Source structure and build process  
+- Javadoc and class design  
+- Theoretical database schema  
+- GitHub repository setup  
+- Coding conventions and testing notes  
+
+With this information, another developer could clone, compile, understand, and extend the system with minimal setup time.
