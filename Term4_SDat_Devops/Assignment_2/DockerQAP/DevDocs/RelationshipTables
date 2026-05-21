@@ -1,0 +1,25 @@
+Member Table:
+
+id - PK
+name
+address
+email
+membershipType
+phoneNumber
+startDate
+duration
+
+Tournament Table
+
+id - PK
+startDate
+endDate
+location
+entryFee
+cashPrize
+
+Join Table
+
+member_tournament:
+member_id
+tournament_id
