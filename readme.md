@@ -32,3 +32,7 @@ Independent applications and experiments built outside coursework.
 ## Personal Projects
 
 # Python
+
+Discord Bot
+
+Music Player
