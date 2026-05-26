@@ -1,4 +1,4 @@
-const { getStreak } = require('../utils/utilities');
+const { getStreak } = require('./utilities');
     
 describe('Tests for mood tracker to make sure it tracks, stores, and displays moods correctly', () => {
   test('Returns 0 for empty array', () => {
