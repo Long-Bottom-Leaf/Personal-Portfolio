@@ -1,0 +1,42 @@
+1. Plan the data models
+   - UserProfile
+   - Workout
+   - Goal
+
+2. Create validation rules
+   - date validation
+   - number validation
+   - menu validation
+   - preset workout/intensity choices
+
+3. Build storage
+   - create file/database
+   - load data
+   - save data
+
+4. Build workout features
+   - add workout
+   - view workouts
+   - summary report
+
+5. Build calorie calculator
+   - use user weight
+   - use workout type
+   - use intensity
+   - use duration
+
+6. Build goals system
+   - create goal
+   - compare goals to saved workouts
+   - show progress
+
+7. Build CSV export
+   - export workout history
+
+8. Build main app menu
+   - connect everything together
+
+9. Polish
+   - test edge cases
+   - clean README
+   - add screenshots
