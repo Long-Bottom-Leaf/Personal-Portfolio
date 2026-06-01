@@ -1,0 +1,38 @@
+Fitness Tracker Project Outline
+
+1. User Profile
+- Name
+- Weight
+- Weight Unit (lbs/kg)
+
+2. Workout Fields
+- Date
+- Workout Type
+- Duration
+- Intensity
+- Calories
+- Notes Optional
+
+3. Fitness Tracker Features
+- Create file/database
+- Load data
+- Save data
+- Add workout
+- View workouts
+- View summary
+- Export CSV
+
+4. Goals System
+- Weekly workout count
+- Weekly duration
+- Weekly calories
+- Weekly workout type goal
+
+5. Input Validation
+- Validate date
+- Validate workout type
+- Validate duration
+- Validate weight
+- Validate intensity
+- Validate goal amount
+- Validate menu choices
