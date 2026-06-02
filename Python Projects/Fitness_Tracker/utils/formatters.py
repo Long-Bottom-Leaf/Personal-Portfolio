@@ -1,6 +1,6 @@
 import datetime
 
-def ValDate1(DateValue):
+def FormatDate1(DateValue):
     # Function will accept a value and format it to yyyy-mm-dd.
 
     DateValueStr = DateValue.strftime("%Y-%m-%d")
@@ -8,7 +8,7 @@ def ValDate1(DateValue):
     return DateValueStr
 
 
-def ValDate2(DateValue):
+def FormatDate2(DateValue):
     # Function will accept a value and format it to dd-Mon-yy.
 
     DateValueStr = DateValue.strftime("%d-%b-%y")
@@ -16,7 +16,7 @@ def ValDate2(DateValue):
     return DateValueStr
 
 
-def ValDate3(DateValue):
+def FormatDate3(DateValue):
     # Function will accept a value and format it to Day, Month dd, yyyy.
 
     DateValueStr = DateValue.strftime("%A, %B %d, %Y")
