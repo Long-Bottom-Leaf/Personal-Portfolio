@@ -3,7 +3,7 @@
 import json
 import os
 
-class dataManager:
+class DataManager:
 
     def __init__(self, file_path = "data/fitness_data.json"):
         self.file_path = file_path
