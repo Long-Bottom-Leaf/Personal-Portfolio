@@ -14,29 +14,31 @@
    - load data
    - save data
 
-4. Build workout features
+5. Simple main.py test
+
+6. Build workout features
    - add workout
    - view workouts
    - summary report
 
-5. Build calorie calculator
+7. Build calorie calculator
    - use user weight
    - use workout type
    - use intensity
    - use duration
 
-6. Build goals system
+8. Build goals system
    - create goal
    - compare goals to saved workouts
    - show progress
 
-7. Build CSV export
+9. Build CSV export
    - export workout history
 
-8. Build main app menu
+10. Build main app menu
    - connect everything together
 
-9. Polish
+11. Polish
    - test edge cases
    - clean README
    - add screenshots
