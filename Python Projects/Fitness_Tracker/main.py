@@ -1,51 +1,34 @@
-# Description A fitness tracker app designed to track daily, weekly, and monthly exercises and fitness goals.
-# Author: Stephen Fennelly
-# Date: June 1 - 
+# Main Fitness Tracker Application
 
-# Define required libraries
+from models.user_profile import UserProfile
+from models.workout import Workout
+from models.goal import Goal
+from services.fitness_tracker import FitnessTracker
+from storage.data_manager import DataManager
 
+def main():
+    fitness_tracker = FitnessTracker()
 
+    profile = UserProfile("Stephen", 180, "lbs")
+    fitness_tracker = FitnessTracker(profile)
 
-# Define constants
+    workout1 = Workout("Running", 30, "medium", 250, "Easy test run")
+    workout2 = Workout("Strength", 45, "high", 400, "Upper body workout")
 
+    fitness_tracker.add_workout(workout1)
+    fitness_tracker.add_workout(workout2)
 
+    goal = Goal(4, 180, 1500, "Running")
+    fitness_tracker.add_goal(goal)
 
+    print("\n=== Profile ===")
+    print(fitness_tracker.view_profile())
 
-# Define program functions
+    print("\n=== Workouts ===")
+    fitness_tracker.view_workouts()
 
-
-
-
-# Main program starts here
-
-
-# Gather user inputs
-
-
-
-# Perfrom required calculations
-
-
-
-# Display results
-
-
-
-# Write the values to a data file for starage
+    print("\n=== Goals ===")
+    fitness_tracker.view_goals()
 
 
-
-
-
-# Any housekeeping duties at the end of the program
-
-
-
-
-
-
-
-
-
-
-
+main()

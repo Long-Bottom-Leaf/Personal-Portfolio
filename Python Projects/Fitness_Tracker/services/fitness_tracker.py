@@ -6,8 +6,8 @@ from models import goal as goal
 
 class FitnessTracker:
 
-    def __init__(self):
-        self.profile = None
+    def __init__(self, profile=None):
+        self.profile = profile
         self.workouts = []
         self.goals = []
 
