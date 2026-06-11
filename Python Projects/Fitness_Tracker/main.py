@@ -4,25 +4,43 @@ from models.user_profile import UserProfile
 from models.workout import Workout
 from models.goal import Goal
 from services.fitness_tracker import FitnessTracker
-from storage.data_manager import DataManager
 
 def main():
     fitness_tracker = FitnessTracker()
 
     profile = UserProfile("Stephen", 180, "lbs")
-    fitness_tracker = FitnessTracker(profile)
+    fitness_tracker.set_profile(profile)
 
-    workout1 = Workout("Running", 30, "medium", 250, "Easy test run")
-    workout2 = Workout("Strength", 45, "high", 400, "Upper body workout")
+    workout1 = Workout(
+        "Running",
+        30,
+        "medium",
+        250,
+        "Easy test run"
+    )
+
+    workout2 = Workout(
+        "Strength",
+        45,
+        "high",
+        400,
+        "Upper body workout"
+    )
 
     fitness_tracker.add_workout(workout1)
     fitness_tracker.add_workout(workout2)
 
-    goal = Goal(4, 180, 1500, "Running")
+    goal = Goal(
+        4,
+        180,
+        1500,
+        "Running"
+    )
+
     fitness_tracker.add_goal(goal)
 
     print("\n=== Profile ===")
-    print(fitness_tracker.view_profile())
+    fitness_tracker.view_profile()
 
     print("\n=== Workouts ===")
     fitness_tracker.view_workouts()
@@ -31,4 +49,5 @@ def main():
     fitness_tracker.view_goals()
 
 
-main()
+if __name__ == "__main__":
+    main()
