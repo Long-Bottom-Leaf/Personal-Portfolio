@@ -25,7 +25,7 @@ class FitnessTracker:
             print("No profile set.")
             return
         
-        return self.profile
+        print(self.profile)
     
     def view_workouts(self):
         if not self.workouts:
