@@ -14,7 +14,7 @@ VALID_ACTIVITIES = {
 }
 
 def validate_positive_number(value):
-    """ Validates weight, duration, calories, and goal value inputs. """
+    # Validates weight, duration, calories, and goal value inputs
 
     try:
         value = float(value)
