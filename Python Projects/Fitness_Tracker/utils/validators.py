@@ -5,11 +5,11 @@ VALID_INTENSITIES = ['low', 'medium', 'high']
 VALID_WEIGHT_UNITS = ['kg', 'lb']
 
 VALID_ACTIVITIES = {
-    "C" : "Cardio",
+    "C" : "Cycling",
+    "G" : "General Cardio",
     "R" : "Running",
-    "W" : "Walking",
-    "S" : "Strength",
-    "Y" : "Cycling",
+    "S" : "Swimming",
+    "W" : "Weights",
     "O" : "Other"
 }
 
