@@ -14,12 +14,12 @@
    - load data
    - save data
 
-5. Simple main.py test
-
-6. Build workout features
+5. Build workout features
    - add workout
    - view workouts
    - summary report
+
+6. Simple main.py test
 
 7. Build calorie calculator
    - use user weight
