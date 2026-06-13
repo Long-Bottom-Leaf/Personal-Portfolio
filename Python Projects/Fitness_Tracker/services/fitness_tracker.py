@@ -44,7 +44,7 @@ class FitnessTracker:
             print("No workouts logged.")
             return
         
-        total_duration = sum(workout.duration for workout in self.workouts)
+        total_duration = sum(workout.workout_duration for workout in self.workouts)
         total_calories = sum(workout.calories_burned for workout in self.workouts)
 
         print(f"Total Workouts: {len(self.workouts)}")
