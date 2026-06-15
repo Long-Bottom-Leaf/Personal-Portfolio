@@ -9,7 +9,7 @@ INVALID_WEIGHT = (
 )
 
 INVALID_WEIGHT_UNIT = (
-    "Error: Invalid weight unit. Please enter 'kg' or 'lb'."
+    "Error: Invalid weight unit. Please enter 'kgs' or 'lbs'."
 )
 
 INVALID_DATE = (
@@ -25,7 +25,7 @@ INVALID_DURATION = (
 )
 
 INVALID_INTENSITY = (
-    "Error: Invalid intensity. Intensity must be L, M, or H."
+    "Error: Invalid intensity. Intensity must be low, medium, or high."
 )
 
 INVALID_CALORIES = (

@@ -33,6 +33,8 @@
    - show progress
 
 8. More rebust testing
+   - tests
+   - validations
 
 9. Build CSV export
    - export workout history

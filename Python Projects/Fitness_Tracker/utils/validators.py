@@ -1,8 +1,10 @@
 # Validators for user input
 
+from datetime import datetime
+
 VALID_INTENSITIES = ['low', 'medium', 'high']
 
-VALID_WEIGHT_UNITS = ['kg', 'lb']
+VALID_WEIGHT_UNITS = ['kgs', 'lbs']
 
 VALID_ACTIVITIES = {
     "C" : "Cycling",
@@ -24,7 +26,7 @@ def validate_positive_number(value):
         return False
     
 def validate_goal_count(value):
-    """ Goal count can be 0 or greater. """
+    # Goal count can be 0 or greater
 
     try:
         value = float(value)
@@ -34,20 +36,29 @@ def validate_goal_count(value):
         return False
     
 def validate_weight_unit(weight_unit):
-    """ Validates weight unit input. """
+    # Validates weight unit input
 
-    return weight_unit in VALID_WEIGHT_UNITS
+    return weight_unit.strip().lower() in VALID_WEIGHT_UNITS
 
 def validate_intensity(intensity):
+    # Validates intensity input
 
-    return intensity.lower() in VALID_INTENSITIES
+    return intensity.strip().lower() in VALID_INTENSITIES
 
 
 def validate_activity(activity):
 
-    return activity.upper() in VALID_ACTIVITIES
+    return activity.strip().upper() in VALID_ACTIVITIES
 
 
 def validate_menu_choice(choice, valid_choices):
 
-    return choice in valid_choices
+    return choice.strip() in valid_choices
+
+def validate_date(date_value):
+    try:
+        datetime.strptime(date_value, "%Y-%m-%d")
+        return True
+    
+    except ValueError:
+        return False

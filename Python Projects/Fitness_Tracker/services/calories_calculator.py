@@ -33,15 +33,15 @@ MET_VALUES = {
     }
 }
 
-def calculate_calories(activity, intensity, weight, duration, weight_unit):
-    if weight_unit == 'lb':
+def calculate_calories(workout_type, intensity, weight, duration, weight_unit):
+    if weight_unit == 'lbs':
         weight_kg = weight / 2.20462  # Convert pounds to kg
     else:
         weight_kg = weight
 
     duration_hours = duration / 60
 
-    met = MET_VALUES[activity][intensity.lower()]
+    met = MET_VALUES[workout_type][intensity.lower()]
 
     calories = met * weight_kg * duration_hours
 
