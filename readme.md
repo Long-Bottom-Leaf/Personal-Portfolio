@@ -33,6 +33,4 @@ Independent applications and experiments built outside coursework.
 
 # Python
 
-Discord Bot
-
-Music Player
+Fitness Tracker app
