@@ -1,8 +1,8 @@
-class goal_tracker:
+class GoalTracker:
 
-    def __init__(self, workout, goal):
-        self.workout = workout
-        self.goal = goal
+    def __init__(self, workouts, goals):
+        self.workouts = workouts
+        self.goals = goals
 
     def show_goal_progress(self):
 

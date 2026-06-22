@@ -20,7 +20,7 @@ def main():
     )
 
     workout2 = Workout(
-        "Strength",
+        "Weights",
         45,
         "high",
         400,

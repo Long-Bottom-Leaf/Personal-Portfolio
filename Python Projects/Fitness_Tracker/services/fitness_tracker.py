@@ -1,9 +1,5 @@
 # Temporary storage for fitness data
 
-from models import user_profile as profile
-from models import workout as workout
-from models import goal as goal
-
 class FitnessTracker:
 
     def __init__(self, profile=None):
