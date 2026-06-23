@@ -75,5 +75,9 @@ def main():
     print("\n=== Goals ===")
     fitness_tracker.view_goals()
 
+    print("\n=== Goal Progress ===")
+    goal_tracker = GoalTracker(fitness_tracker.workouts, fitness_tracker.goals)
+    goal_tracker.show_goal_progress()
+
 if __name__ == "__main__":
     main()

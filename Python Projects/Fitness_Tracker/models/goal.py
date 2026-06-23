@@ -14,6 +14,6 @@ class Goal:
         return (
             f"Workout Count: {self.weekly_workout_count}, "
             f"Weekly Duration: {self.weekly_duration} min, "
-            f"Weekly Calories: {self.weekly_calories}, kcal,"
+            f"Weekly Calories: {self.weekly_calories} kcal, "
             f"Workout Type Goal: {self.workout_type_goal}"
         )
