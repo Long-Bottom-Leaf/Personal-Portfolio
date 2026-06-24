@@ -13,81 +13,81 @@ from models.goal import Goal
 
 class TestFitnessTracker(unittest.TestCase):
 
-        def setUp(self):
-            self.fitness_tracker = FitnessTracker()
+    def setUp(self):
+        self.fitness_tracker = FitnessTracker()
 
     # Profile tests
-        def test_set_and_view_profile(self):
-            user_profile = UserProfile("John French", 180, "lbs")
+    def test_set_and_view_profile(self):
+        user_profile = UserProfile("John French", 180, "lbs")
 
-            self.fitness_tracker.set_profile(user_profile)
-            self.fitness_tracker.view_profile()
+        self.fitness_tracker.set_profile(user_profile)
+        self.fitness_tracker.view_profile()
 
-            assert self.fitness_tracker.profile.user_name == "John French"
-            assert self.fitness_tracker.profile.user_weight == 180
-            assert self.fitness_tracker.profile.weight_unit == "lbs"
+        self.assertEqual(self.fitness_tracker.profile.name, "John French")
+        self.assertEqual(self.fitness_tracker.profile.weight, 180)
+        self.assertEqual(self.fitness_tracker.profile.unit, "lbs")
 
-        def test_clear_profile(self):
-            user_profile = UserProfile("John French", 180, "lbs")
+    def test_clear_profile(self):
+        user_profile = UserProfile("John French", 180, "lbs")
 
-            self.fitness_tracker.set_profile(user_profile)
-            self.fitness_tracker.clear_profile()
+        self.fitness_tracker.set_profile(user_profile)
+        self.fitness_tracker.clear_profile()
 
-            assert self.fitness_tracker.profile is None
+        self.assertIsNone(self.fitness_tracker.profile)
 
     # Workout tests
-        def test_add_and_view_workouts(self):
-            workout1 = Workout("Running", 30, 5, 300, "Morning run")
-            workout2 = Workout("Cycling", 45, 4, 400, "Evening ride")
+    def test_add_and_view_workouts(self):
+        workout1 = Workout("Running", 30, "medium", 300, "Morning run")
+        workout2 = Workout("Cycling", 45, "high", 400, "Evening ride")
 
-            self.fitness_tracker.add_workout(workout1)
-            self.fitness_tracker.add_workout(workout2)
-            self.fitness_tracker.view_workouts()
+        self.fitness_tracker.add_workout(workout1)
+        self.fitness_tracker.add_workout(workout2)
+        self.fitness_tracker.view_workouts()
 
-            assert len(self.fitness_tracker.workouts) == 2
+        self.assertEqual(len(self.fitness_tracker.workouts), 2)
 
-        def test_workout_summary(self):
-            workout1 = Workout("Running", 30, 5, 300, "Morning run")
-            workout2 = Workout("Cycling", 45, 4, 400, "Evening ride")
+    def test_workout_summary(self):
+        workout1 = Workout("Running", 30, "medium", 300, "Morning run")
+        workout2 = Workout("Cycling", 45, "high", 400, "Evening ride")
 
-            self.fitness_tracker.add_workout(workout1)
-            self.fitness_tracker.add_workout(workout2)
-            self.fitness_tracker.view_workouts()
+        self.fitness_tracker.add_workout(workout1)
+        self.fitness_tracker.add_workout(workout2)
+        self.fitness_tracker.view_workouts()
 
-            self.fitness_tracker.workout_summary()
+        self.fitness_tracker.workout_summary()
 
-            assert self.fitness_tracker.workouts[0].workout_duration + self.fitness_tracker.workouts[1].workout_duration == 75
+        self.assertEqual(self.fitness_tracker.workouts[0].workout_duration + self.fitness_tracker.workouts[1].workout_duration, 75)
 
-        def test_clear_workouts(self):
-            workout1 = Workout("Running", 30, 5, 300, "Morning run")
-            workout2 = Workout("Cycling", 45, 4, 400, "Evening ride")
+    def test_clear_workouts(self):
+        workout1 = Workout("Running", 30, "medium", 300, "Morning run")
+        workout2 = Workout("Cycling", 45, "high", 400, "Evening ride")
 
-            self.fitness_tracker.add_workout(workout1)
-            self.fitness_tracker.add_workout(workout2)
-            self.fitness_tracker.clear_workouts()
+        self.fitness_tracker.add_workout(workout1)
+        self.fitness_tracker.add_workout(workout2)
+        self.fitness_tracker.clear_workouts()
 
-            assert len(self.fitness_tracker.workouts) == 0
+        self.assertEqual(len(self.fitness_tracker.workouts), 0)
 
     # Goal tests
-        def test_add_and_view_goals(self):
-            goal1 = Goal(3, 150, 2000, "Swimming")
-            goal2 = Goal(4, 200, 2500, "Running")
+    def test_add_and_view_goals(self):
+        goal1 = Goal(3, 150, 2000, "Swimming")
+        goal2 = Goal(4, 200, 2500, "Running")
 
-            self.fitness_tracker.add_goal(goal1)
-            self.fitness_tracker.add_goal(goal2)
-            self.fitness_tracker.view_goals()
+        self.fitness_tracker.add_goal(goal1)
+        self.fitness_tracker.add_goal(goal2)
+        self.fitness_tracker.view_goals()
 
-            assert len(self.fitness_tracker.goals) == 2
+        self.assertEqual(len(self.fitness_tracker.goals), 2)
 
-        def test_clear_goals(self):
-            goal1 = Goal(3, 150, 2000, "Swimming")
-            goal2 = Goal(4, 200, 2500, "Running")
+    def test_clear_goals(self):
+        goal1 = Goal(3, 150, 2000, "Swimming")
+        goal2 = Goal(4, 200, 2500, "Running")
 
-            self.fitness_tracker.add_goal(goal1)
-            self.fitness_tracker.add_goal(goal2)
-            self.fitness_tracker.clear_goals()
+        self.fitness_tracker.add_goal(goal1)
+        self.fitness_tracker.add_goal(goal2)
+        self.fitness_tracker.clear_goals()
 
-            assert len(self.fitness_tracker.goals) == 0
+        self.assertEqual(len(self.fitness_tracker.goals), 0)
 
 if __name__ == '__main__':
     unittest.main()
