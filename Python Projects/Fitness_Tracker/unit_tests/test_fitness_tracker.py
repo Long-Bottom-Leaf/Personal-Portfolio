@@ -56,7 +56,11 @@ class TestFitnessTracker(unittest.TestCase):
 
         self.fitness_tracker.workout_summary()
 
-        self.assertEqual(self.fitness_tracker.workouts[0].workout_duration + self.fitness_tracker.workouts[1].workout_duration, 75)
+        total_duration = sum(
+            workout.workout_duration for workout in self.fitness_tracker.workouts
+        )
+
+        self.assertEqual(total_duration, 75)
 
     def test_clear_workouts(self):
         workout1 = Workout("Running", 30, "medium", 300, "Morning run")
