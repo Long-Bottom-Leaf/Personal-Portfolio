@@ -17,7 +17,7 @@ class TestUserProfile(unittest.TestCase):
 
         self.assertEqual(user_profile.user_name, "John French")
         self.assertEqual(user_profile.user_weight, 180)
-        self.assertEqual(user_profile.weight_unit, 'lbs')
+        self.assertEqual(user_profile.weight_unit, "lbs")
 
 # Workout
 class TestWorkout(unittest.TestCase):

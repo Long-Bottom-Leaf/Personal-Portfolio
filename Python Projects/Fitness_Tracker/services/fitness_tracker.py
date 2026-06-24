@@ -2,14 +2,14 @@
 
 class FitnessTracker:
 
-    def __init__(self, profile=None):
-        self.profile = profile
+    def __init__(self, user_profile=None):
+        self.profile = user_profile
         self.workouts = []
         self.goals = []
 
 # Profile Management
-    def set_profile(self, profile):
-        self.profile = profile
+    def set_profile(self, user_profile):
+        self.profile = user_profile
 
     def view_profile(self):
         if self.profile is None:
