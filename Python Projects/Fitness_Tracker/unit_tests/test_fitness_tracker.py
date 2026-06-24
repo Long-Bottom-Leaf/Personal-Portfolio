@@ -13,10 +13,10 @@ from models.goal import Goal
 
 class TestFitnessTracker(unittest.TestCase):
 
-    # Profile tests
         def setUp(self):
             self.fitness_tracker = FitnessTracker()
 
+    # Profile tests
         def test_set_and_view_profile(self):
             user_profile = UserProfile("John French", 180, "lbs")
 
@@ -78,6 +78,16 @@ class TestFitnessTracker(unittest.TestCase):
             self.fitness_tracker.view_goals()
 
             assert len(self.fitness_tracker.goals) == 2
+
+        def test_clear_goals(self):
+            goal1 = Goal(3, 150, 2000, "Swimming")
+            goal2 = Goal(4, 200, 2500, "Running")
+
+            self.fitness_tracker.add_goal(goal1)
+            self.fitness_tracker.add_goal(goal2)
+            self.fitness_tracker.clear_goals()
+
+            assert len(self.fitness_tracker.goals) == 0
 
 if __name__ == '__main__':
     unittest.main()
