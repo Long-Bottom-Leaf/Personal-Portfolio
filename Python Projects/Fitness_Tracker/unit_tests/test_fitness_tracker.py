@@ -46,6 +46,28 @@ class TestFitnessTracker(unittest.TestCase):
 
             assert len(self.fitness_tracker.workouts) == 2
 
+        def test_workout_summary(self):
+            workout1 = Workout("Running", 30, 5, 300, "Morning run")
+            workout2 = Workout("Cycling", 45, 4, 400, "Evening ride")
+
+            self.fitness_tracker.add_workout(workout1)
+            self.fitness_tracker.add_workout(workout2)
+            self.fitness_tracker.view_workouts()
+
+            self.fitness_tracker.workout_summary()
+
+            assert self.fitness_tracker.workouts[0].workout_duration + self.fitness_tracker.workouts[1].workout_duration == 75
+
+        def test_clear_workouts(self):
+            workout1 = Workout("Running", 30, 5, 300, "Morning run")
+            workout2 = Workout("Cycling", 45, 4, 400, "Evening ride")
+
+            self.fitness_tracker.add_workout(workout1)
+            self.fitness_tracker.add_workout(workout2)
+            self.fitness_tracker.clear_workouts()
+
+            assert len(self.fitness_tracker.workouts) == 0
+
     # Goal tests
         def test_add_and_view_goals(self):
             goal1 = Goal(3, 150, 2000, "Swimming")
