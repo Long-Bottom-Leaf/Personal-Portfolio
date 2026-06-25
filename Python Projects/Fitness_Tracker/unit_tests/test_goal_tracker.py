@@ -19,9 +19,9 @@ class TestGoalTracker(unittest.TestCase):
             Workout("Running", 30, "medium", 400, "Test run")
         ]
 
-        goal = []
+        goals = []
 
-        goal_tracker = GoalTracker(workouts, goal)
+        goal_tracker = GoalTracker(workouts, goals)
 
         output = StringIO()
 
@@ -33,11 +33,11 @@ class TestGoalTracker(unittest.TestCase):
     def test_no_workouts(self):
         workouts = []
 
-        goal = [
+        goals = [
             Goal(4, 120, 1500, "Running")
         ]
 
-        goal_tracker = GoalTracker(workouts, goal)
+        goal_tracker = GoalTracker(workouts, goals)
 
         output = StringIO()
 
