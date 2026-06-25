@@ -32,6 +32,17 @@ class TestCaloriesCalculator(unittest.TestCase):
 
         self.assertEqual(calories2, 612)
 
+    def test_swimming_low_kgs(self):
+        calories = calculate_calories(
+            "Swimming",
+            "low",
+            80,
+            60,
+            "kgs"
+        )
+
+        self.assertEqual(calories, 464)
+
 if __name__ == "__main__":
     unittest.main()
 
