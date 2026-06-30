@@ -7,77 +7,48 @@ from models.goal import Goal
 from services.fitness_tracker import FitnessTracker
 from services.calories_calculator import calculate_calories
 from services.goal_tracker import GoalTracker
+from services.csv_exporter import export_workouts_to_csv
+from utils.validators import (
+    VALID_ACTIVITIES,
+    validate_positive_number,
+    validate_goal_count,
+    validate_weight_unit,
+    validate_intensity,
+    validate_activity,
+    validate_menu_choice
+)
+
+def get_valide_number(prompt):
+    while True:
+        value = input(prompt)
+
+        if validate_positive_number(value):
+            return float(value)
+        
+        else:
+            print("Invalid number. Please enter a positive number!")
+
+def get_valid_goal_count(prompt):
+    while True:
+        value = input(prompt)
+
+        if validate_goal_count(value):
+            return int(value)
+        
+        else:
+            print("Invalid goal count. Please enter 0 or greater!")
+
+def get_valid_weight_unit():
+    while True:
+        weight_unit = input("Enter weight unit (kgs/lbs): ")
+
+        if validate_weight_unit(weight_unit):
+            return weight_unit.strip().lower()
+        
+        else:
+            print("Invalid weight unit. Please enter kgs or lbs!")
 
 def main():
-    fitness_tracker = FitnessTracker()
-
-    profile = UserProfile("Stephen", 180, "lbs")
-    fitness_tracker.set_profile(profile)
-
-    # Test workout and calories 1
-    calories1 = calculate_calories(
-        "Running",
-        "medium",
-        profile.user_weight,
-        30,
-        profile.weight_unit
-    )
-
-    workout1 = Workout(
-        "Running",
-        30,
-        "medium",
-        calories1,
-        "Easy test run"
-    )
-
-    fitness_tracker.add_workout(workout1)
-
-    # Test workout and calories 2
-    calories2 = calculate_calories(
-        "Cycling",
-        "high",
-        profile.user_weight,
-        45,
-        profile.weight_unit
-    )
-
-    workout2 = Workout(
-        "Cycling",
-        45,
-        "high",
-        calories2,
-        "Intense cycling session"
-    )
-
-    fitness_tracker.add_workout(workout2)
-
-    # Test goal and goal tracking
-    goal = Goal(
-        4,
-        120,
-        1500,
-        "Running"
-    )
-
-    fitness_tracker.add_goal(goal)
-
-    # Print out results
-    print("\n=== User Profile ===")
-    fitness_tracker.view_profile()
-
-    print("\n=== Workouts ===")
-    fitness_tracker.view_workouts()
-
-    print("\n=== Workout Summary ===")
-    fitness_tracker.workout_summary()
-
-    print("\n=== Goals ===")
-    fitness_tracker.view_goals()
-
-    print("\n=== Goal Progress ===")
-    goal_tracker = GoalTracker(fitness_tracker.workouts, fitness_tracker.goals)
-    goal_tracker.show_goal_progress()
-
+    
 if __name__ == "__main__":
     main()
