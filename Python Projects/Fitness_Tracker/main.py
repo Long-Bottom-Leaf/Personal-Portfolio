@@ -19,7 +19,7 @@ from utils.validators import (
 )
 
 # Validations
-def get_valide_number(prompt):
+def get_valid_number(prompt):
     while True:
         value = input(prompt)
 
@@ -77,7 +77,7 @@ def get_valid_activity():
 # Create profile
 def create_profile(fitness_tracker):
     name = input("Enter your name: ")
-    weight = get_valide_number("Enter your weight: ")
+    weight = get_valid_number("Enter your weight: ")
     weight_unit = get_valid_weight_unit()
 
     profile = UserProfile(name, weight, weight_unit)
@@ -93,22 +93,62 @@ def add_workout(fitness_tracker):
         return
     
     workout_type = get_valid_activity()
-    duration = get_valide_number("Enter workout duration (in minutes): ")
+    duration = get_valid_number("Enter workout duration (in minutes): ")
     intensity = get_valid_intensity()
     notes = input("Enter workout notes here: ")
 
-    calories_burned = calculate_calories(
+    calories = calculate_calories(
         workout_type,
         intensity,
         FitnessTracker.profile.user_weight,
         duration,
-        weight_unit
+        FitnessTracker.profile.weight_unit
     )
 
+    workout = Workout(
+        workout_type,
+        duration,
+        intensity,
+        calories,
+        notes
+    )
+
+    fitness_tracker.add_workout(workout)
+
+    print("Workout added!")
+
 # Create/view goal
+def create_goal(fitness_tracker):
+    weekly_workout_count = get_valid_goal_count("Enter weekly workout count goal: ")
+    weekly_duration = get_valid_number("Enter weekly workout duration goal: ")
+    weekly_calories = get_valid_number("Enter target calorie goal: ")
+    workout_type_goal = get_valid_activity()
+
+    goal = Goal(
+        weekly_workout_count,
+        weekly_duration,
+        weekly_calories,
+        workout_type_goal
+    )
+
+    fitness_tracker.add_goal(goal)
+
+    print("Goal created!")
+
+def view_goal_progress(fitness_tracker):
+    goal_tracker = (
+        fitness_tracker.workouts,
+        fitness_tracker.goals
+    )
+
+    goal_tracker.show_goal_progress()
 
 # Menu
+def display_menu():
+    print("\n===== Fitness Tracker Menu =====")
+
 def main():
+    fitness_tracker = FitnessTracker()
     
 if __name__ == "__main__":
     main()
