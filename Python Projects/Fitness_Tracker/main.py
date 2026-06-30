@@ -146,9 +146,97 @@ def view_goal_progress(fitness_tracker):
 # Menu
 def display_menu():
     print("\n===== Fitness Tracker Menu =====")
+    print("1. Create Profile")
+    print("2. View Profile")
+    print("3. Clear Profile")
+    print("4. Add Workout")
+    print("5. View Workouts")
+    print("6. Workout Summary")
+    print("7. Clear Workouts")
+    print("8. Create Goal")
+    print("9. View Goals")
+    print("10. View Goal Progress")
+    print("11. Clear goals")
+    print("12. Export Workouts to CSV")
+    print("13. Exit")
 
 def main():
     fitness_tracker = FitnessTracker()
+
+    while True:
+        display_menu()
+
+        choice = input("Enter an option: ")
+
+        if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]):
+            print("Invalid choice, please enter a valid choice!")
+            continue
+
+        match choice:
+            case "1":
+                print("Saving profile details...")
+
+                create_profile(fitness_tracker)
+
+            case "2":
+                print("Loading profile...")
+                
+                fitness_tracker.view_profile()
+
+            case "3":
+                print("Clearing profile...")
+
+                fitness_tracker.clear_profile()
+
+            case "4":
+                print("Saving workout...")
+
+                fitness_tracker.add_workout()
+
+            case "5":
+                print("Loading workouts...")
+
+                fitness_tracker.view_workouts()
+
+            case "6":
+                print("Loading workout summary...")
+
+                fitness_tracker.workout_summary()
+
+            case "7":
+                print("Clearing workouts...")
+
+                fitness_tracker.clear_workouts
+
+            case "8":
+                print("Saving goal..")
+
+                fitness_tracker.add_goal()
+
+            case "9":
+                print("Loading goals...")
+
+                fitness_tracker.view_goals()
+
+            case "10":
+                print("Loading goal progress...")
+
+                view_goal_progress(fitness_tracker)
+
+            case "11":
+                print("Clearing goals...")
+
+                fitness_tracker.clear_goals()
+            
+            case "12":
+                print("Exporting data...")
+
+                export_workouts_to_csv(fitness_tracker.workouts)
+
+            case "13":
+                print("Goodbye!")
+
+                break
     
 if __name__ == "__main__":
     main()

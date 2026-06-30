@@ -16,8 +16,6 @@ VALID_ACTIVITIES = {
 }
 
 def validate_positive_number(value):
-    # Validates weight, duration, calories, and goal value inputs
-
     try:
         value = float(value)
         return value > 0
@@ -26,8 +24,6 @@ def validate_positive_number(value):
         return False
     
 def validate_goal_count(value):
-    # Goal count can be 0 or greater
-
     try:
         value = float(value)
         return value >= 0
@@ -36,23 +32,17 @@ def validate_goal_count(value):
         return False
     
 def validate_weight_unit(weight_unit):
-    # Validates weight unit input
-
     return weight_unit.strip().lower() in VALID_WEIGHT_UNITS
 
 def validate_intensity(intensity):
-    # Validates intensity input
-
     return intensity.strip().lower() in VALID_INTENSITIES
 
 
 def validate_activity(activity):
-
     return activity.strip().upper() in VALID_ACTIVITIES
 
 
 def validate_menu_choice(choice, valid_choices):
-
     return choice.strip() in valid_choices
 
 def validate_date(date_value):
