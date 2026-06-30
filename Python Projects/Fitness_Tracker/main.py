@@ -51,13 +51,13 @@ def get_valid_weight_unit():
 
 def get_valid_intensity():
     while True:
-        intensity = input("Enter intensity (low/medium/hight): ")
+        intensity = input("Enter intensity (low/medium/high): ")
 
         if validate_intensity(intensity):
             return intensity.strip().lower()
         
         else:
-            return("Invalid intensity. Please enter low, medium, or hight!")
+            print("Invalid intensity. Please enter low, medium, or hight!")
         
 def get_valid_activity():
     while True:
@@ -88,7 +88,7 @@ def create_profile(fitness_tracker):
 # Add workout
 def add_workout(fitness_tracker):
     if fitness_tracker.profile is None:
-        print("Pease create a profile first!")
+        print("Please create a profile first!")
         
         return
     
@@ -100,9 +100,9 @@ def add_workout(fitness_tracker):
     calories = calculate_calories(
         workout_type,
         intensity,
-        FitnessTracker.profile.user_weight,
+        fitness_tracker.profile.user_weight,
         duration,
-        FitnessTracker.profile.weight_unit
+        fitness_tracker.profile.weight_unit
     )
 
     workout = Workout(
@@ -136,7 +136,7 @@ def create_goal(fitness_tracker):
     print("Goal created!")
 
 def view_goal_progress(fitness_tracker):
-    goal_tracker = (
+    goal_tracker = GoalTracker(
         fitness_tracker.workouts,
         fitness_tracker.goals
     )
@@ -191,7 +191,7 @@ def main():
             case "4":
                 print("Saving workout...")
 
-                fitness_tracker.add_workout()
+                add_workout(fitness_tracker)
 
             case "5":
                 print("Loading workouts...")
@@ -206,12 +206,12 @@ def main():
             case "7":
                 print("Clearing workouts...")
 
-                fitness_tracker.clear_workouts
+                fitness_tracker.clear_workouts()
 
             case "8":
                 print("Saving goal..")
 
-                fitness_tracker.add_goal()
+                create_goal(fitness_tracker)
 
             case "9":
                 print("Loading goals...")
