@@ -83,8 +83,6 @@ def create_profile(fitness_tracker):
     profile = UserProfile(name, weight, weight_unit)
     fitness_tracker.set_profile(profile)
 
-    print("Profile created successfully!")
-
 # Add workout
 def add_workout(fitness_tracker):
     if fitness_tracker.profile is None:
@@ -115,8 +113,6 @@ def add_workout(fitness_tracker):
 
     fitness_tracker.add_workout(workout)
 
-    print("Workout added!")
-
 # Create/view goal
 def create_goal(fitness_tracker):
     weekly_workout_count = get_valid_goal_count("Enter weekly workout count goal: ")
@@ -132,8 +128,6 @@ def create_goal(fitness_tracker):
     )
 
     fitness_tracker.add_goal(goal)
-
-    print("Goal created!")
 
 def view_goal_progress(fitness_tracker):
     goal_tracker = GoalTracker(
@@ -198,23 +192,15 @@ def main():
                 create_goal(fitness_tracker)
 
             case "9":
-                print("Loading goals...")
-
                 fitness_tracker.view_goals()
 
             case "10":
-                print("Loading goal progress...")
-
                 view_goal_progress(fitness_tracker)
 
             case "11":
-                print("Clearing goals...")
-
                 fitness_tracker.clear_goals()
             
             case "12":
-                print("Exporting data...")
-
                 export_workouts_to_csv(fitness_tracker.workouts)
 
             case "13":

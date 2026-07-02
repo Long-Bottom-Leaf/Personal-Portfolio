@@ -29,4 +29,5 @@ def export_workouts_to_csv(workouts, file_path="exports/workout_history.csv"):
                 workout.notes
             ])
 
-    print(f"Workout history exported to {file_path}")
+    print("\nWorkout history exported!")
+    print(f"The history was exported to {file_path}")
