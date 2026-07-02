@@ -174,9 +174,9 @@ def main():
 
         match choice:
             case "1":
-                print("Saving profile details...")
-
                 create_profile(fitness_tracker)
+
+                print("Saving profile details...")
 
             case "2":
                 print("Loading profile...")
@@ -189,9 +189,9 @@ def main():
                 fitness_tracker.clear_profile()
 
             case "4":
-                print("Saving workout...")
-
                 add_workout(fitness_tracker)
+
+                print("Saving workout...")
 
             case "5":
                 print("Loading workouts...")
@@ -209,9 +209,9 @@ def main():
                 fitness_tracker.clear_workouts()
 
             case "8":
-                print("Saving goal..")
-
                 create_goal(fitness_tracker)
+
+                print("Saving goal..")
 
             case "9":
                 print("Loading goals...")

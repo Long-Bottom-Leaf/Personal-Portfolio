@@ -1,0 +1,11 @@
+validations on names for profile
+
+loading buffer - saving buffer, just something to give response to user
+
+saving workout/profile txt/saving buffer etc AFTER actually saving
+
+view workouts/goals printout better
+
+update exporting
+
+extract menu validation functions to their own file
