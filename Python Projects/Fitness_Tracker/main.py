@@ -176,42 +176,26 @@ def main():
             case "1":
                 create_profile(fitness_tracker)
 
-                print("Saving profile details...")
-
-            case "2":
-                print("Loading profile...")
-                
+            case "2":                
                 fitness_tracker.view_profile()
 
             case "3":
-                print("Clearing profile...")
-
                 fitness_tracker.clear_profile()
 
             case "4":
                 add_workout(fitness_tracker)
 
-                print("Saving workout...")
-
             case "5":
-                print("Loading workouts...")
-
                 fitness_tracker.view_workouts()
 
             case "6":
-                print("Loading workout summary...")
-
                 fitness_tracker.workout_summary()
 
             case "7":
-                print("Clearing workouts...")
-
                 fitness_tracker.clear_workouts()
 
             case "8":
                 create_goal(fitness_tracker)
-
-                print("Saving goal..")
 
             case "9":
                 print("Loading goals...")

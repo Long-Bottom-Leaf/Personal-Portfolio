@@ -2,7 +2,7 @@ validations on names for profile
 
 loading buffer - saving buffer, just something to give response to user
 
-saving workout/profile txt/saving buffer etc AFTER actually saving
+saving workout/profile txt/saving buffer etc AFTER actually saving, probably move them to their respective functions
 
 view workouts/goals printout better
 
