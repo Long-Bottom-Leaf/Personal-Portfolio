@@ -1,12 +1,6 @@
 validations on strings:
-- Name
+- Name -- done
 - Date
-- Weight
-- Goal count
-- Activity
-- Intensity
-- Weight unit
-- Menu choice
 
 loading buffer - saving buffer, just something to give response to user within the CLI
 

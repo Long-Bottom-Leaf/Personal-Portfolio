@@ -38,10 +38,8 @@ def validate_weight_unit(weight_unit):
 def validate_intensity(intensity):
     return intensity.strip().lower() in VALID_INTENSITIES
 
-
 def validate_activity(activity):
     return activity.strip().upper() in VALID_ACTIVITIES
-
 
 def validate_menu_choice(choice, valid_choices):
     return choice.strip() in valid_choices

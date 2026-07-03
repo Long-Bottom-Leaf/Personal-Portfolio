@@ -78,12 +78,12 @@ def get_valid_activity():
 # Create profile
 def create_profile(fitness_tracker):
     while True:
-        name = input("Enter your name: ")
+        name = input("Enter your name: ").strip()
 
         if validate_name(name):
             break
 
-        print("Invalid name!")
+        print("Invalid name! Use 3-50 letters, spaces, hyphens, or apostrophes.")
 
     weight = get_valid_number("Enter your weight: ")
     weight_unit = get_valid_weight_unit()
