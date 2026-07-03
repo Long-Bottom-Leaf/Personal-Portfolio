@@ -1,6 +1,7 @@
 # Validators for user input
 
 from datetime import datetime
+import re
 
 VALID_INTENSITIES = ['low', 'medium', 'high']
 
@@ -52,3 +53,8 @@ def validate_date(date_value):
     
     except ValueError:
         return False
+    
+def validate_name(name):
+    pattern = r"^[A-Za-z][A-Za-z\s'-]{2,49}$"
+
+    return re.fullmatch(pattern, name) is not None

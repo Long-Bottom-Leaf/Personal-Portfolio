@@ -15,7 +15,8 @@ from utils.validators import (
     validate_weight_unit,
     validate_intensity,
     validate_activity,
-    validate_menu_choice
+    validate_menu_choice,
+    validate_name
 )
 
 # Validations
@@ -76,7 +77,14 @@ def get_valid_activity():
 
 # Create profile
 def create_profile(fitness_tracker):
-    name = input("Enter your name: ")
+    while True:
+        name = input("Enter your name: ")
+
+        if validate_name(name):
+            break
+
+        print("Invalid name!")
+
     weight = get_valid_number("Enter your weight: ")
     weight_unit = get_valid_weight_unit()
 
