@@ -169,15 +169,19 @@ def main():
         match choice:
             case "1":
                 create_profile(fitness_tracker)
+                print("\nProfile saved!")
 
-            case "2":                
+            case "2":
+                print("\nProfile loaded!")
                 fitness_tracker.view_profile()
 
             case "3":
                 fitness_tracker.clear_profile()
+                print("\nProfile cleared.")
 
             case "4":
                 add_workout(fitness_tracker)
+                print("\nWorkout added!")
 
             case "5":
                 fitness_tracker.view_workouts()
@@ -187,9 +191,11 @@ def main():
 
             case "7":
                 fitness_tracker.clear_workouts()
+                print("\nAll workouts cleared.")
 
             case "8":
                 create_goal(fitness_tracker)
+                print("\nGoal saved!")
 
             case "9":
                 fitness_tracker.view_goals()
@@ -199,6 +205,7 @@ def main():
 
             case "11":
                 fitness_tracker.clear_goals()
+                print("\nAll goals cleared.")
             
             case "12":
                 export_workouts_to_csv(fitness_tracker.workouts)

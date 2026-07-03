@@ -10,26 +10,22 @@ class FitnessTracker:
 # Profile Management
     def set_profile(self, user_profile):
         self.profile = user_profile
-        print("\nProfile saved!")
 
     def view_profile(self):
         if self.profile is None:
             print("\nNo profile set.")
             return
         
-        print("\nProfile loaded!")
         print(self.profile)
 
     def clear_profile(self):
         print("\nClearing profile...")
 
         self.profile = None
-        print("\nProfile cleared.")
 
 # Workout Management
     def add_workout(self, workout):
         self.workouts.append(workout)
-        print("\nWorkout added!")
     
     def view_workouts(self):
         if not self.workouts:
@@ -57,12 +53,10 @@ class FitnessTracker:
     def clear_workouts(self):
         print("\nClearing workouts...")
         self.workouts.clear()
-        print("\nAll workouts cleared.")
 
 # Goal Management
     def add_goal(self, goal):
         self.goals.append(goal)
-        print("\nGoal saved!")
 
     def view_goals(self):
         if not self.goals:
@@ -76,4 +70,3 @@ class FitnessTracker:
 
     def clear_goals(self):
         self.goals.clear()
-        print("\nAll goals cleared.")
