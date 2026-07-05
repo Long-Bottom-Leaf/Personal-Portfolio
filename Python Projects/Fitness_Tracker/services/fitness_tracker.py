@@ -1,5 +1,7 @@
 # Temporary storage for fitness data
 
+from utils.loading_bar import Progress
+
 class FitnessTracker:
 
     def __init__(self, user_profile=None):
@@ -16,10 +18,13 @@ class FitnessTracker:
             print("\nNo profile set.")
             return
         
+        print("\nLoading profile...")
+        Progress()
         print(self.profile)
 
     def clear_profile(self):
         print("\nClearing profile...")
+        Progress()
 
         self.profile = None
 
@@ -34,6 +39,7 @@ class FitnessTracker:
         
         for index, workout in enumerate(self.workouts, start=1):
             print("\nLoading workouts...")
+            Progress()
             print(f"\nWorkout #{index}")
             print(workout)
 
@@ -46,11 +52,13 @@ class FitnessTracker:
         total_calories = sum(workout.calories_burned for workout in self.workouts)
 
         print("\nLoading workout summary...")
+        Progress()
         print(f"Total Workouts: {len(self.workouts)}")
         print(f"Total Duration: {total_duration} minutes")
         print(f"Total Calories Burned: {total_calories} kcal")
 
     def clear_workouts(self):
+        Progress()
         print("\nClearing workouts...")
         self.workouts.clear()
 
@@ -63,10 +71,13 @@ class FitnessTracker:
             print("\nNo goals set.")
             return
         
+        Progress()
         print("\nLoading goals...")
         for index, goal in enumerate(self.goals, start=1):
             print(f"\nGoal #{index}")
             print(goal) 
 
     def clear_goals(self):
+        Progress()
+        print("Clearing goals...")
         self.goals.clear()

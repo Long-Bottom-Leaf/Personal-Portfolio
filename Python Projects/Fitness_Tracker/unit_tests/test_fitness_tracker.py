@@ -18,19 +18,19 @@ class TestFitnessTracker(unittest.TestCase):
 
     # Profile tests
     def test_set_and_view_profile(self):
-        user_profile = UserProfile("John French", 180, "lbs")
+        user_profile1 = UserProfile("John French", 180, "lbs")
 
-        self.fitness_tracker.set_profile(user_profile)
+        self.fitness_tracker.set_profile(user_profile1)
         self.fitness_tracker.view_profile()
 
-        self.assertEqual(self.fitness_tracker.profile.name, "John French")
-        self.assertEqual(self.fitness_tracker.profile.weight, 180)
-        self.assertEqual(self.fitness_tracker.profile.unit, "lbs")
+        self.assertEqual(self.fitness_tracker.profile.user_name, "John French")
+        self.assertEqual(self.fitness_tracker.profile.user_weight, 180)
+        self.assertEqual(self.fitness_tracker.profile.weight_unit, "lbs")
 
     def test_clear_profile(self):
-        user_profile = UserProfile("John French", 180, "lbs")
+        user_profile2 = UserProfile("John French", 180, "lbs")
 
-        self.fitness_tracker.set_profile(user_profile)
+        self.fitness_tracker.set_profile(user_profile2)
         self.fitness_tracker.clear_profile()
 
         self.assertIsNone(self.fitness_tracker.profile)
