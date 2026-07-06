@@ -1,6 +1,6 @@
 # Temporary storage for fitness data
 
-from utils.loading_bar import Progress
+from utils.loading_bar import loading_bar
 
 class FitnessTracker:
 
@@ -15,16 +15,14 @@ class FitnessTracker:
 
     def view_profile(self):
         if self.profile is None:
-            print("\nNo profile set.")
+            print("\nNo profile set.\n")
             return
         
-        print("\nLoading profile...")
-        Progress()
+        loading_bar("\nLoading profile...\n", total=20)
         print(self.profile)
 
     def clear_profile(self):
-        print("\nClearing profile...")
-        Progress()
+        print("\nClearing profile...\n")
 
         self.profile = None
 
@@ -34,32 +32,29 @@ class FitnessTracker:
     
     def view_workouts(self):
         if not self.workouts:
-            print("\nNo workouts logged.")
+            print("\nNo workouts logged.\n")
             return
         
         for index, workout in enumerate(self.workouts, start=1):
-            print("\nLoading workouts...")
-            Progress()
+            loading_bar("\nLoading workouts...\n", total=25)
             print(f"\nWorkout #{index}")
             print(workout)
 
     def workout_summary(self):
         if not self.workouts:
-            print("\nNo workouts logged.")
+            print("\nNo workouts logged.\n")
             return
         
         total_duration = sum(workout.workout_duration for workout in self.workouts)
         total_calories = sum(workout.calories_burned for workout in self.workouts)
 
-        print("\nLoading workout summary...")
-        Progress()
+        loading_bar("\nLoading workout summary...\n", total=20)
         print(f"Total Workouts: {len(self.workouts)}")
         print(f"Total Duration: {total_duration} minutes")
         print(f"Total Calories Burned: {total_calories} kcal")
 
     def clear_workouts(self):
-        Progress()
-        print("\nClearing workouts...")
+        loading_bar("\nClearing workouts...\n", total=15)
         self.workouts.clear()
 
 # Goal Management
@@ -68,16 +63,14 @@ class FitnessTracker:
 
     def view_goals(self):
         if not self.goals:
-            print("\nNo goals set.")
+            print("\nNo goals set.\n")
             return
         
-        Progress()
-        print("\nLoading goals...")
+        loading_bar("\nLoading goals...\n", total=20)
         for index, goal in enumerate(self.goals, start=1):
             print(f"\nGoal #{index}")
             print(goal) 
 
     def clear_goals(self):
-        Progress()
-        print("Clearing goals...")
+        loading_bar("Clearing goals...\n", total=15)
         self.goals.clear()

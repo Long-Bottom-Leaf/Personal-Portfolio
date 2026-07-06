@@ -180,8 +180,8 @@ def main():
                 print("\nProfile saved!")
 
             case "2":
-                print("\nProfile loaded!")
                 fitness_tracker.view_profile()
+                print("\nProfile loaded!")
 
             case "3":
                 fitness_tracker.clear_profile()
