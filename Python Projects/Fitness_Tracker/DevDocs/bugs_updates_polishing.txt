@@ -4,8 +4,6 @@ update exporting, messages etc
 
 extract menu validation functions to their own file
 
-add confirmation before clearing information
-
 make CLI menu nicer
 
 improve summary
@@ -29,3 +27,5 @@ saving workout/profile txt/saving buffer etc AFTER actually saving, probably mov
 name validation
 
 loading buffer - saving buffer, just something to give response to user within the CLI
+
+add confirmation before clearing information

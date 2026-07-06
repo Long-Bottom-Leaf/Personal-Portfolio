@@ -35,8 +35,9 @@ class FitnessTracker:
             print("\nNo workouts logged.\n")
             return
         
+        loading_bar("\nLoading workouts...\n", total=25)
+        
         for index, workout in enumerate(self.workouts, start=1):
-            loading_bar("\nLoading workouts...\n", total=25)
             print(f"\nWorkout #{index}")
             print(workout)
 
@@ -69,7 +70,7 @@ class FitnessTracker:
         loading_bar("\nLoading goals...\n", total=20)
         for index, goal in enumerate(self.goals, start=1):
             print(f"\nGoal #{index}")
-            print(goal) 
+            print(goal)
 
     def clear_goals(self):
         loading_bar("Clearing goals...\n", total=15)
