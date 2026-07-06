@@ -75,6 +75,19 @@ def get_valid_activity():
         else:
             print("Invalid workout type!")
 
+# Confirmation helper
+def ask_yes_no(prompt):
+    while True:
+        reply = input(f"{prompt} (y/n): ").strip().lower()
+        
+        if reply in ['yes', 'y']:
+            return True
+        
+        elif reply in ['no', 'n']:
+            return False
+        
+        print("Invalid input. Please enter 'y' or 'n'.")
+
 # Create profile
 def create_profile(fitness_tracker):
     while True:
@@ -184,8 +197,12 @@ def main():
                 print("\nProfile loaded!")
 
             case "3":
-                fitness_tracker.clear_profile()
-                print("\nProfile cleared.")
+                if ask_yes_no("Are you sure you want to clear your profile?"):
+                    fitness_tracker.clear_profile()
+                    print("\nProfile cleared.")
+
+                else:
+                    print("\nAction cancelled!")
 
             case "4":
                 add_workout(fitness_tracker)
@@ -198,8 +215,12 @@ def main():
                 fitness_tracker.workout_summary()
 
             case "7":
-                fitness_tracker.clear_workouts()
-                print("\nAll workouts cleared.")
+                if ask_yes_no("Are you sure you want to clear your workouts?"):
+                    fitness_tracker.clear_workouts()
+                    print("\nAll workouts cleared.")
+
+                else:
+                    print("\nAction cancelled!")
 
             case "8":
                 create_goal(fitness_tracker)
@@ -212,8 +233,12 @@ def main():
                 view_goal_progress(fitness_tracker)
 
             case "11":
-                fitness_tracker.clear_goals()
-                print("\nAll goals cleared.")
+                if ask_yes_no("Are you sure you want to clear your goals?"):
+                    fitness_tracker.clear_goals()
+                    print("\nAll goals cleared.")
+
+                else:
+                    print("\nAction cancelled!")
             
             case "12":
                 export_workouts_to_csv(fitness_tracker.workouts)
