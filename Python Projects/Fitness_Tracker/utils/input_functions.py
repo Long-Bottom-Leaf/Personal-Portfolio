@@ -7,8 +7,6 @@ from utils.validators import (
     validate_weight_unit,
     validate_intensity,
     validate_activity,
-    validate_menu_choice,
-    validate_name
 )
 
 # Validations
@@ -50,7 +48,7 @@ def get_valid_intensity():
             return intensity.strip().lower()
         
         else:
-            print("Invalid intensity. Please enter low, medium, or hight!")
+            print("Invalid intensity. Please enter low, medium, or high!")
         
 def get_valid_activity():
     while True:

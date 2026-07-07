@@ -6,15 +6,15 @@ from models.goal import Goal
 
 from services.calories_calculator import calculate_calories
 from services.goal_tracker import GoalTracker
+from utils.validators import validate_name
 from utils.input_functions import (
     get_valid_number,
     get_valid_goal_count,
     get_valid_weight_unit,
     get_valid_intensity,
     get_valid_activity,
-    ask_yes_no
+    get_valid_name
 )
-from utils.validators import validate_name
 
 # Create profile
 def create_profile(fitness_tracker):

@@ -1,24 +1,16 @@
 # Main Fitness Tracker Application
 
-from models.user_profile import UserProfile
-from models.workout import Workout
-from models.goal import Goal
-
 from services.fitness_tracker import FitnessTracker
-from services.calories_calculator import calculate_calories
-from services.goal_tracker import GoalTracker
-from services.csv_exporter import export_workouts_to_csv
-from utils.helper_functions import(
-    VALID_ACTIVITIES,
-    ask_yes_no,
-    validate_positive_number,
-    validate_goal_count,
-    validate_weight_unit,
-    validate_intensity,
-    validate_activity,
-    validate_menu_choice,
-    validate_name
+from services.actions import (
+    create_profile,
+    add_workout,
+    create_goal,
+    view_goal_progress
 )
+from services.csv_exporter import export_workouts_to_csv
+
+from utils.input_functions import ask_yes_no
+from utils.validators import validate_menu_choice
 
 # Menu
 def display_menu():
