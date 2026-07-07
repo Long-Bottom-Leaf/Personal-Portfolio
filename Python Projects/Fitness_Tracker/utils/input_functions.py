@@ -7,9 +7,19 @@ from utils.validators import (
     validate_weight_unit,
     validate_intensity,
     validate_activity,
+    validate_name
 )
 
 # Validations
+def get_valid_name():
+    while True:
+        name = input("Enter your name: ").strip()
+
+        if validate_name(name):
+            return name
+
+        print("Invalid name! Use 3-50 letters, spaces, hyphens, or apostrophes.")
+
 def get_valid_number(prompt):
     while True:
         value = input(prompt)

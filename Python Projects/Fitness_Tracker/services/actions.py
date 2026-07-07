@@ -6,14 +6,13 @@ from models.goal import Goal
 
 from services.calories_calculator import calculate_calories
 from services.goal_tracker import GoalTracker
-from utils.validators import validate_name
 from utils.input_functions import (
+    get_valid_name,
     get_valid_number,
     get_valid_goal_count,
     get_valid_weight_unit,
     get_valid_intensity,
-    get_valid_activity,
-    get_valid_name
+    get_valid_activity
 )
 
 # Create profile
@@ -21,7 +20,7 @@ def create_profile(fitness_tracker):
     while True:
         name = input("Enter your name: ").strip()
 
-        if validate_name(name):
+        if get_valid_name(name):
             break
 
         print("Invalid name! Use 3-50 letters, spaces, hyphens, or apostrophes.")
