@@ -4,6 +4,22 @@ INVALID_INPUT = (
     "Error: Invalid input. Please enter a valid value."
 )
 
+NO_PROFILE = (
+    "Error. No profile created, please create a profile first."
+)
+
+NO_WORKOUT = (
+    "Error. No workouts added."
+)
+
+NO_GOAL = (
+    "Error. No goals added."
+)
+
+INVALID_NAME = (
+    "Error: Invalid name. Use 3-50 letters, spaces, hyphens, or apostrophes."
+)
+
 INVALID_WEIGHT = (
     "Error: Invalid weight. Weight must be greater than 0."
 )

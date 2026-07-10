@@ -3,6 +3,12 @@
 from utils.loading_bar import loading_bar
 from collections import Counter
 
+from utils.error_messages import (
+    NO_PROFILE,
+    NO_WORKOUT,
+    NO_GOAL
+)
+
 class FitnessTracker:
 
     def __init__(self, user_profile=None):
@@ -16,7 +22,7 @@ class FitnessTracker:
 
     def view_profile(self):
         if self.profile is None:
-            print("\nNo profile set.\n")
+            print(NO_PROFILE)
             return
         
         loading_bar("\nLoading profile...\n", total=20)
@@ -33,7 +39,7 @@ class FitnessTracker:
     
     def view_workouts(self):
         if not self.workouts:
-            print("\nNo workouts logged.\n")
+            print(NO_WORKOUT)
             return
         
         loading_bar("\nLoading workouts...\n", total=25)
@@ -55,7 +61,7 @@ class FitnessTracker:
 
     def workout_summary(self):
         if not self.workouts:
-            print("\nNo workouts logged.\n")
+            print(NO_WORKOUT)
             return
         
         total_duration = sum(workout.workout_duration for workout in self.workouts)
@@ -85,7 +91,7 @@ class FitnessTracker:
 
     def view_goals(self):
         if not self.goals:
-            print("\nNo goals set.\n")
+            print(NO_GOAL)
             return
         
         loading_bar("\nLoading goals...\n", total=20)

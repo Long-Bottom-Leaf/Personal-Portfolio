@@ -15,6 +15,11 @@ from utils.input_functions import (
     get_valid_activity
 )
 
+from utils.error_messages import (
+    INVALID_NAME,
+    NO_PROFILE
+)
+
 # Create profile
 def create_profile(fitness_tracker):
     while True:
@@ -23,7 +28,7 @@ def create_profile(fitness_tracker):
         if get_valid_name(name):
             break
 
-        print("Invalid name! Use 3-50 letters, spaces, hyphens, or apostrophes.")
+        print(INVALID_NAME)
 
     weight = get_valid_number("Enter your weight: ")
     weight_unit = get_valid_weight_unit()
@@ -34,7 +39,7 @@ def create_profile(fitness_tracker):
 # Add workout
 def add_workout(fitness_tracker):
     if fitness_tracker.profile is None:
-        print("Please create a profile first!")
+        print(NO_PROFILE)
         
         return
     
