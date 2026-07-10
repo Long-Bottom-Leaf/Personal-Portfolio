@@ -2,8 +2,6 @@ view workouts/goals printout better
 
 update exporting, messages etc
 
-extract menu validation functions to their own file
-
 make CLI menu nicer
 
 improve summary
@@ -20,7 +18,7 @@ show the percentage of each goal completed
 
 display a message when there are no workouts or goals, instead of a blank section
 
---- FINISHED ---
+------ FINISHED ------
 
 saving workout/profile txt/saving buffer etc AFTER actually saving, probably move them to their respective functions
 
@@ -29,3 +27,5 @@ name validation
 loading buffer - saving buffer, just something to give response to user within the CLI
 
 add confirmation before clearing information
+
+extract menu validation functions to their own file
