@@ -1,7 +1,7 @@
 # Temporary storage for fitness data
 
 from utils.loading_bar import loading_bar
-from services.actions import get_favorite_workout
+from collections import Counter
 
 class FitnessTracker:
 
@@ -41,6 +41,17 @@ class FitnessTracker:
         for index, workout in enumerate(self.workouts, start=1):
             print(f"\nWorkout #{index}")
             print(workout)
+
+    def get_favorite_workout(self):
+        if not self.workouts:
+            return None
+
+        workout_counts = Counter(
+            workout.workout_type
+            for workout in self.workouts
+        )
+
+        return workout_counts.most_common(1)[0]
 
     def workout_summary(self):
         if not self.workouts:

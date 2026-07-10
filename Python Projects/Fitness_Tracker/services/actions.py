@@ -1,7 +1,5 @@
 # Action functions for main.py
 
-from collections import Counter
-
 from models.user_profile import UserProfile
 from models.workout import Workout
 from models.goal import Goal
@@ -62,17 +60,6 @@ def add_workout(fitness_tracker):
     )
 
     fitness_tracker.add_workout(workout)
-
-def get_favorite_workout(self):
-    if not self.workouts:
-        return None
-
-    workout_counts = Counter(
-        workout.workout_type
-        for workout in self.workouts
-    )
-
-    return workout_counts.most_common(1)[0]
 
 # Create/view goal
 def create_goal(fitness_tracker):
