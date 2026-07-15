@@ -5,15 +5,15 @@ INVALID_INPUT = (
 )
 
 NO_PROFILE = (
-    "Error. No profile created, please create a profile first."
+    "Error: No profile found. Please create a profile first."
 )
 
 NO_WORKOUT = (
-    "Error. No workouts added."
+    "Error: No workouts found."
 )
 
 NO_GOAL = (
-    "Error. No goals added."
+    "Error: No goals found."
 )
 
 INVALID_GOAL_COUNT = (

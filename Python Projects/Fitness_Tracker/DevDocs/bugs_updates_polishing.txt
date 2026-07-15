@@ -1,6 +1,6 @@
 view workouts/goals printout better -- need to fix bug to test
 
-use error messages
+create success message file like error messages
 
 update exporting, messages etc
 

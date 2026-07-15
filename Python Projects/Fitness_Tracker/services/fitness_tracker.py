@@ -77,8 +77,8 @@ class FitnessTracker:
         print(f"Total Workouts: {len(self.workouts)}")
         print(f"Total Duration: {total_duration} minutes")
         print(f"Total Calories Burned: {total_calories} kcal")
-        print(f"Average Duration: {average_duration}")
-        print(f"Average Calories Burned: {average_calories}")
+        print(f"Average Duration: {average_duration} minutes")
+        print(f"Average Calories Burned: {average_calories} kcal")
         print(f"Favorite Workout: {workout_type} ({count} workouts)")
 
     def clear_workouts(self):
