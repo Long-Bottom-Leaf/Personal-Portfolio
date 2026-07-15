@@ -16,15 +16,22 @@ from utils.input_functions import (
 )
 
 from utils.error_messages import (
-    NO_PROFILE
+    NO_PROFILE,
+    INVALID_WEIGHT,
+    INVALID_DURATION,
+    INVALID_GOAL_DURATION,
+    INVALID_GOAL_CALORIES
 )
 
 # Create profile
 def create_profile(fitness_tracker):
     name = get_valid_name()
 
-    weight = get_valid_number("Enter your weight: ")
-    weight_unit = get_valid_weight_unit(name, weight, weight_unit)
+    weight = get_valid_number(
+        "Enter your weight: ",
+        INVALID_WEIGHT
+    )
+    weight_unit = get_valid_weight_unit()
 
     profile = UserProfile(name, weight, weight_unit)
     fitness_tracker.set_profile(profile)
@@ -37,7 +44,10 @@ def add_workout(fitness_tracker):
         return
     
     workout_type = get_valid_activity()
-    duration = get_valid_number("Enter workout duration (in minutes): ")
+    duration = get_valid_number(
+        "Enter workout duration (in minutes): ",
+        INVALID_DURATION
+    )
     intensity = get_valid_intensity()
     notes = input("Enter workout notes here: ")
 
@@ -62,8 +72,14 @@ def add_workout(fitness_tracker):
 # Create/view goal
 def create_goal(fitness_tracker):
     weekly_workout_count = get_valid_goal_count("Enter weekly workout count goal: ")
-    weekly_duration = get_valid_number("Enter weekly workout duration goal: ")
-    weekly_calories = get_valid_number("Enter target calorie goal: ")
+    weekly_duration = get_valid_number(
+        "Enter weekly workout duration goal: ",
+        INVALID_GOAL_DURATION
+    )
+    weekly_calories = get_valid_number(
+        "Enter target calorie goal: ",
+        INVALID_GOAL_CALORIES
+    )
     workout_type_goal = get_valid_activity()
 
     goal = Goal(

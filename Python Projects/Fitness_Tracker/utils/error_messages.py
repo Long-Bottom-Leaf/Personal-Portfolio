@@ -17,7 +17,15 @@ NO_GOAL = (
 )
 
 INVALID_GOAL_COUNT = (
-    "error: Invalid number. Please input a goal count greater than 0."
+    "Error: Invalid number. Please enter 0 or greater."
+)
+
+INVALID_GOAL_DURATION = (
+    "Error: Invalid duration. Please enter 0 or greater."
+)
+
+INVALID_GOAL_CALORIES = (
+    "Error: Invalid number. Please enter 0 or greater."
 )
 
 INVALID_NAME = (
@@ -50,10 +58,6 @@ INVALID_INTENSITY = (
 
 INVALID_CALORIES = (
     "Error: Invalid calories. Calories must be greater than 0."
-)
-
-INVALID_GOAL_VALUE = (
-    "Error: Invalid goal value. Goal value must be 0 or greater."
 )
 
 INVALID_MENU_CHOICE = (
