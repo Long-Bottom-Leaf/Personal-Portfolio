@@ -19,8 +19,7 @@ from utils.error_messages import (
     NO_PROFILE,
     INVALID_WEIGHT,
     INVALID_DURATION,
-    INVALID_GOAL_DURATION,
-    INVALID_GOAL_CALORIES
+    INVALID_CALORIES
 )
 
 # Create profile
@@ -74,11 +73,11 @@ def create_goal(fitness_tracker):
     weekly_workout_count = get_valid_goal_count("Enter weekly workout count goal: ")
     weekly_duration = get_valid_number(
         "Enter weekly workout duration goal: ",
-        INVALID_GOAL_DURATION
+        INVALID_DURATION
     )
     weekly_calories = get_valid_number(
         "Enter target calorie goal: ",
-        INVALID_GOAL_CALORIES
+        INVALID_CALORIES
     )
     workout_type_goal = get_valid_activity()
 

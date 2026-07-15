@@ -1,31 +1,8 @@
 # Error Messages
 
-INVALID_INPUT = (
-    "Error: Invalid input. Please enter a valid choice."
-)
-
+# ==== Profile ====
 NO_PROFILE = (
     "Error: No profile found. Please create a profile first."
-)
-
-NO_WORKOUT = (
-    "Error: No workouts found."
-)
-
-NO_GOAL = (
-    "Error: No goals found."
-)
-
-INVALID_GOAL_COUNT = (
-    "Error: Invalid number. Please enter 0 or greater."
-)
-
-INVALID_GOAL_DURATION = (
-    "Error: Invalid duration. Please enter 0 or greater."
-)
-
-INVALID_GOAL_CALORIES = (
-    "Error: Invalid number. Please enter 0 or greater."
 )
 
 INVALID_NAME = (
@@ -40,12 +17,26 @@ INVALID_WEIGHT_UNIT = (
     "Error: Invalid weight unit. Please enter 'kgs' or 'lbs'."
 )
 
-INVALID_DATE = (
-    "Error: Invalid date. Please enter a valid date in YYYY-MM-DD format."
+#==== Workout ====
+NO_WORKOUT = (
+    "Error: No workouts found."
 )
 
 INVALID_WORKOUT_TYPE = (
     "Error: Invalid workout type. Please select a valid workout type."
+)
+
+#==== Goal ====
+NO_GOAL = (
+    "Error: No goals found."
+)
+
+INVALID_GOAL_COUNT = (
+    "Error: Invalid number. Please enter 0 or greater."
+)
+
+INVALID_CALORIES = (
+    "Error: Invalid calories. Calories must be greater than 0."
 )
 
 INVALID_DURATION = (
@@ -56,14 +47,7 @@ INVALID_INTENSITY = (
     "Error: Invalid intensity. Intensity must be low, medium, or high."
 )
 
-INVALID_CALORIES = (
-    "Error: Invalid calories. Calories must be greater than 0."
-)
-
-INVALID_MENU_CHOICE = (
-    "Error: Invalid menu choice. Please select a valid option."
-)
-
+#==== Data ====
 FILE_NOT_FOUND = (
     "Error: Data file could not be found."
 )
@@ -74,4 +58,13 @@ FILE_SAVE_ERROR = (
 
 FILE_LOAD_ERROR = (
     "Error: Unable to load data."
+)
+
+#==== Menu and Misc ====
+INVALID_MENU_CHOICE = (
+    "Error: Invalid menu choice. Please select a valid option."
+)
+
+INVALID_DATE = (
+    "Error: Invalid date. Please enter a valid date in YYYY-MM-DD format."
 )
