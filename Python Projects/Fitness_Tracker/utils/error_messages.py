@@ -1,7 +1,7 @@
 # Error Messages
 
 INVALID_INPUT = (
-    "Error: Invalid input. Please enter a valid value."
+    "Error: Invalid input. Please enter a valid choice."
 )
 
 NO_PROFILE = (
@@ -14,6 +14,10 @@ NO_WORKOUT = (
 
 NO_GOAL = (
     "Error. No goals added."
+)
+
+INVALID_GOAL_COUNT = (
+    "error: Invalid number. Please input a goal count greater than 0."
 )
 
 INVALID_NAME = (

@@ -16,22 +16,15 @@ from utils.input_functions import (
 )
 
 from utils.error_messages import (
-    INVALID_NAME,
     NO_PROFILE
 )
 
 # Create profile
 def create_profile(fitness_tracker):
-    while True:
-        name = input("Enter your name: ").strip()
-
-        if get_valid_name(name):
-            break
-
-        print(INVALID_NAME)
+    name = get_valid_name()
 
     weight = get_valid_number("Enter your weight: ")
-    weight_unit = get_valid_weight_unit()
+    weight_unit = get_valid_weight_unit(name, weight, weight_unit)
 
     profile = UserProfile(name, weight, weight_unit)
     fitness_tracker.set_profile(profile)

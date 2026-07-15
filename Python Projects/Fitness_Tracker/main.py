@@ -11,6 +11,9 @@ from services.csv_exporter import export_workouts_to_csv
 
 from utils.input_functions import ask_yes_no
 from utils.validators import validate_menu_choice
+from utils.error_messages import (
+    INVALID_INPUT
+)
 
 # Menu
 def display_menu():
@@ -38,7 +41,7 @@ def main():
         choice = input("Enter an option: ")
 
         if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]):
-            print("Invalid choice, please enter a valid choice!")
+            print(INVALID_INPUT)
             continue
 
         match choice:

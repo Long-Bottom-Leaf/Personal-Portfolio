@@ -1,5 +1,10 @@
 # Goal tracker service
 
+from utils.error_messages import (
+    NO_WORKOUT,
+    NO_GOAL
+)
+
 class GoalTracker:
 
     def __init__(self, workouts, goals):
@@ -9,11 +14,11 @@ class GoalTracker:
     def show_goal_progress(self):
 
         if not self.goals:
-            print("No goals set.")
+            print(NO_GOAL)
             return
 
         if not self.workouts:
-            print("No workouts logged.")
+            print(NO_WORKOUT)
             return
 
         total_workouts = len(self.workouts)
