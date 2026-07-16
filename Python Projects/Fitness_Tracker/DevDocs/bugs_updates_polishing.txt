@@ -1,26 +1,35 @@
-view workouts/goals printout better -- need to fix bug to test
+==== High Priority ====
+sort workouts by date before displaying/exporting
 
-create success message file like error messages
+show the percentage of each goal completed
 
-update exporting, messages etc
+improve workout summary
+    - Favorite workout
+    - Longest workout
+    - Highest calorie workout
+    - Average duration
+    - Average calories
+    - Total workouts
 
-make CLI menu nicer
+update exporting message and other export/data storage
 
-improve summary
+==== Med Priority ====
+
+CLI menu polish
+
+view workouts/goals printout better
 
 data manager can print load/save messages
 
 update add workout to be a scheduler, use date format helper
 
-automatically calculate calories
+==== Low Priority ====
 
-sort workouts by date before displaying/exporting
+enable multiple profile storage/viewing
 
-show the percentage of each goal completed
+create success message file like error messages
 
-display a message when there are no workouts or goals, instead of a blank section
-
------- FINISHED ------
+==== FINISHED ====
 
 saving workout/profile txt/saving buffer etc AFTER actually saving, probably move them to their respective functions
 
@@ -31,3 +40,5 @@ loading buffer - saving buffer, just something to give response to user within t
 add confirmation before clearing information
 
 extract menu validation functions to their own file
+
+display a message when there are no workouts or goals, instead of a blank section
