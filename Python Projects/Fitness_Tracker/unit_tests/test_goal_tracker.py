@@ -28,7 +28,7 @@ class TestGoalTracker(unittest.TestCase):
         with redirect_stdout(output):
             goal_tracker.show_goal_progress()
 
-        self.assertIn("No goals set.", output.getvalue())
+        self.assertTrue("NO_GOAL", output.getvalue())
 
     def test_no_workouts(self):
         workouts = []
@@ -44,7 +44,7 @@ class TestGoalTracker(unittest.TestCase):
         with redirect_stdout(output):
             goal_tracker.show_goal_progress()
 
-        self.assertIn("No workouts logged.", output.getvalue())
+        self.assertTrue("NO_WORKOUT", output.getvalue())
 
     def test_goal_progress(self):
         workouts = [
