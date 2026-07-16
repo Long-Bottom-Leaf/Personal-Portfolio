@@ -68,3 +68,7 @@ INVALID_MENU_CHOICE = (
 INVALID_DATE = (
     "Error: Invalid date. Please enter a valid date in YYYY-MM-DD format."
 )
+
+INVALID_INPUT = (
+    "Error: Invalid input. Please enter a valid input."
+)

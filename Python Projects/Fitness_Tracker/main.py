@@ -1,5 +1,9 @@
 # Main Fitness Tracker Application
 
+import os
+import sys
+sys.path.insert(0, os.path.dirname(__file__))
+
 from services.fitness_tracker import FitnessTracker
 from services.actions import (
     create_profile,
