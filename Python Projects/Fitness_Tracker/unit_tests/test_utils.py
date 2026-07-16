@@ -15,9 +15,16 @@ from utils.validators import (
     validate_intensity,
     validate_activity,
     validate_menu_choice,
-    validate_date
+    validate_date,
+    validate_name
 )
-from utils.exceptions import INVALID_WEIGHT, INVALID_INTENSITY
+from utils.error_messages import (
+    NO_PROFILE,
+    INVALID_WEIGHT,
+    INVALID_GOAL_COUNT,
+    FILE_SAVE_ERROR,
+    INVALID_MENU_CHOICE
+)
 
 
 class TestDateFormatters(unittest.TestCase):
@@ -45,6 +52,18 @@ class TestValidators(unittest.TestCase):
         self.assertFalse(validate_positive_number("0"))
         self.assertFalse(validate_positive_number("-5"))
         self.assertFalse(validate_positive_number("abc"))
+
+    def test_validate_name(self):
+        self.assertTrue(validate_name("Stephen"))
+        self.assertTrue(validate_name("Mary Jane"))
+        self.assertTrue(validate_name("Anne-Marie"))
+        self.assertTrue(validate_name("O'Connor"))
+
+        self.assertFalse(validate_name(""))
+        self.assertFalse(validate_name("A"))
+        self.assertFalse(validate_name("Jo"))
+        self.assertFalse(validate_name("123"))
+        self.assertFalse(validate_name("@Stephen"))
 
     def test_validate_goal_count(self):
         self.assertTrue(validate_goal_count("0"))
@@ -82,7 +101,13 @@ class TestValidators(unittest.TestCase):
         self.assertFalse(validate_date("not a date"))
 
 
-class TestMessages(unittest.TestCase):
+class TestErrorMessages(unittest.TestCase):
+
+    def test_no_profile_message(self):
+        self.assertEqual(
+            NO_PROFILE,
+            "Error: No profile found. Please create a profile first."
+        )
 
     def test_invalid_weight_message(self):
         self.assertEqual(
@@ -90,10 +115,22 @@ class TestMessages(unittest.TestCase):
             "Error: Invalid weight. Weight must be greater than 0."
         )
 
-    def test_invalid_intensity_message(self):
+    def test_invalid_goal_count_message(self):
         self.assertEqual(
-            INVALID_INTENSITY,
-            "Error: Invalid intensity. Intensity must be low, medium, or high."
+            INVALID_GOAL_COUNT,
+            "Error: Invalid number. Please enter 0 or greater."
+        )
+
+    def test_file_save_error_message(self):
+        self.assertEqual(
+            FILE_SAVE_ERROR,
+            "Error: Unable to save data."
+        )
+
+    def test_invalid_menu_choice_message(self):
+        self.assertEqual(
+            INVALID_MENU_CHOICE,
+            "Error: Invalid menu choice. Please select a valid option."
         )
 
 
