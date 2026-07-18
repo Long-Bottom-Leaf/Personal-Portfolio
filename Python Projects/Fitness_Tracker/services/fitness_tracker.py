@@ -2,6 +2,7 @@
 
 from utils.loading_bar import loading_bar
 from collections import Counter
+from utils.sorter import sort_workouts_by_date
 
 from utils.error_messages import (
     NO_PROFILE,
@@ -41,6 +42,8 @@ class FitnessTracker:
         if not self.workouts:
             print(NO_WORKOUT)
             return
+        
+        workouts = sort_workouts_by_date(self.workouts)
         
         loading_bar("\nLoading workouts...\n", total=25)
         

@@ -3,6 +3,8 @@
 import csv
 import os
 
+from utils.sorter import sort_workouts_by_date
+
 def export_workouts_to_csv(workouts, file_path="exports/workout_history.csv"):
 
     os.makedirs(os.path.dirname(file_path), exist_ok=True)

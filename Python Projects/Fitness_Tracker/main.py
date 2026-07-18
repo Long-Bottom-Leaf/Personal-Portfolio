@@ -18,6 +18,7 @@ from utils.validators import validate_menu_choice
 from utils.error_messages import (
     INVALID_MENU_CHOICE
 )
+from utils.sorter import sort_workouts_by_date
 
 # Menu
 def display_menu():
@@ -70,7 +71,19 @@ def main():
                 print("\nWorkout added!")
 
             case "5":
-                fitness_tracker.view_workouts()
+                choice = input("Sort workouts by earliest (1) or latest (2): ").strip()
+
+                if choice == "1":
+                    workouts = sort_workouts_by_date(fitness_tracker.workouts)
+
+                else:
+                    workouts = sort_workouts_by_date(
+                        fitness_tracker.workouts,
+                        newest_first=True
+                    )
+
+                for i in workouts:
+                    print(i)
 
             case "6":
                 fitness_tracker.workout_summary()

@@ -29,6 +29,14 @@ enable multiple profile storage/viewing
 
 create success message file like error messages
 
+==== Final Polish ====
+
+    - Final bug testing
+    - Update README
+    - Clean comments/docstrings
+    - Remove unused imports
+    - Run unit tests
+
 ==== FINISHED ====
 
 saving workout/profile txt/saving buffer etc AFTER actually saving, probably move them to their respective functions
