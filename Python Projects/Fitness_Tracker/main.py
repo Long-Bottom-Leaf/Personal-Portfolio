@@ -73,30 +73,22 @@ def main():
                 print("\nWorkout added!")
 
             case "5":
-                sort_choice = input("Sort workouts by most recent (1) or oldest (2): ").strip()
+                sort_choice = input(
+                    "Sort workouts:\n"
+                    "1. Newest to Oldest\n"
+                    "2. Oldest to Newest\n"
+                    "Choice: "
+                ).strip()
 
                 if sort_choice == "1":
-                    workouts = sort_workouts_by_date(fitness_tracker.workouts)
+                    fitness_tracker.view_workouts(newest_first=True)
 
                 elif sort_choice == "2":
-                    workouts = sort_workouts_by_date(
-                        fitness_tracker.workouts,
-                        newest_first=True
-                    )
+                    fitness_tracker.view_workouts(newest_first=False)
 
                 else:
                     print(INVALID_SORT)
-                    workouts = sort_workouts_by_date(fitness_tracker.workouts)
-
-                if not workouts:
-                    print(NO_WORKOUT)
-
-                for idx, workout in enumerate(workouts, start=1):
-                    try:
-                        line = str(workout)
-                    except Exception:
-                        line = repr(workout)
-                    print(f"{idx}. {line}")
+                    fitness_tracker.view_workouts()
 
             case "6":
                 fitness_tracker.workout_summary()

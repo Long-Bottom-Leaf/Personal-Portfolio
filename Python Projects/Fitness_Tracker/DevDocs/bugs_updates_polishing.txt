@@ -1,7 +1,9 @@
 ==== High Priority ====
-sort workouts by date before displaying/exporting
+sort workouts by date before displaying/exporting -- test
 
 show the percentage of each goal completed
+
+use favorite workout
 
 improve workout summary
     - Favorite workout

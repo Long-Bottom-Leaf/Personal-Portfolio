@@ -38,7 +38,7 @@ class FitnessTracker:
     def add_workout(self, workout):
         self.workouts.append(workout)
     
-    def view_workouts(self):
+    def view_workouts(self, newest_first=True):
         if not self.workouts:
             print(NO_WORKOUT)
             return
@@ -47,7 +47,7 @@ class FitnessTracker:
         
         loading_bar("\nLoading workouts...\n", total=25)
         
-        for index, workout in enumerate(self.workouts, start=1):
+        for index, workout in enumerate(workouts, start=1):
             print(f"\nWorkout #{index}")
             print(workout)
 
