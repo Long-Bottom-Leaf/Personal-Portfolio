@@ -11,6 +11,12 @@ class GoalTracker:
         self.workouts = workouts
         self.goals = goals
 
+    def _calculate_percentage(self, current, goal):
+        if goal <= 0:
+            return 0
+
+        return min(round((current / goal) * 100, 1), 100)
+
     def show_goal_progress(self):
 
         if not self.goals:
@@ -33,6 +39,22 @@ class GoalTracker:
             for workout in self.workouts
         )
 
+        # Goal %'s
+        workout_percent = self._calculate_percentage(
+            total_workouts,
+            goal.weekly_workout_count
+        )
+
+        duration_percent = self._calculate_percentage(
+            total_duration,
+            goal.weekly_duration
+        )
+
+        calorie_percent = self._calculate_percentage(
+            total_calories,
+            goal.weekly_calories
+        )
+
         for index, goal in enumerate(self.goals, start=1):
 
             matching_type_count = 0
@@ -42,7 +64,22 @@ class GoalTracker:
                     matching_type_count += 1
 
             print(f"\nGoal Progress #{index}")
-            print(f"Workout Count: {total_workouts}/{goal.weekly_workout_count}")
-            print(f"Duration: {total_duration}/{goal.weekly_duration} minutes")
-            print(f"Calories Burned: {total_calories}/{goal.weekly_calories} kcal")
+            print(
+                f"Workout Count: "
+                f"{total_workouts}/{goal.weekly_workout_count} "
+                f"({workout_percent}%)"
+            )
+
+            print(
+                f"Duration: "
+                f"{total_duration}/{goal.weekly_duration} minutes "
+                f"({duration_percent}%)"
+            )
+
+            print(
+                f"Calories Burned: "
+                f"{total_calories}/{goal.weekly_calories} kcal "
+                f"({calorie_percent}%)"
+            )
+            
             print(f"{goal.workout_type_goal} Workouts: {matching_type_count}")

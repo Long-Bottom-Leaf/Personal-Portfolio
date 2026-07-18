@@ -1,9 +1,5 @@
 ==== High Priority ====
-sort workouts by date before displaying/exporting -- test
-
 show the percentage of each goal completed
-
-use favorite workout
 
 improve workout summary
     - Favorite workout
@@ -52,3 +48,7 @@ add confirmation before clearing information
 extract menu validation functions to their own file
 
 display a message when there are no workouts or goals, instead of a blank section
+
+sort workouts by date before displaying/exporting -- unit test
+
+use favorite workout
