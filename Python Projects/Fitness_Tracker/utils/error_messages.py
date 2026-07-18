@@ -72,3 +72,7 @@ INVALID_DATE = (
 INVALID_INPUT = (
     "Error: Invalid input. Please enter a valid input."
 )
+
+INVALID_SORT = (
+    "Error: Invalid sort choice, showing workouts starting with most recent."
+)

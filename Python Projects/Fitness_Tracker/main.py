@@ -16,7 +16,9 @@ from services.csv_exporter import export_workouts_to_csv
 from utils.input_functions import ask_yes_no
 from utils.validators import validate_menu_choice
 from utils.error_messages import (
-    INVALID_MENU_CHOICE
+    INVALID_MENU_CHOICE,
+    NO_WORKOUT,
+    INVALID_SORT
 )
 from utils.sorter import sort_workouts_by_date
 
@@ -71,19 +73,30 @@ def main():
                 print("\nWorkout added!")
 
             case "5":
-                choice = input("Sort workouts by earliest (1) or latest (2): ").strip()
+                sort_choice = input("Sort workouts by most recent (1) or oldest (2): ").strip()
 
-                if choice == "1":
+                if sort_choice == "1":
                     workouts = sort_workouts_by_date(fitness_tracker.workouts)
 
-                else:
+                elif sort_choice == "2":
                     workouts = sort_workouts_by_date(
                         fitness_tracker.workouts,
                         newest_first=True
                     )
 
-                for i in workouts:
-                    print(i)
+                else:
+                    print(INVALID_SORT)
+                    workouts = sort_workouts_by_date(fitness_tracker.workouts)
+
+                if not workouts:
+                    print(NO_WORKOUT)
+
+                for idx, workout in enumerate(workouts, start=1):
+                    try:
+                        line = str(workout)
+                    except Exception:
+                        line = repr(workout)
+                    print(f"{idx}. {line}")
 
             case "6":
                 fitness_tracker.workout_summary()
