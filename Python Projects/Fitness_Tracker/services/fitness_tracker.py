@@ -61,6 +61,24 @@ class FitnessTracker:
         )
 
         return workout_counts.most_common(1)[0]
+    
+    def get_longest_workout(self):
+        if not self.workouts:
+            return None
+
+        return max(
+            self.workouts,
+            key=lambda workout: workout.workout_duration
+        )
+    
+    def get_highest_calorie_workout(self):
+        if not self.workouts:
+            return None
+
+        return max(
+            self.workouts,
+            key=lambda workout: workout.calories_burned
+        )
 
     def workout_summary(self):
         if not self.workouts:
@@ -75,14 +93,29 @@ class FitnessTracker:
 
         workout_type, count = self.get_favorite_workout()
 
+        favorite_type, favorite_count = self.get_favorite_workout()
+
+        longest = self.get_longest_workout()
+        highest = self.get_highest_calorie_workout()
+
         loading_bar("\nLoading workout summary...\n", total=20)
         print("==== Workout Summary ====")
         print(f"Total Workouts: {len(self.workouts)}")
         print(f"Total Duration: {total_duration} minutes")
-        print(f"Total Calories Burned: {total_calories} kcal")
+        print(f"Total Calories Burned: {total_calories} kcal\n")
+
         print(f"Average Duration: {average_duration} minutes")
-        print(f"Average Calories Burned: {average_calories} kcal")
-        print(f"Favorite Workout: {workout_type} ({count} workouts)")
+        print(f"Average Calories Burned: {average_calories} kcal\n")
+
+        print(f"Favorite Workout: {favorite_type} ({favorite_count} workouts)")
+        print(
+            f"Longest Workout: "
+            f"{longest.workout_type} ({longest.workout_duration} minutes)"
+        )
+        print(
+            f"Highest Calorie Workout: "
+            f"{highest.workout_type} ({highest.calories_burned} kcal)"
+        )
 
     def clear_workouts(self):
         loading_bar("\nClearing workouts...\n", total=15)
