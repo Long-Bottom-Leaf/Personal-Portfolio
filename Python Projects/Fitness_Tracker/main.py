@@ -24,19 +24,28 @@ from utils.sorter import sort_workouts_by_date
 
 # Menu
 def display_menu():
-    print("\n===== Fitness Tracker Menu =====")
+    print("\n===== Fitness Tracker Menu =====\n")
+
+    print("\nProfile")
     print("1. Create Profile")
     print("2. View Profile")
     print("3. Clear Profile")
+
+    print("\nWorkouts")
     print("4. Add Workout")
     print("5. View Workouts")
     print("6. Workout Summary")
     print("7. Clear Workouts")
+
+    print("\nGoals")
     print("8. Create Goal")
     print("9. View Goals")
     print("10. View Goal Progress")
     print("11. Clear goals")
+
+    print("\nExport Data")
     print("12. Export Workouts to CSV")
+
     print("13. Exit")
 
 def main():

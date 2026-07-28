@@ -1,15 +1,3 @@
-==== High Priority ====
-
-improve workout summary
-    - Favorite workout
-    - Longest workout
-    - Highest calorie workout
-    - Average duration
-    - Average calories
-    - Total workouts
-
-update exporting message and other export/data storage upgrades
-
 ==== Med Priority ====
 
 CLI menu polish
@@ -32,7 +20,7 @@ create success message file like error messages
     - Update README
     - Clean comments/docstrings
     - Remove unused imports
-    - Run unit tests
+    - Run unit tests, add any necessary
 
 ==== FINISHED ====
 
@@ -53,3 +41,13 @@ sort workouts by date before displaying/exporting -- unit test
 use favorite workout
 
 show the percentage of each goal completed
+
+improve workout summary
+    - Favorite workout
+    - Longest workout
+    - Highest calorie workout
+    - Average duration
+    - Average calories
+    - Total workouts
+
+update exporting message and other export/data storage upgrades

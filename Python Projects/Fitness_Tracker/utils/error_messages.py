@@ -48,16 +48,8 @@ INVALID_INTENSITY = (
 )
 
 #==== Data ====
-FILE_NOT_FOUND = (
-    "Error: Data file could not be found."
-)
-
 FILE_SAVE_ERROR = (
     "Error: Unable to save data."
-)
-
-FILE_LOAD_ERROR = (
-    "Error: Unable to load data."
 )
 
 #==== Menu and Misc ====
