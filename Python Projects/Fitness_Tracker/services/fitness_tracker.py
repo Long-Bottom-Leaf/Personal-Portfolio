@@ -133,8 +133,11 @@ class FitnessTracker:
         
         loading_bar("\nLoading goals...\n", total=20)
         for index, goal in enumerate(self.goals, start=1):
-            print(f"\nGoal #{index}")
+            print("=" * 40)
+            print(f"Goal #{index}")
+            print("-" * 40)
             print(goal)
+            print("=" * 40)
 
     def clear_goals(self):
         loading_bar("Clearing goals...\n", total=15)
