@@ -43,13 +43,16 @@ class FitnessTracker:
             print(NO_WORKOUT)
             return
         
-        workouts = sort_workouts_by_date(self.workouts)
+        workouts = sort_workouts_by_date(self.workouts, newest_first=newest_first)
         
         loading_bar("\nLoading workouts...\n", total=25)
         
         for index, workout in enumerate(workouts, start=1):
-            print(f"\nWorkout #{index}")
+            print("=" * 40)
+            print(f"Workout #{index}")
+            print("-" * 40)
             print(workout)
+            print("=" * 40)
 
     def get_favorite_workout(self):
         if not self.workouts:
@@ -90,8 +93,6 @@ class FitnessTracker:
 
         average_duration = round(total_duration / len(self.workouts), 1)
         average_calories = round(total_calories / len(self.workouts), 1)
-
-        workout_type, count = self.get_favorite_workout()
 
         favorite_type, favorite_count = self.get_favorite_workout()
 

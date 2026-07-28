@@ -17,14 +17,12 @@ from utils.input_functions import ask_yes_no
 from utils.validators import validate_menu_choice
 from utils.error_messages import (
     INVALID_MENU_CHOICE,
-    NO_WORKOUT,
     INVALID_SORT
 )
-from utils.sorter import sort_workouts_by_date
 
 # Menu
 def display_menu():
-    print("\n===== Fitness Tracker Menu =====\n")
+    print("\n===== Fitness Tracker Menu =====")
 
     print("\nProfile")
     print("1. Create Profile")
@@ -43,7 +41,7 @@ def display_menu():
     print("10. View Goal Progress")
     print("11. Clear goals")
 
-    print("\nExport Data")
+    print("\nExport Workouts")
     print("12. Export Workouts to CSV")
 
     print("13. Exit")
@@ -133,7 +131,6 @@ def main():
 
             case "13":
                 print("Goodbye!")
-
                 break
     
 if __name__ == "__main__":

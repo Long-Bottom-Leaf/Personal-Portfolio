@@ -1,7 +1,5 @@
 ==== Med Priority ====
 
-CLI menu polish
-
 view workouts/goals printout better
 
 data manager can print load/save messages
@@ -51,3 +49,5 @@ improve workout summary
     - Total workouts
 
 update exporting message and other export/data storage upgrades
+
+CLI menu polish
