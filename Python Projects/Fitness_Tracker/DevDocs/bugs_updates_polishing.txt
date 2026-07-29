@@ -4,11 +4,11 @@ data manager can print load/save messages
 
 update add workout to be a scheduler, use date format helper
 
+implement data manager for json
+
 ==== Low Priority ====
 
 enable multiple profile storage/viewing
-
-create success message file like error messages
 
 ==== Final Polish ====
 
@@ -51,3 +51,5 @@ update exporting message and other export/data storage upgrades
 CLI menu polish
 
 view workouts/goals printout better
+
+create success message file like error messages

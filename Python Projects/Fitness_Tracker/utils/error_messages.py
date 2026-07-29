@@ -52,6 +52,10 @@ FILE_SAVE_ERROR = (
     "Error: Unable to save data."
 )
 
+FILE_LOAD_ERROR = (
+    "Error: Failed to load data"
+)
+
 #==== Menu and Misc ====
 INVALID_MENU_CHOICE = (
     "Error: Invalid menu choice. Please select a valid option."

@@ -31,3 +31,11 @@ GOALS_CLEARED = (
     "All goals cleared!"
 )
 
+# Data success
+FILE_SAVED = (
+    "File successfully saved!"
+)
+
+FILE_LOAD = (
+    "File successfully loaded!"
+)

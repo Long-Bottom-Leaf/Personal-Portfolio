@@ -3,6 +3,15 @@
 import json
 import os
 
+from utils.error_messages import (
+    FILE_LOAD_ERROR,
+    FILE_SAVE_ERROR
+)
+from utils.success_messages import (
+    FILE_LOAD,
+    FILE_SAVED
+)
+
 class DataManager:
 
     def __init__(self, file_path = "data/fitness_data.json"):
@@ -24,13 +33,25 @@ class DataManager:
     def load_data(self):
         self.create_file_if_missing()
 
-        with open(self.file_path, 'r') as file:
-            data = json.load(file)
+        try:
+            with open(self.file_path, 'r') as file:
+                data = json.load(file)
+            
+                print(FILE_LOAD)
+                return data
         
-        return data
+        except (OSError, json.JSONDecodeError):
+            print(FILE_LOAD_ERROR)
+            return data
 
     def save_data(self, data):
         self.create_file_if_missing()
 
-        with open(self.file_path, 'w') as file:
-            json.dump(data, file, indent = 4)
+        try:
+            with open(self.file_path, 'w') as file:
+                json.dump(data, file, indent = 4)
+            
+                print(FILE_SAVED)
+                
+        except OSError:
+            print(FILE_SAVE_ERROR)
