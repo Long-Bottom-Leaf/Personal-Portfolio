@@ -1,7 +1,5 @@
 ==== Med Priority ====
 
-view workouts/goals printout better
-
 data manager can print load/save messages
 
 update add workout to be a scheduler, use date format helper
@@ -51,3 +49,5 @@ improve workout summary
 update exporting message and other export/data storage upgrades
 
 CLI menu polish
+
+view workouts/goals printout better

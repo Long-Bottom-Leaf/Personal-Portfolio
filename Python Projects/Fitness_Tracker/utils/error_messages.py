@@ -68,3 +68,7 @@ INVALID_INPUT = (
 INVALID_SORT = (
     "Error: Invalid sort choice, showing workouts starting with most recent."
 )
+
+ACTION_CANCELLED = (
+    "Action cancelled!"
+)

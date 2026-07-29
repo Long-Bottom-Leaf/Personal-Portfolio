@@ -17,7 +17,17 @@ from utils.input_functions import ask_yes_no
 from utils.validators import validate_menu_choice
 from utils.error_messages import (
     INVALID_MENU_CHOICE,
-    INVALID_SORT
+    INVALID_SORT,
+    ACTION_CANCELLED
+)
+from utils.success_messages import (
+    PROFILE_SAVED,
+    PROFILE_LOADED,
+    PROFILE_CLEARED,
+    WORKOUT_ADDED,
+    ALL_WORKOUT_CLEARED,
+    GOAL_SAVED,
+    GOALS_CLEARED
 )
 
 # Menu
@@ -61,23 +71,23 @@ def main():
         match choice:
             case "1":
                 create_profile(fitness_tracker)
-                print("\nProfile saved!")
+                print(PROFILE_SAVED)
 
             case "2":
                 fitness_tracker.view_profile()
-                print("\nProfile loaded!")
+                print(PROFILE_LOADED)
 
             case "3":
                 if ask_yes_no("Are you sure you want to clear your profile?"):
                     fitness_tracker.clear_profile()
-                    print("\nProfile cleared.")
+                    print(PROFILE_CLEARED)
 
                 else:
-                    print("\nAction cancelled!")
+                    print(ACTION_CANCELLED)
 
             case "4":
                 add_workout(fitness_tracker)
-                print("\nWorkout added!")
+                print(WORKOUT_ADDED)
 
             case "5":
                 sort_choice = input(
@@ -103,14 +113,14 @@ def main():
             case "7":
                 if ask_yes_no("Are you sure you want to clear your workouts?"):
                     fitness_tracker.clear_workouts()
-                    print("\nAll workouts cleared.")
+                    print(ALL_WORKOUT_CLEARED)
 
                 else:
-                    print("\nAction cancelled!")
+                    print(ACTION_CANCELLED)
 
             case "8":
                 create_goal(fitness_tracker)
-                print("\nGoal saved!")
+                print(GOAL_SAVED)
 
             case "9":
                 fitness_tracker.view_goals()
@@ -121,10 +131,10 @@ def main():
             case "11":
                 if ask_yes_no("Are you sure you want to clear your goals?"):
                     fitness_tracker.clear_goals()
-                    print("\nAll goals cleared.")
+                    print(GOALS_CLEARED)
 
                 else:
-                    print("\nAction cancelled!")
+                    print(ACTION_CANCELLED)
             
             case "12":
                 export_workouts_to_csv(fitness_tracker.workouts)
