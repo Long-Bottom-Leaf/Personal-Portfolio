@@ -16,10 +16,10 @@ class Workout:
     def __str__(self):
 
         return (
-            f"Date: {self.workout_date}, "
+            f"Date: {self.workout_date},\n"
             f"Type: {self.workout_type}, "
-            f"Duration: {self.workout_duration} min, "
-            f"Intensity: {self.workout_intensity}, "
-            f"Calories: {self.calories_burned}, "
+            f"Duration: {self.workout_duration} min,\n"
+            f"Intensity: {self.workout_intensity},\n"
+            f"Calories: {self.calories_burned},\n"
             f"Notes: {self.notes}"
         )
