@@ -12,6 +12,7 @@ from services.actions import (
     view_goal_progress
 )
 from services.csv_exporter import export_workouts_to_csv
+from storage.data_manager import DataManager
 
 from utils.input_functions import ask_yes_no
 from utils.validators import validate_menu_choice
@@ -58,6 +59,10 @@ def display_menu():
 
 def main():
     fitness_tracker = FitnessTracker()
+    data_manager = DataManager()
+
+    # Load saved data
+    data_manager.load_tracker(fitness_tracker)
 
     while True:
         display_menu()
@@ -71,6 +76,7 @@ def main():
         match choice:
             case "1":
                 create_profile(fitness_tracker)
+                data_manager.save_tracker(fitness_tracker)
                 print(PROFILE_SAVED)
 
             case "2":
@@ -80,6 +86,7 @@ def main():
             case "3":
                 if ask_yes_no("Are you sure you want to clear your profile?"):
                     fitness_tracker.clear_profile()
+                    data_manager.save_tracker(fitness_tracker)
                     print(PROFILE_CLEARED)
 
                 else:
@@ -87,6 +94,7 @@ def main():
 
             case "4":
                 add_workout(fitness_tracker)
+                data_manager.save_tracker(fitness_tracker)
                 print(WORKOUT_ADDED)
 
             case "5":
@@ -113,6 +121,7 @@ def main():
             case "7":
                 if ask_yes_no("Are you sure you want to clear your workouts?"):
                     fitness_tracker.clear_workouts()
+                    data_manager.save_tracker(fitness_tracker)
                     print(ALL_WORKOUT_CLEARED)
 
                 else:
@@ -120,6 +129,7 @@ def main():
 
             case "8":
                 create_goal(fitness_tracker)
+                data_manager.save_tracker(fitness_tracker)
                 print(GOAL_SAVED)
 
             case "9":

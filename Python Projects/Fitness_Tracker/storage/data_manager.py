@@ -19,11 +19,14 @@ from utils.success_messages import (
 
 class DataManager:
 
-    def __init__(self, file_path = "data/fitness_data.json"):
+    def __init__(self, file_path="data/fitness_data.json"):
         self.file_path = file_path
 
     def create_file_if_missing(self):
-        os.makedirs(os.path.dirname(self.file_path), exist_ok=True)
+        directory = os.path.dirname(self.file_path)
+
+        if directory:
+            os.makedirs(directory, exist_ok=True)
 
         if not os.path.isfile(self.file_path):
             starter_data = {
@@ -33,51 +36,63 @@ class DataManager:
             }
 
             with open(self.file_path, "w") as file:
-                json.dump(starter_data, file, indent = 4)
+                json.dump(starter_data, file, indent=4)
 
-    def load_data(self):
+    def load_data(self, show_message=True):
         self.create_file_if_missing()
 
         try:
-            with open(self.file_path, 'r') as file:
+            with open(self.file_path, "r") as file:
                 data = json.load(file)
-            
+
+            if show_message:
                 print(FILE_LOAD)
-                return data
-        
+
+            return data
+
         except (OSError, json.JSONDecodeError):
-            print(FILE_LOAD_ERROR)
+
+            if show_message:
+                print(FILE_LOAD_ERROR)
+
             return None
 
-# save data
-    def save_data(self, data):
+    def save_data(self, data, show_message=True):
         self.create_file_if_missing()
 
         try:
-            with open(self.file_path, 'w') as file:
-                json.dump(data, file, indent = 4)
-            
-                print(FILE_SAVED)
-                
-        except OSError:
-            print(FILE_SAVE_ERROR)
+            with open(self.file_path, "w") as file:
+                json.dump(data, file, indent=4)
 
-# convert objects to json
+            if show_message:
+                print(FILE_SAVED)
+
+        except OSError:
+
+            if show_message:
+                print(FILE_SAVE_ERROR)
+
+    # Convert objects -> JSON
     def save_tracker(self, fitness_tracker):
+
         data = {
             "profile": None,
             "workouts": [],
             "goals": []
         }
 
+        # Profile
         if fitness_tracker.profile:
+
             data["profile"] = {
                 "name": fitness_tracker.profile.user_name,
                 "weight": fitness_tracker.profile.user_weight,
                 "weight_unit": fitness_tracker.profile.weight_unit
             }
 
+        # Workouts
         for workout in fitness_tracker.workouts:
+
             data["workouts"].append({
                 "date": str(workout.workout_date),
                 "type": workout.workout_type,
@@ -87,7 +102,9 @@ class DataManager:
                 "notes": workout.notes
             })
 
+        # Goals
         for goal in fitness_tracker.goals:
+
             data["goals"].append({
                 "count": goal.weekly_workout_count,
                 "duration": goal.weekly_duration,
@@ -95,10 +112,13 @@ class DataManager:
                 "type": goal.workout_type_goal
             })
 
+
         self.save_data(data)
 
+    # Convert JSON to objects
     def load_tracker(self, fitness_tracker):
-        data = self.load_data()
+
+        data = self.load_data(show_message=False)
 
         if data is None:
             return
@@ -109,6 +129,7 @@ class DataManager:
         profile_data = data.get("profile")
 
         if profile_data:
+
             fitness_tracker.profile = UserProfile(
                 profile_data["name"],
                 profile_data["weight"],
@@ -119,16 +140,14 @@ class DataManager:
         fitness_tracker.workouts.clear()
 
         for workout_data in data.get("workouts", []):
+
             workout = Workout(
                 workout_data["type"],
                 workout_data["duration"],
                 workout_data["intensity"],
                 workout_data["calories"],
-                workout_data["notes"]
-            )
-
-            workout.workout_date = date.fromisoformat(
-                workout_data["date"]
+                workout_data["notes"],
+                date.fromisoformat(workout_data["date"])
             )
 
             fitness_tracker.workouts.append(workout)
@@ -137,6 +156,7 @@ class DataManager:
         fitness_tracker.goals.clear()
 
         for goal_data in data.get("goals", []):
+
             goal = Goal(
                 goal_data["count"],
                 goal_data["duration"],
