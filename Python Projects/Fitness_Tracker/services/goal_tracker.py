@@ -39,22 +39,6 @@ class GoalTracker:
             for workout in self.workouts
         )
 
-        # Goal %'s
-        workout_percent = self._calculate_percentage(
-            total_workouts,
-            goal.weekly_workout_count
-        )
-
-        duration_percent = self._calculate_percentage(
-            total_duration,
-            goal.weekly_duration
-        )
-
-        calorie_percent = self._calculate_percentage(
-            total_calories,
-            goal.weekly_calories
-        )
-
         for index, goal in enumerate(self.goals, start=1):
 
             matching_type_count = 0
@@ -62,6 +46,22 @@ class GoalTracker:
             for workout in self.workouts:
                 if workout.workout_type == goal.workout_type_goal:
                     matching_type_count += 1
+
+            # Goal %'s
+            workout_percent = self._calculate_percentage(
+                total_workouts,
+                goal.weekly_workout_count
+            )
+            
+            duration_percent = self._calculate_percentage(
+                total_duration,
+                goal.weekly_duration
+            )
+            
+            calorie_percent = self._calculate_percentage(
+                total_calories,
+                goal.weekly_calories
+            )
 
             print(f"\nGoal Progress #{index}")
             print(
