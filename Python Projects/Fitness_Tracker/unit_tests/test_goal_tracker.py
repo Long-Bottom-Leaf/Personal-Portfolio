@@ -1,5 +1,3 @@
-# Test goal tracker service
-
 import sys
 import os
 import unittest
@@ -11,6 +9,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from models.workout import Workout
 from models.goal import Goal
 from services.goal_tracker import GoalTracker
+from utils.error_messages import NO_GOAL, NO_WORKOUT
 
 class TestGoalTracker(unittest.TestCase):
 
@@ -28,7 +27,7 @@ class TestGoalTracker(unittest.TestCase):
         with redirect_stdout(output):
             goal_tracker.show_goal_progress()
 
-        self.assertTrue("NO_GOAL", output.getvalue())
+        self.assertIn(NO_GOAL, output.getvalue())
 
     def test_no_workouts(self):
         workouts = []
@@ -44,7 +43,7 @@ class TestGoalTracker(unittest.TestCase):
         with redirect_stdout(output):
             goal_tracker.show_goal_progress()
 
-        self.assertTrue("NO_WORKOUT", output.getvalue())
+        self.assertIn(NO_WORKOUT, output.getvalue())
 
     def test_goal_progress(self):
         workouts = [
@@ -66,10 +65,11 @@ class TestGoalTracker(unittest.TestCase):
         result = output.getvalue()
 
         self.assertIn("Goal Progress #1", result)
-        self.assertIn("Workout Count: 2/4", result)
-        self.assertIn("Duration: 75/120 minutes", result)
-        self.assertIn("Calories Burned: 1012/1500 kcal", result)
+        self.assertIn("Workout Count: 2/4 (50.0%)", result)
+        self.assertIn("Duration: 75/120 minutes (62.5%)", result)
+        self.assertIn("Calories Burned: 1012/1500 kcal (67.5%)", result)
         self.assertIn("Running Workouts: 1", result)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
