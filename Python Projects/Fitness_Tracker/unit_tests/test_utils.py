@@ -1,5 +1,3 @@
-# Test utils
-
 import sys
 import os
 import unittest

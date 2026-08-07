@@ -1,5 +1,3 @@
-# Test fitness tracker service
-
 import sys
 import os
 import unittest

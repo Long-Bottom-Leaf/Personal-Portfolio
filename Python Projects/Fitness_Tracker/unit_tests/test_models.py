@@ -1,4 +1,3 @@
-# Test program models
 import sys
 import os
 import unittest

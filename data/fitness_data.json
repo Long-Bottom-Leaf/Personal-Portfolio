@@ -1,0 +1,18 @@
+{
+    "profile": {
+        "name": "asdf",
+        "weight": 234.0,
+        "weight_unit": "kgs"
+    },
+    "workouts": [
+        {
+            "date": "2026-08-07",
+            "type": "Cycling",
+            "duration": 30.0,
+            "intensity": "medium",
+            "calories": 796,
+            "notes": "morning cycle"
+        }
+    ],
+    "goals": []
+}

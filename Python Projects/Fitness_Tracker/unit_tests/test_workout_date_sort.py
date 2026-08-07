@@ -1,5 +1,3 @@
-# Test workout date sorter
-
 import sys
 import os
 import unittest

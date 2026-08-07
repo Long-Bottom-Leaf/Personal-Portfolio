@@ -1,4 +1,4 @@
-# Store data as JSON file, can update to SQL later
+# Save data manager
 
 import json
 import os
@@ -72,7 +72,6 @@ class DataManager:
             if show_message:
                 print(FILE_SAVE_ERROR)
 
-    # Convert objects -> JSON
     def save_tracker(self, fitness_tracker):
 
         data = {
@@ -81,7 +80,6 @@ class DataManager:
             "goals": []
         }
 
-        # Profile
         if fitness_tracker.profile:
 
             data["profile"] = {
@@ -90,7 +88,6 @@ class DataManager:
                 "weight_unit": fitness_tracker.profile.weight_unit
             }
 
-        # Workouts
         for workout in fitness_tracker.workouts:
 
             data["workouts"].append({
@@ -102,7 +99,6 @@ class DataManager:
                 "notes": workout.notes
             })
 
-        # Goals
         for goal in fitness_tracker.goals:
 
             data["goals"].append({
@@ -115,7 +111,6 @@ class DataManager:
 
         self.save_data(data)
 
-    # Convert JSON to objects
     def load_tracker(self, fitness_tracker):
 
         data = self.load_data(show_message=False)
@@ -123,7 +118,6 @@ class DataManager:
         if data is None:
             return
 
-        # Profile
         fitness_tracker.profile = None
 
         profile_data = data.get("profile")
@@ -136,7 +130,6 @@ class DataManager:
                 profile_data["weight_unit"]
             )
 
-        # Workouts
         fitness_tracker.workouts.clear()
 
         for workout_data in data.get("workouts", []):
@@ -152,7 +145,6 @@ class DataManager:
 
             fitness_tracker.workouts.append(workout)
 
-        # Goals
         fitness_tracker.goals.clear()
 
         for goal_data in data.get("goals", []):

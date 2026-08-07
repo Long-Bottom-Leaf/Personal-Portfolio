@@ -1,5 +1,3 @@
-# Test data manager service
-
 import sys
 import os
 import unittest

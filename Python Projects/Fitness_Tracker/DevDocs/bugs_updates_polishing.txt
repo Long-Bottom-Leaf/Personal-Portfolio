@@ -2,12 +2,6 @@
 
 update add workout to be a scheduler, use date format helper
 
-implement data manager for json
-
-==== Low Priority ====
-
-enable multiple profile storage/viewing
-
 ==== Final Polish ====
 
     - Final bug testing
@@ -53,3 +47,5 @@ view workouts/goals printout better
 create success message file like error messages
 
 data manager can print load/save messages
+
+implement data manager for json

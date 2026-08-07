@@ -1,5 +1,3 @@
-# Test calories calculator service
-
 import sys
 import os
 import unittest
