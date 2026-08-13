@@ -1,0 +1,6 @@
+Just a small calculator program to reinforce some basics.
+
+add, subtract, multiply, divide
+more than 2 numbers
+
+roots, percentages, more complicated math ex calculate interest
