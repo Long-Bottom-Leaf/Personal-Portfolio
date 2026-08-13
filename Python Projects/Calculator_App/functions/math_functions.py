@@ -1,13 +1,13 @@
 # Math functions for main
 
-def add(x, y):
-    return x + y
+def add(num1, num2):
+    return num1 + num2
 
-def subtract(x, y):
-    return x - y
+def subtract(num1, num2):
+    return num1 - num2
 
-def multiply(x, y):
-    return x * y
+def multiply(num1, num2):
+    return num1 * num2
 
-def divide(x, y):
-    return x / y
+def divide(num1, num2):
+    return num1 / num2

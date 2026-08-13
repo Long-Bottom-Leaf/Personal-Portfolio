@@ -36,20 +36,20 @@ def main():
             print("Goodbye!")
             break
 
-        x = float(input("Enter first number: "))
-        y = float(input("Enter second number: "))
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
 
         if choice == "1":
-            print(f"Result: {add(x, y)}")
+            print(f"Result: {add(num1, num2)}")
 
         elif choice == "2":
-            print(f"Result: {subtract(x, y)}")
+            print(f"Result: {subtract(num1, num2)}")
 
         elif choice == "3":
-            print(f"Result: {multiply(x, y)}")
+            print(f"Result: {multiply(num1, num2)}")
 
         elif choice == "4":
-            print(f"Result: {divide(x, y)}")
+            print(f"Result: {divide(num1, num2)}")
 
 if __name__ == "__main__":
     main()
