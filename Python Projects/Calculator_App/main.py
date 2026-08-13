@@ -40,16 +40,20 @@ def main():
         num2 = float(input("Enter second number: "))
 
         if choice == "1":
-            print(f"Result: {add(num1, num2)}")
+            result = add(num1, num2)
+            print(f"{num1} + {num2} = {result}")
 
         elif choice == "2":
-            print(f"Result: {subtract(num1, num2)}")
+            result = subtract(num1, num2)
+            print(f"{num1} - {num2} = {result}")
 
         elif choice == "3":
-            print(f"Result: {multiply(num1, num2)}")
+            result = multiply(num1, num2)
+            print(f"{num1} + {num2} = {result}")
 
         elif choice == "4":
-            print(f"Result: {divide(num1, num2)}")
+            result = divide(num1, num2)
+            print(f"{num1} + {num2} = {result}")
 
 if __name__ == "__main__":
     main()
