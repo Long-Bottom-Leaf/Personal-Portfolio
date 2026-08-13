@@ -1,6 +1,32 @@
-Just a small calculator program to reinforce some basics.
+Calculator
 
-add, subtract, multiply, divide
-more than 2 numbers
+Phase 1 - Basic Operations
+- Add
+- Subtract
+- Multiply
+- Divide
+- More than 2 numbers
 
-roots, percentages, more complicated math ex calculate interest
+Phase 2 - Input & Error Handling
+- Validate menu choices
+- Validate numbers
+- Handle division by zero
+- Improve error messages
+
+Phase 3 - More Math
+- Square roots
+- Powers
+- Percentages
+- Absolute values
+- Other math functions
+
+Phase 4 - Financial Calculations
+- Simple interest
+- Compound interest
+- Loan/payment calculations
+
+Phase 5 - Polish
+- Improve CLI menu
+- Unit tests
+- README
+- Clean up code
