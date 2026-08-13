@@ -1,0 +1,51 @@
+==== Med Priority ====
+
+update add workout to be a scheduler, use date format helper
+
+==== Final Polish ====
+
+    - Final bug testing
+    - Update README
+    - Clean comments/docstrings
+    - Remove unused imports
+    - Run unit tests, add any necessary
+
+==== FINISHED ====
+
+saving workout/profile txt/saving buffer etc AFTER actually saving, probably move them to their respective functions
+
+name validation
+
+loading buffer - saving buffer, just something to give response to user within the CLI
+
+add confirmation before clearing information
+
+extract menu validation functions to their own file
+
+display a message when there are no workouts or goals, instead of a blank section
+
+sort workouts by date before displaying/exporting -- unit test
+
+use favorite workout
+
+show the percentage of each goal completed
+
+improve workout summary
+    - Favorite workout
+    - Longest workout
+    - Highest calorie workout
+    - Average duration
+    - Average calories
+    - Total workouts
+
+update exporting message and other export/data storage upgrades
+
+CLI menu polish
+
+view workouts/goals printout better
+
+create success message file like error messages
+
+data manager can print load/save messages
+
+implement data manager for json

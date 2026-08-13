@@ -13,4 +13,8 @@ class UserProfile:
 
     def __str__(self):
 
-        return f"Name: {self.user_name}, Weight: {self.user_weight} {self.weight_unit}, Profile created on: {self.profile_creation}"
+        return (
+            f"Name: {self.user_name}\n"
+            f"Weight: {self.user_weight} {self.weight_unit}\n"
+            f"Profile created on: {self.profile_creation}"
+        )

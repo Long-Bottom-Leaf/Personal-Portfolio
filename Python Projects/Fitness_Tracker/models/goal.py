@@ -12,8 +12,8 @@ class Goal:
     def __str__(self):
 
         return (
-            f"Workout Count: {self.weekly_workout_count}, "
-            f"Weekly Duration: {self.weekly_duration} min, "
-            f"Weekly Calories: {self.weekly_calories}, kcal"
+            f"Workout Count: {self.weekly_workout_count},\n"
+            f"Weekly Duration: {self.weekly_duration} min,\n"
+            f"Weekly Calories: {self.weekly_calories} kcal,\n"
             f"Workout Type Goal: {self.workout_type_goal}"
         )

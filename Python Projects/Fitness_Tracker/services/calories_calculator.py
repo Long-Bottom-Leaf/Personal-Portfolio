@@ -34,14 +34,14 @@ MET_VALUES = {
 }
 
 def calculate_calories(workout_type, intensity, weight, duration, weight_unit):
-    if weight_unit == 'lbs':
+    if weight_unit.strip().lower() == 'lbs':
         weight_kg = weight / 2.20462  # Convert pounds to kg
     else:
         weight_kg = weight
 
     duration_hours = duration / 60
 
-    met = MET_VALUES[workout_type][intensity.lower()]
+    met = MET_VALUES[workout_type][intensity.strip().lower()]
 
     calories = met * weight_kg * duration_hours
 
