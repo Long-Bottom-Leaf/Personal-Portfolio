@@ -1,13 +1,28 @@
-# Math functions for main
+# Math functions
 
-def add(num1, num2):
-    return num1 + num2
+def add(*numbers):
+    return sum(numbers)
 
-def subtract(num1, num2):
-    return num1 - num2
+def subtract(first, *numbers):
+    result = first
 
-def multiply(num1, num2):
-    return num1 * num2
+    for number in numbers:
+        result -= number
 
-def divide(num1, num2):
-    return num1 / num2
+    return result
+
+def multiply(*numbers):
+    result = 1
+
+    for number in numbers:
+        result *= number
+
+    return result
+
+def divide(first, *numbers):
+    result = first
+
+    for number in numbers:
+        result /= number
+
+    return result

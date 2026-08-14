@@ -1,10 +1,7 @@
 Calculator
 
 Phase 1 - Basic Operations
-- Add
-- Subtract
-- Multiply
-- Divide
+
 - More than 2 numbers
 
 Phase 2 - Input & Error Handling
@@ -30,3 +27,10 @@ Phase 5 - Polish
 - Unit tests
 - README
 - Clean up code
+
+Finished
+
+- Add
+- Subtract
+- Multiply
+- Divide
