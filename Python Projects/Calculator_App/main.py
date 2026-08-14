@@ -36,24 +36,24 @@ def main():
             print("Goodbye!")
             break
 
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+        numbers = input("Enter numbers separated by spaces: ")
+        numbers = [float(number) for number in numbers.split()]
 
         if choice == "1":
-            result = add(num1, num2)
-            print(f"{num1} + {num2} = {result}")
+            result = add(*numbers)
+            print(f"{numbers[0]} + {numbers[1]} = {result}")
 
         elif choice == "2":
-            result = subtract(num1, num2)
-            print(f"{num1} - {num2} = {result}")
+            result = subtract(numbers[0], numbers[1])
+            print(f"{numbers[0]} - {numbers[1]} = {result}")
 
         elif choice == "3":
-            result = multiply(num1, num2)
-            print(f"{num1} + {num2} = {result}")
+            result = multiply(numbers[0], numbers[1])
+            print(f"{numbers[0]} * {numbers[1]} = {result}")
 
         elif choice == "4":
-            result = divide(num1, num2)
-            print(f"{num1} + {num2} = {result}")
+            result = divide(numbers[0], numbers[1])
+            print(f"{numbers[0]} / {numbers[1]} = {result}")
 
 if __name__ == "__main__":
     main()
