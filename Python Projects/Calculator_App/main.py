@@ -49,7 +49,7 @@ def main():
 
         elif choice == "3":
             result = multiply(numbers[0], numbers[1])
-            print(f"{numbers[0]} * {numbers[1]} = {result}")
+            print(f"{numbers[0]} x {numbers[1]} = {result}")
 
         elif choice == "4":
             result = divide(numbers[0], numbers[1])
