@@ -23,6 +23,9 @@ def divide(first, *numbers):
     result = first
 
     for number in numbers:
+        if number == 0:
+            raise ZeroDivisionError
+
         result /= number
 
     return result

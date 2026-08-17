@@ -1,9 +1,5 @@
 Calculator
 
-Phase 1 - Basic Operations
-
-- More than 2 numbers
-
 Phase 2 - Input & Error Handling
 - Validate menu choices
 - Validate numbers
@@ -34,3 +30,5 @@ Finished
 - Subtract
 - Multiply
 - Divide
+
+- More than 2 numbers
