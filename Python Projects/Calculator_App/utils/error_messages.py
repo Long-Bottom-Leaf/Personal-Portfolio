@@ -5,6 +5,11 @@ INVALID_CHOICE = (
     "Error: Invalide choice, please enter a valid menu choice!"
 )
 
+# Number Validations
+INVALID_NUMBER = (
+    "Error: Invalid number. Please enter a valid number."
+)
+
 # Number/Math errors
 DIVIDE_BY_0 = (
     "Error: Cannot divide by zero!"

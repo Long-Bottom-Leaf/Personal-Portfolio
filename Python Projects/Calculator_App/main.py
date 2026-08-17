@@ -6,9 +6,16 @@ from functions.math_functions import (
     multiply,
     divide
 )
-from utils.validators import validate_menu_choice
+
+from utils.validators import (
+    validate_menu_choice,
+    validate_number
+)
+
 from utils.error_messages import (
-    INVALID_CHOICE
+    INVALID_CHOICE,
+    INVALID_NUMBER,
+    DIVIDE_BY_0
 )
 
 def display_menu():
@@ -36,8 +43,14 @@ def main():
             print("Goodbye!")
             break
 
-        numbers = input("Enter numbers separated by spaces: ")
-        numbers = [float(number) for number in numbers.split()]
+        number_input = input("Enter numbers separated by spaces: ")
+        number_strings = number_input.split()
+
+        if not all(validate_number(number) for number in number_strings):
+            print(INVALID_NUMBER)
+            continue
+
+        numbers = [float(number) for number in number_strings]
 
         if choice == "1":
             result = add(*numbers)
@@ -52,8 +65,12 @@ def main():
             print(f"{numbers[0]} x {numbers[1]} = {result}")
 
         elif choice == "4":
-            result = divide(numbers[0], numbers[1])
-            print(f"{numbers[0]} / {numbers[1]} = {result}")
+            try:
+                result = divide(*numbers)
+                print(f"{numbers[0]} / ... = {result}")
+
+            except ZeroDivisionError:
+                print(DIVIDE_BY_0)
 
 if __name__ == "__main__":
     main()
