@@ -14,3 +14,7 @@ INVALID_NUMBER = (
 DIVIDE_BY_0 = (
     "Error: Cannot divide by zero!"
 )
+
+INVALID_SQUARE_ROOT = (
+    "Error: Cannot calculate the square root of a negative number."
+)

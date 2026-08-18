@@ -1,11 +1,5 @@
 Calculator
 
-Phase 2 - Input & Error Handling
-- Validate menu choices
-- Validate numbers
-- Handle division by zero
-- Improve error messages
-
 Phase 3 - More Math
 - Square roots
 - Powers
@@ -32,3 +26,8 @@ Finished
 - Divide
 
 - More than 2 numbers
+
+- Validate menu choices
+- Validate numbers
+- Handle division by zero
+- Improve error messages

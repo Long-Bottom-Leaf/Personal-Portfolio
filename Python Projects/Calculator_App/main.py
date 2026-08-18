@@ -6,12 +6,10 @@ from functions.math_functions import (
     multiply,
     divide
 )
-
 from utils.validators import (
     validate_menu_choice,
     validate_number
 )
-
 from utils.error_messages import (
     INVALID_CHOICE,
     INVALID_NUMBER,

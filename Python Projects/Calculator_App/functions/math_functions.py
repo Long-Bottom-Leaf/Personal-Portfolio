@@ -1,5 +1,7 @@
 # Math functions
+import math
 
+# Basic
 def add(*numbers):
     return sum(numbers)
 
@@ -12,12 +14,7 @@ def subtract(first, *numbers):
     return result
 
 def multiply(*numbers):
-    result = 1
-
-    for number in numbers:
-        result *= number
-
-    return result
+    return math.prod(numbers)
 
 def divide(first, *numbers):
     result = first
@@ -29,3 +26,16 @@ def divide(first, *numbers):
         result /= number
 
     return result
+
+# Advanced
+def square_root(number):
+    return math.sqrt(number)
+
+def power(base, exponent):
+    return base ** exponent
+
+def percent(number, percent):
+    return number * (percent/100)
+
+def aboslute_value(number):
+    return abs(number)
