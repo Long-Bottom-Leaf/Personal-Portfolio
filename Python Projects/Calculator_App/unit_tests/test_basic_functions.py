@@ -41,5 +41,9 @@ class TestBasicFunctions(unittest.TestCase):
     def test_division_multiple_numbers(self):
         self.assertEqual(divide(100, 2, 5), 10)
 
+    def test_division_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            divide(10, 0)
+
 if __name__ == "__main__":
     unittest.main()
