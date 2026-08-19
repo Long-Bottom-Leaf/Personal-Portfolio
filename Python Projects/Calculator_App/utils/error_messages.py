@@ -10,6 +10,14 @@ INVALID_NUMBER = (
     "Error: Invalid number. Please enter a valid number."
 )
 
+INVALID_NUMBER_COUNT = (
+    "Error: Invalid number of inputs. Please enter exactly the required number."
+)
+
+INVALID_MINIMUM_NUMBERS = (
+    "Error: Not enough numbers. Please enter at least 2 numbers."
+)
+
 # Number/Math errors
 DIVIDE_BY_0 = (
     "Error: Cannot divide by zero!"
