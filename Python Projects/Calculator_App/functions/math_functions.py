@@ -39,3 +39,7 @@ def percent(number, percent):
 
 def absolute_value(number):
     return abs(number)
+
+# Financial
+def simple_interest(principal, rate, time):
+    return principal * (rate / 100) * time

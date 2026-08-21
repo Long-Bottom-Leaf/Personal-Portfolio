@@ -8,7 +8,8 @@ from functions.math_functions import (
     square_root,
     power,
     percent,
-    absolute_value
+    absolute_value,
+    simple_interest
 )
 from utils.validators import (
     validate_menu_choice,
@@ -37,7 +38,8 @@ def display_menu():
     print("6. Power")
     print("7. Percent")
     print("8. Absolute Value")
-    print("9. Exit")
+    print("9. Simple Interest")
+    print("10. Exit")
 
 def main():
 
@@ -46,11 +48,11 @@ def main():
 
         choice = input("Enter choice: ")
 
-        if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7", "8", "9"]):
+        if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]):
             print(INVALID_CHOICE)
             continue
 
-        if choice == "9":
+        if choice == "10":
             print("Goodbye!")
             break
 
@@ -136,6 +138,13 @@ def main():
 
             result = absolute_value(numbers[0])
             print(f"Absolute Value: {result}")
+
+        elif choice == "9":
+            if not validate_number_count(numbers, 3):
+                print(INVALID_NUMBER_COUNT)
+                continue
+
+            result = simple
 
 if __name__ == "__main__":
     main()
