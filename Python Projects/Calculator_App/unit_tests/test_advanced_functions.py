@@ -8,7 +8,7 @@ from functions.math_functions import (
     square_root,
     power,
     percent,
-    aboslute_value
+    absolute_value
 )
 
 class TestAdvancedFunctions(unittest.TestCase):
@@ -27,7 +27,7 @@ class TestAdvancedFunctions(unittest.TestCase):
         self.assertEqual(percent(200, 15), 30)
 
     def test_absolute_value(self):
-        self.assertEqual(aboslute_value(-25), 25)
+        self.assertEqual(absolute_value(-25), 25)
 
 if __name__ == "__main__":
     unittest.main()

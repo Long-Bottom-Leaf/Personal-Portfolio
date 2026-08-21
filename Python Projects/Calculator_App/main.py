@@ -7,18 +7,22 @@ from functions.math_functions import (
     divide,
     square_root,
     power,
-    percentage,
+    percent,
     absolute_value
 )
 from utils.validators import (
     validate_menu_choice,
-    validate_number
+    validate_number,
+    validate_minimum_numbers,
+    validate_number_count
 )
 from utils.error_messages import (
     INVALID_CHOICE,
     INVALID_NUMBER,
     DIVIDE_BY_0,
-    INVALID_SQUARE_ROOT
+    INVALID_SQUARE_ROOT,
+    INVALID_MINIMUM_NUMBERS,
+    INVALID_NUMBER_COUNT
 )
 
 def display_menu():
@@ -60,19 +64,35 @@ def main():
         numbers = [float(number) for number in number_strings]
 
         if choice == "1":
+            if not validate_minimum_numbers(numbers, 2):
+                print(INVALID_MINIMUM_NUMBERS)
+                continue
+
             result = add(*numbers)
             print(f"{numbers[0]} + {numbers[1]} = {result}")
 
         elif choice == "2":
+            if not validate_minimum_numbers(numbers, 2):
+                print(INVALID_MINIMUM_NUMBERS)
+                continue
+            
             result = subtract(*numbers)
             print(f"{numbers[0]} - {numbers[1]} = {result}")
 
         elif choice == "3":
+            if not validate_minimum_numbers(numbers, 2):
+                print(INVALID_MINIMUM_NUMBERS)
+                continue
+            
             result = multiply(*numbers)
             print(f"{numbers[0]} x {numbers[1]} = {result}")
 
         elif choice == "4":
             try:
+                if not validate_minimum_numbers(numbers, 2):
+                    print(INVALID_MINIMUM_NUMBERS)
+                    continue
+
                 result = divide(*numbers)
                 print(f"{numbers[0]} / ... = {result}")
 
@@ -81,6 +101,10 @@ def main():
 
         elif choice == "5":
             try:
+                if not validate_number_count(numbers, 1):
+                    print(INVALID_NUMBER_COUNT)
+                    continue
+
                 result = square_root(float(numbers[0]))
                 print(f"Square Root: {result}")
 
@@ -90,14 +114,26 @@ def main():
             continue
 
         elif choice == "6":
+            if not validate_number_count(numbers, 2):
+                print(INVALID_NUMBER_COUNT)
+                continue
+
             result = power(numbers[0], numbers[1])
             print(f"Result: {result}")
 
         elif choice == "7":
-            result = percentage(numbers[0], numbers[1])
+            if not validate_number_count(numbers, 2):
+                print(INVALID_NUMBER_COUNT)
+                continue
+
+            result = percent(numbers[0], numbers[1])
             print(f"Result: {result}%")
 
         elif choice == "8":
+            if not validate_number_count(numbers, 1):
+                print(INVALID_NUMBER_COUNT)
+                continue
+
             result = absolute_value(numbers[0])
             print(f"Absolute Value: {result}")
 

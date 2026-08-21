@@ -37,5 +37,5 @@ def power(base, exponent):
 def percent(number, percent):
     return number * (percent/100)
 
-def aboslute_value(number):
+def absolute_value(number):
     return abs(number)

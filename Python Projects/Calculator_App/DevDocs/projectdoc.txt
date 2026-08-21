@@ -1,12 +1,5 @@
 Calculator
 
-Phase 3 - More Math
-- Square roots
-- Powers
-- Percentages
-- Absolute values
-- Other math functions
-
 Phase 4 - Financial Calculations
 - Simple interest
 - Compound interest
@@ -32,3 +25,9 @@ Finished
 - Validate numbers
 - Handle division by zero
 - Improve error messages
+
+- Square roots
+- Powers
+- Percentages
+- Absolute values
+- Other math functions
