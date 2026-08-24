@@ -15,7 +15,7 @@ from utils.validators import (
     validate_menu_choice,
     validate_number,
     validate_minimum_numbers,
-    validate_number_count
+    get_valid_number
 )
 from utils.error_messages import (
     INVALID_CHOICE,
@@ -56,16 +56,16 @@ def main():
             print("Goodbye!")
             break
 
-        number_input = input("Enter numbers separated by spaces: ")
-        number_strings = number_input.split()
-
-        if not all(validate_number(number) for number in number_strings):
-            print(INVALID_NUMBER)
-            continue
-
-        numbers = [float(number) for number in number_strings]
-
         if choice == "1":
+            number_input = input("Enter numbers seperated by spaces: ")
+            number_string = number_input.split()
+
+            if not all(validate_number(number) for number in number_string):
+                print(INVALID_NUMBER)
+                continue
+
+            numbers = [float(number) for number in number_string]
+
             if not validate_minimum_numbers(numbers, 2):
                 print(INVALID_MINIMUM_NUMBERS)
                 continue
@@ -74,9 +74,14 @@ def main():
             print(f"{numbers[0]} + {numbers[1]} = {result}")
 
         elif choice == "2":
-            if not validate_minimum_numbers(numbers, 2):
-                print(INVALID_MINIMUM_NUMBERS)
+            number_input = input("Enter numbers seperated by spaces: ")
+            number_string = number_input.split()
+            
+            if not all(validate_number(number) for number in number_string):
+                print(INVALID_NUMBER)
                 continue
+            
+            numbers = [float(number) for number in number_string]
             
             result = subtract(*numbers)
             print(f"{numbers[0]} - {numbers[1]} = {result}")
@@ -144,7 +149,7 @@ def main():
                 print(INVALID_NUMBER_COUNT)
                 continue
 
-            result = simple
+            result = simple_interest()
 
 if __name__ == "__main__":
     main()

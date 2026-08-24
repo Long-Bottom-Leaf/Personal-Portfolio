@@ -1,5 +1,7 @@
 # Validations for numbers, menu choices, etc
 
+from utils.error_messages import INVALID_NUMBER
+
 def validate_menu_choice(choice, valid_choices):
     return choice.strip() in valid_choices
 
@@ -14,5 +16,11 @@ def validate_number(value):
 def validate_minimum_numbers(numbers, minimum):
     return len(numbers) >= minimum
 
-def validate_number_count(numbers, required_count):
-    return len(numbers) == required_count
+def get_valid_number(prompt):
+    while True:
+        value = input(prompt)
+
+        if validate_number(value):
+            return float(value)
+
+        print(INVALID_NUMBER)
