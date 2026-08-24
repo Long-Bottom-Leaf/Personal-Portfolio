@@ -22,8 +22,7 @@ from utils.error_messages import (
     INVALID_NUMBER,
     DIVIDE_BY_0,
     INVALID_SQUARE_ROOT,
-    INVALID_MINIMUM_NUMBERS,
-    INVALID_NUMBER_COUNT
+    INVALID_MINIMUM_NUMBERS
 )
 
 def display_menu():
@@ -56,6 +55,7 @@ def main():
             print("Goodbye!")
             break
 
+        # Addition
         if choice == "1":
             number_input = input("Enter numbers seperated by spaces: ")
             number_string = number_input.split()
@@ -73,6 +73,7 @@ def main():
             result = add(*numbers)
             print(f"{numbers[0]} + {numbers[1]} = {result}")
 
+        # Subtraction
         elif choice == "2":
             number_input = input("Enter numbers seperated by spaces: ")
             number_string = number_input.split()
@@ -82,11 +83,25 @@ def main():
                 continue
             
             numbers = [float(number) for number in number_string]
+
+            if not validate_minimum_numbers(numbers, 2):
+                print(INVALID_MINIMUM_NUMBERS)
+                continue
             
             result = subtract(*numbers)
             print(f"{numbers[0]} - {numbers[1]} = {result}")
 
+        # Multiplication
         elif choice == "3":
+            number_input = input("Enter numbers seperated by spaces: ")
+            number_string = number_input.split()
+                        
+            if not all(validate_number(number) for number in number_string):
+                print(INVALID_NUMBER)
+                continue
+                        
+            numbers = [float(number) for number in number_string]
+            
             if not validate_minimum_numbers(numbers, 2):
                 print(INVALID_MINIMUM_NUMBERS)
                 continue
@@ -94,62 +109,73 @@ def main():
             result = multiply(*numbers)
             print(f"{numbers[0]} x {numbers[1]} = {result}")
 
+        # Division
         elif choice == "4":
+            number_input = input("Enter numbers seperated by spaces: ")
+            number_string = number_input.split()
+                        
+            if not all(validate_number(number) for number in number_string):
+                print(INVALID_NUMBER)
+                continue
+                        
+            numbers = [float(number) for number in number_string]
+            
+            if not validate_minimum_numbers(numbers, 2):
+                print(INVALID_MINIMUM_NUMBERS)
+                continue
+            
             try:
-                if not validate_minimum_numbers(numbers, 2):
-                    print(INVALID_MINIMUM_NUMBERS)
-                    continue
-
                 result = divide(*numbers)
-                print(f"{numbers[0]} / ... = {result}")
+                print(f"{numbers[0]} / {numbers[1]} = {result}")
 
             except ZeroDivisionError:
                 print(DIVIDE_BY_0)
 
+        # Square Root
         elif choice == "5":
-            try:
-                if not validate_number_count(numbers, 1):
-                    print(INVALID_NUMBER_COUNT)
-                    continue
+            number = get_valid_number("Enter number: ")
 
-                result = square_root(float(numbers[0]))
+            try:
+                result = square_root(number)
                 print(f"Square Root: {result}")
 
             except ValueError:
                 print(INVALID_SQUARE_ROOT)
 
-            continue
-
+        # Exponent
         elif choice == "6":
-            if not validate_number_count(numbers, 2):
-                print(INVALID_NUMBER_COUNT)
-                continue
+            base = get_valid_number("Enter base: ")
+            exponent = get_valid_number("Enter exponent: ")
 
-            result = power(numbers[0], numbers[1])
-            print(f"Result: {result}")
+            result = power(base, exponent)
+            print(f"{base} ^ {exponent} = {result}")
 
+        # Percent
         elif choice == "7":
-            if not validate_number_count(numbers, 2):
-                print(INVALID_NUMBER_COUNT)
-                continue
+            number = get_valid_number("Enter number: ")
+            percentage = get_valid_number("Enter percentage: ")
 
-            result = percent(numbers[0], numbers[1])
-            print(f"Result: {result}%")
+            result = percent(number, percentage)
+            print(f"{percentage}% of {number} = {result}")
 
+        # Absolute Value
         elif choice == "8":
-            if not validate_number_count(numbers, 1):
-                print(INVALID_NUMBER_COUNT)
-                continue
+            number = get_valid_number("Enter number: ")
 
-            result = absolute_value(numbers[0])
+            result = absolute_value(number)
             print(f"Absolute Value: {result}")
 
+        # Interest
         elif choice == "9":
-            if not validate_number_count(numbers, 3):
-                print(INVALID_NUMBER_COUNT)
-                continue
+            principal = get_valid_number("Enter principal: ")
+            rate = get_valid_number("Enter interest rate (%): ")
+            time = get_valid_number("Enter time (years): ")
 
-            result = simple_interest()
+            result = simple_interest(principal, rate, time)
+            total = principal + result
+
+            print(f"Interest: ${result:.2f}")
+            print(f"Total Amount: ${total:.2f}")
 
 if __name__ == "__main__":
     main()
