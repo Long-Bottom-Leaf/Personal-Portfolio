@@ -19,5 +19,8 @@ class TestFinancialFunctions(unittest.TestCase):
     def test_simple_interest_zero_time(self):
         self.assertEqual(simple_interest(1000, 5, 0), 0)
 
+    def test_compound_interest(self):
+        self.assertEqual
+
 if __name__ == "__main__":
     unittest.main()

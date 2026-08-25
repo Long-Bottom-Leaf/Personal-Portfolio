@@ -22,3 +22,7 @@ DIVIDE_BY_0 = (
 INVALID_SQUARE_ROOT = (
     "Error: Cannot calculate the square root of a negative number."
 )
+
+INVALID_COMPOUND_PERIOD = (
+    "Error: Compounding periods must be greater than 0."
+)

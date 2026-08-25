@@ -13,6 +13,9 @@ def validate_number(value):
     except ValueError:
         return False
 
+def validate_positive_number(number):
+    return number > 0
+
 def validate_minimum_numbers(numbers, minimum):
     return len(numbers) >= minimum
 

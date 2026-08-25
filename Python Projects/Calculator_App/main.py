@@ -16,14 +16,16 @@ from utils.validators import (
     validate_menu_choice,
     validate_number,
     validate_minimum_numbers,
-    get_valid_number
+    get_valid_number,
+    validate_positive_number
 )
 from utils.error_messages import (
     INVALID_CHOICE,
     INVALID_NUMBER,
     DIVIDE_BY_0,
     INVALID_SQUARE_ROOT,
-    INVALID_MINIMUM_NUMBERS
+    INVALID_MINIMUM_NUMBERS,
+    INVALID_COMPOUND_PERIOD
 )
 
 def display_menu():
@@ -38,7 +40,7 @@ def display_menu():
     print("6. Power")
     print("7. Percent")
     print("8. Absolute Value")
-    print("9. Simple Interest")
+    print("9. Interest")
     print("10. Exit")
 
 def interest_menu():
@@ -181,7 +183,7 @@ def main():
 
             interest_choice = input("Enter choice: ")
             
-            if not validate_menu_choice(choice, ["1", "2"]):
+            if not validate_menu_choice(interest_choice, ["1", "2"]):
                 print(INVALID_CHOICE)
                 continue
 
@@ -192,22 +194,26 @@ def main():
             if interest_choice == "1":
                 result = simple_interest(principal, rate, time)
                 total = principal + result
-
+                
                 print(f"Interest Earned: ${result:.2f}")
                 print(f"Total Amount: ${total:.2f}")
-
+                
             elif interest_choice == "2":
                 compound_period = get_valid_number("Enter compounding periods per year: ")
 
+                if not validate_positive_number(compound_period):
+                    print(INVALID_COMPOUND_PERIOD)
+                    continue
+                
                 result = compound_interest(
                     principal,
                     rate,
                     compound_period,
                     time
                 )
-
+                
                 interest = result - principal
-
+                
                 print(f"Interest Earned: ${interest:.2f}")
                 print(f"Total Amount: ${result:.2f}")
 
