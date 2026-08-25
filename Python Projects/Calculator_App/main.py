@@ -9,7 +9,8 @@ from functions.math_functions import (
     power,
     percent,
     absolute_value,
-    simple_interest
+    simple_interest,
+    compound_interest
 )
 from utils.validators import (
     validate_menu_choice,
@@ -40,6 +41,11 @@ def display_menu():
     print("9. Simple Interest")
     print("10. Exit")
 
+def interest_menu():
+
+    print("\n1. Simple Interest")
+    print("2. Compound Interest")
+
 def main():
 
     while True:
@@ -57,7 +63,7 @@ def main():
 
         # Addition
         if choice == "1":
-            number_input = input("Enter numbers seperated by spaces: ")
+            number_input = input("Enter numbers separated by spaces: ")
             number_string = number_input.split()
 
             if not all(validate_number(number) for number in number_string):
@@ -71,11 +77,12 @@ def main():
                 continue
 
             result = add(*numbers)
-            print(f"{numbers[0]} + {numbers[1]} = {result}")
+            expression = " + ".join(str(number) for number in numbers)
+            print(f"{expression} = {result}")
 
         # Subtraction
         elif choice == "2":
-            number_input = input("Enter numbers seperated by spaces: ")
+            number_input = input("Enter numbers separated by spaces: ")
             number_string = number_input.split()
             
             if not all(validate_number(number) for number in number_string):
@@ -89,11 +96,12 @@ def main():
                 continue
             
             result = subtract(*numbers)
-            print(f"{numbers[0]} - {numbers[1]} = {result}")
+            expression = " - ".join(str(number) for number in numbers)
+            print(f"{expression} = {result}")
 
         # Multiplication
         elif choice == "3":
-            number_input = input("Enter numbers seperated by spaces: ")
+            number_input = input("Enter numbers separated by spaces: ")
             number_string = number_input.split()
                         
             if not all(validate_number(number) for number in number_string):
@@ -107,11 +115,12 @@ def main():
                 continue
             
             result = multiply(*numbers)
-            print(f"{numbers[0]} x {numbers[1]} = {result}")
+            expression = " x ".join(str(number) for number in numbers)
+            print(f"{expression} = {result}")
 
         # Division
         elif choice == "4":
-            number_input = input("Enter numbers seperated by spaces: ")
+            number_input = input("Enter numbers separated by spaces: ")
             number_string = number_input.split()
                         
             if not all(validate_number(number) for number in number_string):
@@ -126,7 +135,8 @@ def main():
             
             try:
                 result = divide(*numbers)
-                print(f"{numbers[0]} / {numbers[1]} = {result}")
+                expression = " / ".join(str(number) for number in numbers)
+                print(f"{expression} = {result}")
 
             except ZeroDivisionError:
                 print(DIVIDE_BY_0)
@@ -167,15 +177,39 @@ def main():
 
         # Interest
         elif choice == "9":
+            interest_menu()
+
+            interest_choice = input("Enter choice: ")
+            
+            if not validate_menu_choice(choice, ["1", "2"]):
+                print(INVALID_CHOICE)
+                continue
+
             principal = get_valid_number("Enter principal: ")
             rate = get_valid_number("Enter interest rate (%): ")
             time = get_valid_number("Enter time (years): ")
 
-            result = simple_interest(principal, rate, time)
-            total = principal + result
+            if interest_choice == "1":
+                result = simple_interest(principal, rate, time)
+                total = principal + result
 
-            print(f"Interest: ${result:.2f}")
-            print(f"Total Amount: ${total:.2f}")
+                print(f"Interest Earned: ${result:.2f}")
+                print(f"Total Amount: ${total:.2f}")
+
+            elif interest_choice == "2":
+                compound_period = get_valid_number("Enter compounding periods per year: ")
+
+                result = compound_interest(
+                    principal,
+                    rate,
+                    compound_period,
+                    time
+                )
+
+                interest = result - principal
+
+                print(f"Interest Earned: ${interest:.2f}")
+                print(f"Total Amount: ${result:.2f}")
 
 if __name__ == "__main__":
     main()

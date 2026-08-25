@@ -43,3 +43,8 @@ def absolute_value(number):
 # Financial
 def simple_interest(principal, rate, time):
     return principal * (rate / 100) * time
+
+def compound_interest(principal, rate, compound_period, time):
+    percent = rate / 100
+
+    return principal * (1 + percent / compound_period) ** (compound_period * time)
