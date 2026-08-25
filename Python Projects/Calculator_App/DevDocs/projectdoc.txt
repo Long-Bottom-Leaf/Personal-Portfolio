@@ -1,8 +1,6 @@
 Calculator
 
 Phase 4 - Financial Calculations
-- Simple interest
-- Compound interest
 - Loan/payment calculations
 
 Phase 5 - Polish
@@ -31,3 +29,6 @@ Finished
 - Percentages
 - Absolute values
 - Other math functions
+
+- Simple interest
+- Compound interest
