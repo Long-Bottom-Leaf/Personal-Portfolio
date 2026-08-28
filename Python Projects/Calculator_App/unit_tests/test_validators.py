@@ -1,6 +1,7 @@
 import sys
 import os
 import unittest
+from unittest.mock import patch
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -11,7 +12,6 @@ from utils.validators import (
     get_valid_number,
     validate_positive_number
 )
-
 
 class TestValidators(unittest.TestCase):
 
@@ -46,9 +46,17 @@ class TestValidators(unittest.TestCase):
 
     def test_get_valid_number(self):
 
-        # will updated with input mocking
-        pass
+        with patch("builtins.input", return_value="25"):
+            result = get_valid_number("Enter number: ")
 
+        self.assertEqual(result, 25.0)
+
+    def test_get_valid_number_invalid_then_valid(self):
+
+        with patch("builtins.input", side_effect=["hello", "25"]):
+            result = get_valid_number("Enter number: ")
+
+        self.assertEqual(result, 25.0)
 
 if __name__ == "__main__":
     unittest.main()

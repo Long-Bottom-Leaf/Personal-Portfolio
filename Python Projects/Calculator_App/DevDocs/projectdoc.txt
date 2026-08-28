@@ -1,12 +1,8 @@
 Calculator
 
-Phase 4 - Financial Calculations
-- Loan/payment calculations
-
 Phase 5 - Polish
 - Improve CLI menu
 - Ensure proper error and success messages
-- Unit tests
 - README
 - Clean up code
 
@@ -32,3 +28,5 @@ Finished
 
 - Simple interest
 - Compound interest
+
+- Unit tests
