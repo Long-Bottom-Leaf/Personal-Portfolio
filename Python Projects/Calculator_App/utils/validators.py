@@ -27,3 +27,13 @@ def get_valid_number(prompt):
             return float(value)
 
         print(INVALID_NUMBER)
+
+def get_valid_numbers(prompt):
+    while True:
+        number_input = input(prompt)
+        number_strings = number_input.split()
+
+        if all(validate_number(number) for number in number_strings):
+            return [float(number) for number in number_strings]
+
+        print(INVALID_NUMBER)

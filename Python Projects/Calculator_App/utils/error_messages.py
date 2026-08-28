@@ -2,7 +2,7 @@
 
 # Menu Choice
 INVALID_CHOICE = (
-    "Error: Invalide choice, please enter a valid menu choice!"
+    "Error: Invalid choice, please enter a valid menu choice."
 )
 
 # Number Validations
