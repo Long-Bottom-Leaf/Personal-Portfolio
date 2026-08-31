@@ -1,0 +1,71 @@
+Phase 1 — Project Setup
+
+- Create project structure
+- Create Book class
+- Create Library class
+- Create main.py
+- Set up tests/
+
+Phase 2 — Book Management
+
+- Add a book
+- View all books
+- Remove a book
+- Search for a book
+- Mark a book as read/unread
+
+Book information:
+- Title
+- Author
+- Genre
+- Publication year
+- Rating
+- Read status
+
+Phase 3 — Data Persistence
+
+- Create JSON data file
+- Load library when program starts
+- Save library when changes are made
+- Handle missing/invalid data files
+
+Phase 4 — Validation & Error Handling
+
+- Validate title/author
+- Validate publication year
+- Validate rating
+- Handle duplicate books
+- Handle book not found
+- Handle invalid menu choices
+- Handle invalid JSON/data
+
+Phase 5 — Statistics & Search
+
+- Search by title
+- Search by author
+- Filter by genre
+- Show read/unread books
+- Total books
+- Books read
+- Average rating
+- Most common genre
+
+Phase 6 — Unit Tests
+
+- Test Book
+- Test adding/removing books
+- Test searching/filtering
+- Test read status
+- Test statistics
+- Test JSON loading/saving
+- Test validation
+- Use mocking where appropriate
+
+Phase 7 — Polish
+
+- Clean up CLI/menu
+- Improve output formatting
+- Improve error/success messages
+- Refactor repetitive code
+- README
+- Final project review
