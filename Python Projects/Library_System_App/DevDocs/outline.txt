@@ -1,9 +1,5 @@
 Phase 1 — Project Setup
 
-- Create project structure
-- Create Book class
-- Create Library class
-- Create main.py
 - Set up tests/
 
 Phase 2 — Book Management
@@ -69,3 +65,10 @@ Phase 7 — Polish
 - Refactor repetitive code
 - README
 - Final project review
+
+Finished
+
+- Create project structure
+- Create Book class
+- Create Library class
+- Create main.py
