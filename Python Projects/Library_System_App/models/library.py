@@ -1,7 +1,5 @@
 # Library model
 
-from models.book import Book
-
 class Library:
 
     def __init__(self):
