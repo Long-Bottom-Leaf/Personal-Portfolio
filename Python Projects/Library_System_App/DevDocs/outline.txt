@@ -1,7 +1,3 @@
-Phase 1 — Project Setup
-
-- Set up tests/
-
 Phase 2 — Book Management
 
 - Add a book
@@ -72,3 +68,4 @@ Finished
 - Create Book class
 - Create Library class
 - Create main.py
+- Set up tests
