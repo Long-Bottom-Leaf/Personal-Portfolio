@@ -13,9 +13,9 @@ def display_menu():
     print("\n==== Library Menu ====")
 
     print("\n1. Add new book")
-    print("\n2. View book")
-    print("\n3. Remove a book")
-    print("\n4. View book list")
+    print("\n2. View book list")
+    print("\n3. View specific book")
+    print("\n4. Remove a book")
 
     print("\n5. Exit")
 
@@ -30,6 +30,7 @@ def main():
 
         if not validate_menu_choice(choice, ["1", "2", "3", "4", "5"]):
             print(INVALID_MENU_CHOICE)
+            continue
 
         match choice:
             case "1":
@@ -41,7 +42,7 @@ def main():
                 rating = input("Enter rating, if any: ")
                 status = input("Enter status (read/unread): ")
 
-                book = (
+                book = Book(
                     title,
                     author,
                     genre,
@@ -50,18 +51,24 @@ def main():
                     status
                 )
 
-                Library.add_book(book)
+                library.add_book(book)
 
                 print("Book added successfully!")
 
             case "2":
-                pass
+                print("\n==Library List==")
+
+                library.view_book_list()
 
             case "3":
-                pass
+                view_book = input("Enter the book title you want to view: ")
+
+                library.view_specific_book(view_book)
 
             case "4":
-                pass
+                remove_title = input("Enter the book title to be removed: ")
+
+                library.remove_book(remove_title)
 
             case "5":
                 print("Goodbye")

@@ -8,9 +8,18 @@ class Library:
     def add_book(self, book):
         self.books.append(book)
 
-    def remove_book(self, book):
-        self.books.remove(book)
+    def remove_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                self.books.remove(book)
+                return
 
-    def view_book(self, book):
+    def view_book_list(self):
         for book in self.books:
             print(book)
+
+    def view_specific_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                print(book)
+                return book
