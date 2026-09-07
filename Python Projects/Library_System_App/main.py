@@ -9,11 +9,14 @@ from utils.validators import (
 from utils.error_messages import (
     INVALID_MENU_CHOICE,
     INVALID_STATUS_CHOICE,
-    ERROR_UPDATING_BOOK
+    ERROR_UPDATING_BOOK,
+    INVALID_BOOK_TITLE
 )
 from utils.success_messages import (
     BOOK_ADDED,
-    BOOK_UPDATE
+    BOOK_UPDATE,
+    EMPTY_LIBRARY,
+    ERROR_ADDING_BOOK,
 )
 
 def display_menu():
@@ -42,7 +45,7 @@ def main():
 
         match choice:
             case "1":
-                print("\n==Enter book details==\n").strip().upper()
+                print("\n==Enter book details==\n")
                 title = input("Enter title: ").strip().upper()
                 author = input("Enter author: ").strip().upper()
                 genre = input("Enter genre: ").strip().upper()
@@ -59,24 +62,38 @@ def main():
                     status
                 )
 
-                library.add_book(book)
+                if library.add_book(book):
+                    print(BOOK_ADDED)
 
-                print("Book added successfully!")
+                else:
+                    print(ERROR_ADDING_BOOK)
 
             case "2":
-                print("\n==Library List==")
+                print("\n==Library List==\n")
 
-                library.view_book_list()
+                if library.view_book_list() is None:
+                    print(EMPTY_LIBRARY)
+
+                else:
+                    library.view_book_list()
 
             case "3":
-                title = input("Enter the book title you want to view: ").strip().upper()
+                title = input("\nEnter the book title you want to view: ").strip().upper()
 
-                library.search_book(title)
+                if library.search_book(title) is False:
+                    print(INVALID_BOOK_TITLE)
+
+                else:
+                    library.search_book(title)
 
             case "4":
                 title = input("Enter the book title to be removed: ").strip().upper()
 
-                library.remove_book(title)
+                if library.remove_book(title) is False:
+                    print(INVALID_BOOK_TITLE)
+
+                else:
+                    library.remove_book(title)
 
             case "5":
                 title = input("Enter the title of the book you wish to change the status of: ").strip().upper()

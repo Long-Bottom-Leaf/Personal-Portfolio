@@ -7,12 +7,15 @@ class Library:
 
     def add_book(self, book):
         self.books.append(book)
+        return True
 
     def remove_book(self, title):
         for book in self.books:
             if book.title == title:
                 self.books.remove(book)
-                return
+                return True
+
+        return False
 
     def view_book_list(self):
         for book in self.books:
