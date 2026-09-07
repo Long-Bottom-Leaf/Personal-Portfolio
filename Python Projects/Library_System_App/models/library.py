@@ -18,8 +18,16 @@ class Library:
         for book in self.books:
             print(book)
 
-    def view_specific_book(self, title):
+    def search_book(self, title):
         for book in self.books:
             if book.title == title:
                 print(book)
                 return book
+
+    def update_status(self, title, status):
+        for book in self.books:
+            if book.title == title:
+                book.status = status
+                return True
+
+        return False
