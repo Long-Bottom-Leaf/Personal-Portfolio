@@ -81,8 +81,8 @@ class TestLibrary(unittest.TestCase):
         library.add_book(book2)
 
         self.assertEqual(len(library.books), 2)
-        self.assertEqual(book1, library.books)
-        self.assertEqual(book2, library.books)
+        self.assertEqual(library.books[0], book1)
+        self.assertEqual(library.books[1], book2)
 
     def test_remove_book(self):
         library = Library()
@@ -96,11 +96,21 @@ class TestLibrary(unittest.TestCase):
             "Unread"
         )
 
-        library.add_book(book1)
-        library.remove_book(book1)
+        book2 = Book(
+            "Really Cool Book",
+            "John Harris",
+            "Drama",
+            2005,
+            6,
+            "Read"
+        )
 
-        self.assertEqual(len(library.books), 0)
-        self.assertNotIn(book1, library.books)
+        library.add_book(book1)
+        library.add_book(book2)
+        library.remove_book("Cool Book")
+
+        self.assertEqual(len(library.books), 1)
+        self.assertEqual(library.books[0], book2)
 
 if __name__ == '__main__':
     unittest.main()

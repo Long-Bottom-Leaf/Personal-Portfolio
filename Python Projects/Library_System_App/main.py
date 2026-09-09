@@ -23,10 +23,11 @@ def display_menu():
     print("\n==== Library Menu ====")
 
     print("\n1. Add new book")
-    print("\n2. View book list")
+    print("\n2. View book library")
     print("\n3. View specific book")
-    print("\n4. Remove a book")
-    print("\n5. Mark book as read/unread")
+    print("\n4. Mark book as read/unread")
+    print("\n5. Update book details")
+    print("\n6. Remove a book")
 
     print("\n6. Exit")
 
@@ -39,7 +40,7 @@ def main():
 
         choice = input("Enter an option: ")
 
-        if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6"]):
+        if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7"]):
             print(INVALID_MENU_CHOICE)
             continue
 
@@ -91,15 +92,6 @@ def main():
                     print(book)
 
             case "4":
-                title = input("Enter the book title to be removed: ").strip().upper()
-
-                if library.remove_book(title):
-                    print("Book removed successfully!")
-                    
-                else:
-                    print(INVALID_BOOK_TITLE)
-
-            case "5":
                 title = input("Enter the title of the book you wish to change the status of: ").strip().upper()
                 status = input("Enter Y or N for read/unread: ").strip().upper()
 
@@ -113,7 +105,29 @@ def main():
                     else:
                         print(ERROR_UPDATING_BOOK)
 
+            case "5":
+                title = input("Enter the title of the book you want to update: ").strip().upper()
+                book = library.search_book(title)
+
+                if not books:
+                    print(EMPTY_LIBRARY)
+                
+                else:
+                    for book in books:
+                        print(book)
+
+                    # will finish after tests
+
             case "6":
+                title = input("Enter the book title to be removed: ").strip().upper()
+            
+                if library.remove_book(title):
+                    print("Book removed successfully!")
+                                
+                else:
+                    print(INVALID_BOOK_TITLE)
+
+            case "7":
                 print("Goodbye")
                 break
 
