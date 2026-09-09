@@ -139,6 +139,39 @@ class TestLibrary(unittest.TestCase):
         self.assertIn(book1, library.books)
         self.assertIn(book2, library.books)
 
+    def test_search_specific_book(self):
+        library = Library()
+        
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+        
+        book2 = Book(
+            "Really Cool Book",
+            "John Harris",
+            "Drama",
+            2005,
+            6,
+            "Read"
+        )
+
+        library.add_book(book1)
+        library.add_book(book2)
+
+        search1 = library.search_book("Cool Book")
+        search2 = library.search_book("Really Cool Book")
+        search3 = library.search_book("Uncool Book")
+
+        self.assertEqual(search1, book1)
+        self.assertEqual(search2, book2)
+        self.assertNotEqual(search3, book1)
+        self.assertNotEqual(search3, book2)
+
     def test_update_book_status(self):
         library = Library()
         
