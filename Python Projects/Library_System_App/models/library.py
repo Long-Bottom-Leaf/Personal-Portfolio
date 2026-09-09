@@ -18,14 +18,14 @@ class Library:
         return False
 
     def view_book_list(self):
-        for book in self.books:
-            print(book)
+        return self.books
 
     def search_book(self, title):
         for book in self.books:
             if book.title == title:
-                print(book)
                 return book
+
+        return None
 
     def update_status(self, title, status):
         for book in self.books:

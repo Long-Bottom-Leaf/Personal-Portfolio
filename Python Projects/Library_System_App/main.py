@@ -71,39 +71,43 @@ def main():
             case "2":
                 print("\n==Library List==\n")
 
-                if library.view_book_list() is None:
+                books = library.view_book_list()
+
+                if not books:
                     print(EMPTY_LIBRARY)
 
                 else:
-                    library.view_book_list()
+                    for book in books:
+                        print(book)
 
             case "3":
                 title = input("\nEnter the book title you want to view: ").strip().upper()
+                book = library.search_book(title)
 
-                if library.search_book(title) is False:
+                if book is None:
                     print(INVALID_BOOK_TITLE)
 
                 else:
-                    library.search_book(title)
+                    print(book)
 
             case "4":
                 title = input("Enter the book title to be removed: ").strip().upper()
 
-                if library.remove_book(title) is False:
-                    print(INVALID_BOOK_TITLE)
-
+                if library.remove_book(title):
+                    print("Book removed successfully!")
+                    
                 else:
-                    library.remove_book(title)
+                    print(INVALID_BOOK_TITLE)
 
             case "5":
                 title = input("Enter the title of the book you wish to change the status of: ").strip().upper()
                 status = input("Enter Y or N for read/unread: ").strip().upper()
 
-                if status.upper() not in BOOK_STATUS:
+                if status not in BOOK_STATUS:
                     print(INVALID_STATUS_CHOICE)
 
                 else:
-                    if library.update_status(title, BOOK_STATUS[status.upper()]):
+                    if library.update_status(title, BOOK_STATUS[status]):
                         print(BOOK_UPDATE)
 
                     else:
