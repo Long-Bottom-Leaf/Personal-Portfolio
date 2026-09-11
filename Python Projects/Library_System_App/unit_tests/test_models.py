@@ -109,8 +109,28 @@ class TestLibrary(unittest.TestCase):
         library.add_book(book2)
         library.remove_book("Cool Book")
 
+        self.assertTrue(book1 not in library.books)
         self.assertEqual(len(library.books), 1)
         self.assertEqual(library.books[0], book2)
+
+    def test_remove_nonexistent_book(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+
+        library.add_book(book1)
+        result = library.remove_book("Uncool Book")
+
+        self.assertFalse(result)
+        self.assertEqual(len(library.books), 1)
+        self.assertEqual(library.books[0], book1)
 
     def test_view_library_list(self):
         library = Library()
@@ -135,9 +155,9 @@ class TestLibrary(unittest.TestCase):
 
         library.add_book(book1)
         library.add_book(book2)
+        books = library.view_book_list()
 
-        self.assertIn(book1, library.books)
-        self.assertIn(book2, library.books)
+        self.assertEqual(books, [book1, book2])
 
     def test_search_specific_book(self):
         library = Library()
@@ -169,8 +189,7 @@ class TestLibrary(unittest.TestCase):
 
         self.assertEqual(search1, book1)
         self.assertEqual(search2, book2)
-        self.assertNotEqual(search3, book1)
-        self.assertNotEqual(search3, book2)
+        self.assertIsNone(search3)
 
     def test_update_book_status(self):
         library = Library()
@@ -185,9 +204,17 @@ class TestLibrary(unittest.TestCase):
         )
 
         library.add_book(book1)
-        library.update_status("Cool Book", "Read")
+        result = library.update_status("Cool Book", "Read")
 
+        self.assertTrue(result)
         self.assertEqual(book1.status, "Read")
+
+    def test_update_book_status_not_found(self):
+        library = Library()
+
+        result = library.update_status("Uncool Book", "Read")
+
+        self.assertFalse(result)
 
 if __name__ == '__main__':
     unittest.main()
