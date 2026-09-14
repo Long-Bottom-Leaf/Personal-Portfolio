@@ -32,18 +32,22 @@ def save_library(library):
     with open(DATA_FILE, "w") as file:
         json.dump(books_data, file, indent=4)
 
+def load_library():
+    library = Library()
 
-library = Library()
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, "r") as file:
+            books_data = json.load(file)
 
-book = Book(
-    "Cool Book",
-    "John French",
-    "Horror",
-    1999,
-    5,
-    "Unread"
-)
+        for book_data in books_data:
+            book = Book(
+                book_data["title"],
+                book_data["author"],
+                book_data["genre"],
+                book_data["release_date"],
+                book_data["rating"],
+                book_data["status"]
+            )
+            library.add_book(book)
 
-library.add_book(book)
-
-save_library(library)
+    return library
