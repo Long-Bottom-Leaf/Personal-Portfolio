@@ -2,6 +2,7 @@
 
 from models.book import Book
 from models.library import Library
+from services.persistence import save_library
 from utils.validators import (
     validate_menu_choice,
     BOOK_STATUS,
@@ -9,14 +10,14 @@ from utils.validators import (
 from utils.error_messages import (
     INVALID_MENU_CHOICE,
     INVALID_STATUS_CHOICE,
+    ERROR_ADDING_BOOK,
     ERROR_UPDATING_BOOK,
+    EMPTY_LIBRARY,
     INVALID_BOOK_TITLE
 )
 from utils.success_messages import (
     BOOK_ADDED,
     BOOK_UPDATE,
-    EMPTY_LIBRARY,
-    ERROR_ADDING_BOOK,
 )
 
 def display_menu():
@@ -29,10 +30,9 @@ def display_menu():
     print("\n5. Update book details")
     print("\n6. Remove a book")
 
-    print("\n6. Exit")
+    print("\n7. Exit")
 
 def main():
-
     library = Library()
 
     while True:
