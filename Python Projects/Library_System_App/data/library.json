@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "title": "Cool Book",
+        "author": "John French",
+        "genre": "Horror",
+        "release_date": 1999,
+        "rating": 5,
+        "status": "Unread"
+    }
+]
