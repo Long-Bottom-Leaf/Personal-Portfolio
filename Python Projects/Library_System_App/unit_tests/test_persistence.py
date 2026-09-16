@@ -144,5 +144,14 @@ class TestPersistence(unittest.TestCase):
         self.assertIsInstance(library, Library)
         self.assertEqual(library.books, [])
 
+    @patch("services.persistence.os.path.exists")
+    def test_load_library_missing_file(self, mock_exists):
+        mock_exists.return_value = False
+
+        library = load_library()
+
+        self.assertIsInstance(library, Library)
+        self.assertEqual(library.books, [])
+
 if __name__ == '__main__':
     unittest.main()
