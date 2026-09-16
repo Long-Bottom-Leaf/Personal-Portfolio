@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from models.book import Book
 from models.library import Library
-from services.persistence import save_library, DATA_FILE
+from services.persistence import save_library, load_library, DATA_FILE
 
 from unittest.mock import mock_open, patch
 
@@ -14,7 +14,6 @@ class TestPersistence(unittest.TestCase):
 
     @patch("services.persistence.json.dump")
     @patch("services.persistence.open", new_callable = mock_open)
-
     def test_save_library(self, mock_file, mock_json_dump):
         library = Library()
 
@@ -46,6 +45,31 @@ class TestPersistence(unittest.TestCase):
             mock_file(),
             indent=4
         )
+
+    @patch("services.persistence.json.load")
+    @patch("services.persistence.open", new_callable=mock_open)
+    def test_load_library(self, mock_file, mock_json_load):
+        mock_json_load.return_value = [
+            {
+                "title": "Cool Book",
+                "author": "John French",
+                "genre": "Horror",
+                "release_date": 1999,
+                "rating": 5,
+                "status": "Unread"
+            }
+        ]
+
+        library = load_library()
+
+        book = library.books[0]
+
+        self.assertEqual(book.title, "Cool Book")
+        self.assertEqual(book.author, "John French")
+        self.assertEqual(book.genre, "Horror")
+        self.assertEqual(book.release_date, 1999)
+        self.assertEqual(book.rating, 5)
+        self.assertEqual(book.status, "Unread")
 
     def test_save_library_empty(self):
         library = Library()
