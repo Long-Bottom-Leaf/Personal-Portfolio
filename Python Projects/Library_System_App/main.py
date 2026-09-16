@@ -2,7 +2,7 @@
 
 from models.book import Book
 from models.library import Library
-from services.persistence import save_library
+from services.persistence import (save_library, load_library)
 from utils.validators import (
     validate_menu_choice,
     BOOK_STATUS,
@@ -33,7 +33,7 @@ def display_menu():
     print("\n7. Exit")
 
 def main():
-    library = Library()
+    library = load_library()
 
     while True:
         display_menu()
@@ -64,6 +64,7 @@ def main():
                 )
 
                 if library.add_book(book):
+                    save_library(library)
                     print(BOOK_ADDED)
 
                 else:
@@ -107,27 +108,31 @@ def main():
 
             case "5":
                 title = input("Enter the title of the book you want to update: ").strip().upper()
-                book = library.search_book(title)
+                status = input("Enter the new status (Y/N): ").strip().upper()
 
-                if not books:
-                    print(EMPTY_LIBRARY)
-                
+                if status not in BOOK_STATUS:
+                    print(INVALID_STATUS_CHOICE)
+
                 else:
-                    for book in books:
-                        print(book)
+                    if library.update_status(title, BOOK_STATUS[status]):
+                        save_library(library)
+                        print(BOOK_UPDATE)
 
-                    # will finish after tests
+                    else:
+                        print(ERROR_UPDATING_BOOK)
 
             case "6":
                 title = input("Enter the book title to be removed: ").strip().upper()
             
                 if library.remove_book(title):
+                    save_library(library)
                     print("Book removed successfully!")
                                 
                 else:
                     print(INVALID_BOOK_TITLE)
 
             case "7":
+                save_library(library)
                 print("Goodbye")
                 break
 

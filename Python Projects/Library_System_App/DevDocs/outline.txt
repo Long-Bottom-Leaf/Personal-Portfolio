@@ -46,6 +46,35 @@ Phase 7 — Polish
 - README
 - Final project review
 
+Program Flow
+             PROGRAM RUNNING
+                    │
+              Library object
+                    │
+               library.books
+                    │
+        ┌───────────┴───────────┐
+        │                       │
+      add                    remove/update
+        │                       │
+        └───────────┬───────────┘
+                    ↓
+             save_library()
+                    ↓
+              library.json
+
+
+             PROGRAM STARTS
+                    │
+                    ↓
+             load_library()
+                    │
+                    ↓
+              library.json
+                    │
+                    ↓
+             Library object
+
 Finished
 
 - Create project structure
