@@ -47,12 +47,12 @@ def main():
         match choice:
             case "1":
                 print("\n==Enter book details==\n")
-                title = input("Enter title: ").strip().upper()
-                author = input("Enter author: ").strip().upper()
-                genre = input("Enter genre: ").strip().upper()
+                title = input("Enter title: ").strip().title()
+                author = input("Enter author: ").strip().title()
+                genre = input("Enter genre: ").strip().title()
                 release_date = input("Enter the release date: ")
                 rating = input("Enter rating, if any: ")
-                status = input("Have you read this book? (Y/N): ").strip().upper()
+                status = input("Have you read this book? (Y/N): ").strip().title()
 
                 book = Book(
                     title,
@@ -83,7 +83,7 @@ def main():
                         print(book)
 
             case "3":
-                title = input("\nEnter the book title you want to view: ").strip().upper()
+                title = input("\nEnter the book title you want to view: ").strip().title()
                 book = library.search_book(title)
 
                 if book is None:
@@ -93,7 +93,7 @@ def main():
                     print(book)
 
             case "4":
-                title = input("Enter the title of the book you wish to change the status of: ").strip().upper()
+                title = input("Enter the title of the book you wish to change the status of: ").strip().title()
                 status = input("Enter Y or N for read/unread: ").strip().upper()
 
                 if status not in BOOK_STATUS:
@@ -107,7 +107,7 @@ def main():
                         print(ERROR_UPDATING_BOOK)
 
             case "5":
-                title = input("Enter the title of the book you want to update: ").strip().upper()
+                title = input("Enter the title of the book you want to update: ").strip().title()
                 status = input("Enter the new status (Y/N): ").strip().upper()
 
                 if status not in BOOK_STATUS:
@@ -122,7 +122,7 @@ def main():
                         print(ERROR_UPDATING_BOOK)
 
             case "6":
-                title = input("Enter the book title to be removed: ").strip().upper()
+                title = input("Enter the book title to be removed: ").strip().title()
             
                 if library.remove_book(title):
                     save_library(library)
