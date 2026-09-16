@@ -153,5 +153,37 @@ class TestPersistence(unittest.TestCase):
         self.assertIsInstance(library, Library)
         self.assertEqual(library.books, [])
 
+    @patch("services.persistence.json.load")
+    @patch("services.persistence.open", new_callable=mock_open)
+    def test_load_library_multiple_books(self, mock_file, mock_json_load):
+        mock_json_load.return_value = [
+            {
+                "title": "Cool Book",
+                "author": "John French",
+                "genre": "Horror",
+                "release_date": 1999,
+                "rating": 5,
+                "status": "Unread"
+            },
+            {
+                "title": "Really Cool Book",
+                "author": "John Harris",
+                "genre": "Drama",
+                "release_date": 2005,
+                "rating": 6,
+                "status": "Read"
+            }
+        ]
+
+        library = load_library()
+
+        self.assertEqual(len(library.books), 2)
+
+        self.assertEqual(library.books[0].title, "Cool Book")
+        self.assertEqual(library.books[0].author, "John French")
+
+        self.assertEqual(library.books[1].title, "Really Cool Book")
+        self.assertEqual(library.books[1].author, "John Harris")
+
 if __name__ == '__main__':
     unittest.main()
