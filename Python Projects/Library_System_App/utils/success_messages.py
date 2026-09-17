@@ -7,3 +7,7 @@ BOOK_ADDED = (
 BOOK_UPDATE = (
     "The book has been updated successfully!"
 )
+
+BOOK_REMOVED = (
+    "The book has been removed successfully!"
+)

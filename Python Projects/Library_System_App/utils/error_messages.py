@@ -20,6 +20,26 @@ EMPTY_LIBRARY = (
     "Error: No books found. Please add a book/s to the library."
 )
 
+# Book detail error messages
+EMPTY_TITLE = (
+    "Error: Book title cannot be empty. Please enter a valid book title."
+)
+
+EMPTY_AUTHOR = (
+    "Error: Book author cannot be empty. Please enter a valid book author.")
+
+EMPTY_GENRE = (
+    "Error: Book genre cannot be empty. Please enter a valid book genre."
+)
+
+EMPTY_RELEASE_DATE = (
+    "Error: Book release date cannot be empty. Please enter a valid book release date."
+)
+
+EMPTY_RATING = (
+    "Error: Book rating cannot be empty. Please enter a valid book rating."
+)
+
 INVALID_BOOK_TITLE = (
     "Error: No book was found with that title. Please enter another book title, or add the book to the library."
 )

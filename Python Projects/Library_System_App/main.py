@@ -5,6 +5,9 @@ from models.library import Library
 from services.persistence import (save_library, load_library)
 from utils.validators import (
     validate_menu_choice,
+    validate_non_empty,
+    validate_rating,
+    validate_release_date,
     BOOK_STATUS,
 )
 from utils.error_messages import (
@@ -13,11 +16,17 @@ from utils.error_messages import (
     ERROR_ADDING_BOOK,
     ERROR_UPDATING_BOOK,
     EMPTY_LIBRARY,
+    EMPTY_TITLE,
+    EMPTY_AUTHOR,
+    EMPTY_GENRE,
+    EMPTY_RELEASE_DATE,
+    EMPTY_RATING,
     INVALID_BOOK_TITLE
 )
 from utils.success_messages import (
     BOOK_ADDED,
     BOOK_UPDATE,
+    BOOK_REMOVED,
 )
 
 def display_menu():
@@ -48,11 +57,34 @@ def main():
             case "1":
                 print("\n==Enter book details==\n")
                 title = input("Enter title: ").strip().title()
+                if not validate_non_empty(title):
+                    print(EMPTY_TITLE)
+                    continue
+
                 author = input("Enter author: ").strip().title()
+                if not validate_non_empty(author):
+                    print(EMPTY_AUTHOR)
+                    continue
+
                 genre = input("Enter genre: ").strip().title()
-                release_date = input("Enter the release date: ")
+                if not validate_non_empty(genre):
+                    print(EMPTY_GENRE)
+                    continue
+
+                release_date = input("Enter the release date (YYYY-MM-DD): ")
+                if not validate_release_date(release_date):
+                    print(EMPTY_RELEASE_DATE)
+                    continue
+
                 rating = input("Enter rating, if any: ")
+                if not validate_rating(rating):
+                    print(EMPTY_RATING)
+                    continue
+
                 status = input("Have you read this book? (Y/N): ").strip().title()
+                if not validate_non_empty(status) or status not in BOOK_STATUS:
+                    print(INVALID_STATUS_CHOICE)
+                    continue
 
                 book = Book(
                     title,
@@ -94,7 +126,9 @@ def main():
 
             case "4":
                 title = input("Enter the title of the book you wish to change the status of: ").strip().title()
+
                 status = input("Enter Y or N for read/unread: ").strip().upper()
+                
 
                 if status not in BOOK_STATUS:
                     print(INVALID_STATUS_CHOICE)
@@ -126,7 +160,7 @@ def main():
             
                 if library.remove_book(title):
                     save_library(library)
-                    print("Book removed successfully!")
+                    print(BOOK_REMOVED)
                                 
                 else:
                     print(INVALID_BOOK_TITLE)
