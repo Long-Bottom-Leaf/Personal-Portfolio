@@ -1,8 +1,5 @@
 Phase 4 — Validation & Error Handling
 
-- Validate title/author
-- Validate publication year
-- Validate rating
 - Handle duplicate books
 - Handle book not found
 - Handle invalid menu choices
@@ -36,6 +33,8 @@ Phase 7 — Polish
 - Improve output formatting
 - Improve error/success messages
 - Refactor repetitive code
+- Improve menu interaction
+- Fix status printout for book
 - README
 - Final project review
 
@@ -93,3 +92,7 @@ Finished
 - Load library when program starts
 - Save library when changes are made
 - Handle missing/invalid data files
+
+- Validate title/author
+- Validate publication year
+- Validate rating

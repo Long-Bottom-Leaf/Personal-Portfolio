@@ -32,8 +32,8 @@ EMPTY_GENRE = (
     "Error: Book genre cannot be empty. Please enter a valid book genre."
 )
 
-EMPTY_RELEASE_DATE = (
-    "Error: Book release date cannot be empty. Please enter a valid book release date."
+RELEASE_DATE_ERROR = (
+    "Error: Invalid date. Please enter a valid book release date or leave empty."
 )
 
 EMPTY_RATING = (

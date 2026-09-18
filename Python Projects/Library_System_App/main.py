@@ -19,7 +19,7 @@ from utils.error_messages import (
     EMPTY_TITLE,
     EMPTY_AUTHOR,
     EMPTY_GENRE,
-    EMPTY_RELEASE_DATE,
+    RELEASE_DATE_ERROR,
     EMPTY_RATING,
     INVALID_BOOK_TITLE
 )
@@ -39,7 +39,7 @@ def display_menu():
     print("\n5. Update book details")
     print("\n6. Remove a book")
 
-    print("\n7. Exit")
+    print("\n7. Exit\n")
 
 def main():
     library = load_library()
@@ -71,17 +71,17 @@ def main():
                     print(EMPTY_GENRE)
                     continue
 
-                release_date = input("Enter the release date (YYYY-MM-DD): ")
+                release_date = input("Enter the release date (YYYY-MM-DD) or leave empty: ")
                 if not validate_release_date(release_date):
-                    print(EMPTY_RELEASE_DATE)
+                    print(RELEASE_DATE_ERROR)
                     continue
 
-                rating = input("Enter rating, if any: ")
+                rating = input("Enter rating out of 5, if any: ")
                 if not validate_rating(rating):
                     print(EMPTY_RATING)
                     continue
 
-                status = input("Have you read this book? (Y/N): ").strip().title()
+                status = input("Have you read this book? (Y/N): ").strip().upper()
                 if not validate_non_empty(status) or status not in BOOK_STATUS:
                     print(INVALID_STATUS_CHOICE)
                     continue

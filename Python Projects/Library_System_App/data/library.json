@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Book 23",
+        "author": "Me",
+        "genre": "Horror",
+        "release_date": "2020-02-14",
+        "rating": "3",
+        "status": "Y"
+    },
+    {
+        "title": "Book 52",
+        "author": "Danny Boy",
+        "genre": "Comedy",
+        "release_date": "2020-04-23",
+        "rating": "5",
+        "status": "N"
+    }
+]
