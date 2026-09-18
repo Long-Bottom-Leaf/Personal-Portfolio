@@ -14,6 +14,7 @@ from utils.error_messages import (
     INVALID_MENU_CHOICE,
     INVALID_STATUS_CHOICE,
     ERROR_ADDING_BOOK,
+    DUPLICATE_BOOK,
     ERROR_UPDATING_BOOK,
     EMPTY_LIBRARY,
     EMPTY_TITLE,
@@ -59,6 +60,10 @@ def main():
                 title = input("Enter title: ").strip().title()
                 if not validate_non_empty(title):
                     print(EMPTY_TITLE)
+                    continue
+
+                if library.duplicate_book(title):
+                    print(DUPLICATE_BOOK)
                     continue
 
                 author = input("Enter author: ").strip().title()

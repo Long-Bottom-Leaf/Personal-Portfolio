@@ -96,18 +96,9 @@ class TestLibrary(unittest.TestCase):
             "Unread"
         )
 
-        book2 = Book(
-            "Cool Book",
-            "John Harris",
-            "Drama",
-            2005,
-            4,
-            "Read"
-        )
-
         library.add_book(book1)
 
-        self.assertTrue(library.duplicate_book(book2))
+        self.assertTrue(library.duplicate_book("Cool Book"))
 
     def test_book_is_not_duplicate(self):
         library = Library()

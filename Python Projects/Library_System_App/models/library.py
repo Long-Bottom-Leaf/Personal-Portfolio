@@ -9,9 +9,9 @@ class Library:
         self.books.append(book)
         return True
 
-    def duplicate_book(self, book):
+    def duplicate_book(self, title):
         for existing_book in self.books:
-            if book.title == existing_book.title:
+            if existing_book.title == title:
                 return True
 
         return False
