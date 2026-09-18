@@ -12,6 +12,10 @@ ERROR_ADDING_BOOK = (
     "Error: Unable to add book, please ensure book details are added correctly."
 )
 
+DUPLICATE_BOOK = (
+    "Error: Book has already been added."
+)
+
 ERROR_UPDATING_BOOK = (
     "Error: Book was not updated."
 )

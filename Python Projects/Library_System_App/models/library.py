@@ -9,6 +9,13 @@ class Library:
         self.books.append(book)
         return True
 
+    def duplicate_book(self, book):
+        for existing_book in self.books:
+            if book.title == existing_book.title:
+                return True
+
+        return False
+
     def remove_book(self, title):
         for book in self.books:
             if book.title == title:

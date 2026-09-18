@@ -84,6 +84,56 @@ class TestLibrary(unittest.TestCase):
         self.assertEqual(library.books[0], book1)
         self.assertEqual(library.books[1], book2)
 
+    def test_duplicate_book(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+
+        book2 = Book(
+            "Cool Book",
+            "John Harris",
+            "Drama",
+            2005,
+            4,
+            "Read"
+        )
+
+        library.add_book(book1)
+
+        self.assertTrue(library.duplicate_book(book2))
+
+    def test_book_is_not_duplicate(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+
+        book2 = Book(
+            "Really Cool Book",
+            "John Harris",
+            "Drama",
+            2005,
+            4,
+            "Read"
+        )
+
+        library.add_book(book1)
+
+        self.assertFalse(library.duplicate_book(book2))
+
     def test_remove_book(self):
         library = Library()
 
