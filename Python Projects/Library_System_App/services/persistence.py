@@ -41,7 +41,7 @@ def load_library():
                 books_data = json.load(file)
 
         except json.JSONDecodeError:
-            return library
+            return library, False
 
         for book_data in books_data:
             book = Book(
@@ -54,4 +54,4 @@ def load_library():
             )
             library.add_book(book)
 
-    return library
+    return library, True

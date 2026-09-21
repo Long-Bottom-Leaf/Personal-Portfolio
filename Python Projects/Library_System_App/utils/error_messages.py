@@ -24,6 +24,11 @@ EMPTY_LIBRARY = (
     "Error: No books found. Please add a book/s to the library."
 )
 
+INVALID_LIBRARY_DATA = (
+    "Error: The library data could not be loaded. "
+    "The library will start empty."
+)
+
 # Book detail error messages
 EMPTY_TITLE = (
     "Error: Book title cannot be empty. Please enter a valid book title."

@@ -85,9 +85,6 @@ class TestPersistence(unittest.TestCase):
         library.add_book(book2)
         save_library(library)
 
-        with open(DATA_FILE, "r") as file:
-            data = file.read()
-
         mock_file.assert_called_once_with(DATA_FILE, "w")
 
         mock_json_dump.assert_called_once_with(
@@ -127,7 +124,10 @@ class TestPersistence(unittest.TestCase):
             }
         ]
     
-        library = load_library()
+        library, loaded = load_library()
+
+        self.assertTrue(loaded)
+        self.assertEqual(len(library.books), 1)
     
         book = library.books[0]
     
@@ -142,8 +142,9 @@ class TestPersistence(unittest.TestCase):
     def test_load_library_missing_file(self, mock_exists):
         mock_exists.return_value = False
 
-        library = load_library()
+        library, loaded = load_library()
 
+        self.assertTrue(loaded)
         self.assertIsInstance(library, Library)
         self.assertEqual(library.books, [])
 
@@ -151,8 +152,9 @@ class TestPersistence(unittest.TestCase):
     def test_load_library_missing_file(self, mock_exists):
         mock_exists.return_value = False
 
-        library = load_library()
+        library, loaded = load_library()
 
+        self.assertTrue(loaded)
         self.assertIsInstance(library, Library)
         self.assertEqual(library.books, [])
 
@@ -178,8 +180,9 @@ class TestPersistence(unittest.TestCase):
             }
         ]
 
-        library = load_library()
+        library, loaded = load_library()
 
+        self.assertTrue(loaded)
         self.assertEqual(len(library.books), 2)
 
         self.assertEqual(library.books[0].title, "Cool Book")
@@ -197,8 +200,9 @@ class TestPersistence(unittest.TestCase):
             0
         )
 
-        library = load_library()
+        library, loaded = load_library()
 
+        self.assertFalse(loaded)
         self.assertIsInstance(library, Library)
         self.assertEqual(library.books, [])
 

@@ -22,7 +22,8 @@ from utils.error_messages import (
     EMPTY_GENRE,
     RELEASE_DATE_ERROR,
     EMPTY_RATING,
-    INVALID_BOOK_TITLE
+    INVALID_BOOK_TITLE,
+    INVALID_LIBRARY_DATA
 )
 from utils.success_messages import (
     BOOK_ADDED,
@@ -43,7 +44,10 @@ def display_menu():
     print("\n7. Exit\n")
 
 def main():
-    library = load_library()
+    library, loaded = load_library()
+
+    if not loaded:
+        print(INVALID_LIBRARY_DATA)
 
     while True:
         display_menu()
