@@ -36,8 +36,12 @@ def load_library():
     library = Library()
 
     if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "r") as file:
-            books_data = json.load(file)
+        try:
+            with open(DATA_FILE, "r") as file:
+                books_data = json.load(file)
+
+        except json.JSONDecodeError:
+            return library
 
         for book_data in books_data:
             book = Book(

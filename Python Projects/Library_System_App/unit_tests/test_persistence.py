@@ -1,5 +1,6 @@
 # Persistence service tests
 
+import json
 import sys
 import os
 import unittest
@@ -186,6 +187,20 @@ class TestPersistence(unittest.TestCase):
 
         self.assertEqual(library.books[1].title, "Really Cool Book")
         self.assertEqual(library.books[1].author, "John Harris")
+
+    @patch("services.persistence.json.load")
+    @patch("services.persistence.open", new_callable=mock_open)
+    def test_load_library_invalid_json(self, mock_file, mock_json_load):
+        mock_json_load.side_effect = json.JSONDecodeError(
+            "Invalid JSON",
+            "",
+            0
+        )
+
+        library = load_library()
+
+        self.assertIsInstance(library, Library)
+        self.assertEqual(library.books, [])
 
 if __name__ == '__main__':
     unittest.main()
