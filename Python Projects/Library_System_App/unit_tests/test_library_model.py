@@ -217,5 +217,65 @@ class TestLibrary(unittest.TestCase):
 
         self.assertFalse(result)
 
+    def test_search_by_author(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+
+        library.add_book(book1)
+
+        result1 = library.search_by_author("John French")
+        result2 = library.search_by_author("Unknown Author")
+
+        self.assertEqual(result1, [book1])
+        self.assertEqual(result2, [])
+
+    def test_search_by_genre(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+
+        library.add_book(book1)
+
+        result1 = library.search_by_genre("Horror")
+        result2 = library.search_by_genre("Unknown Genre")
+
+        self.assertEqual(result1, [book1])
+        self.assertEqual(result2, [])
+
+    def test_search_by_status(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+
+        library.add_book(book1)
+
+        result1 = library.search_by_status("Unread")
+        result2 = library.search_by_status("Read")
+
+        self.assertEqual(result1, [book1])
+        self.assertEqual(result2, [])
+
 if __name__ == '__main__':
     unittest.main()

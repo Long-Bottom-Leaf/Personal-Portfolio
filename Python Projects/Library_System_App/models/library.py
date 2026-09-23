@@ -67,7 +67,7 @@ class Library:
             if book.status == status:
                 matching_books.append(book)
 
-        return None
+        return matching_books
 
     def total_books(self):
         return len(self.books)
