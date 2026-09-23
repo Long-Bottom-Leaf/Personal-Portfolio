@@ -1,10 +1,3 @@
-Phase 4 — Validation & Error Handling
-
-- Handle duplicate books
-- Handle book not found
-- Handle invalid menu choices
-- Handle invalid JSON/data
-
 Phase 5 — Statistics & Search
 
 - Search by title
@@ -96,3 +89,8 @@ Finished
 - Validate title/author
 - Validate publication year
 - Validate rating
+
+- Handle duplicate books
+- Handle book not found
+- Handle invalid menu choices
+- Handle invalid JSON/data

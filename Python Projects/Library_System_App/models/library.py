@@ -27,13 +27,6 @@ class Library:
     def view_book_list(self):
         return self.books
 
-    def search_book(self, title):
-        for book in self.books:
-            if book.title == title:
-                return book
-
-        return None
-
     def update_status(self, title, status):
         for book in self.books:
             if book.title == title:
@@ -41,3 +34,49 @@ class Library:
                 return True
 
         return False
+
+    def search_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                return book
+
+        return None
+
+    def search_by_author(self, author):
+        matching_books = []
+
+        for book in self.books:
+            if book.author == author:
+                matching_books.append(book)
+
+        return matching_books
+
+    def search_by_genre(self, genre):
+        matching_books = []
+
+        for book in self.books:
+            if book.genre == genre:
+                matching_books.append(book)
+
+        return matching_books
+
+    def search_by_status(self, status):
+        matching_books = []
+
+        for book in self.books:
+            if book.status == status:
+                matching_books.append(book)
+
+        return None
+
+    def total_books(self):
+        return len(self.books)
+
+    def books_read(self):
+        count = 0
+
+        for book in self.books:
+            if book.status == "Y":
+                count += 1
+
+        return count

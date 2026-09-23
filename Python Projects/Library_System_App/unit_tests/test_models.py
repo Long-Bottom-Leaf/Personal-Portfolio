@@ -123,7 +123,7 @@ class TestLibrary(unittest.TestCase):
 
         library.add_book(book1)
 
-        self.assertFalse(library.duplicate_book(book2))
+        self.assertFalse(library.duplicate_book(book2.title))
 
     def test_remove_book(self):
         library = Library()
