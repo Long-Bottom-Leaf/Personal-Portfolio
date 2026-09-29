@@ -1,15 +1,4 @@
-Phase 5 — Statistics & Search
-
-- Search by title
-- Search by author
-- Filter by genre
-- Show read/unread books
-- Total books
-- Books read
-- Average rating
-- Most common genre
-
-Phase 6 — Unit Tests
+Phase 6 — Unit Test Polish
 
 - Test Book
 - Test adding/removing books
@@ -94,3 +83,12 @@ Finished
 - Handle book not found
 - Handle invalid menu choices
 - Handle invalid JSON/data
+
+- Search by title
+- Search by author
+- Filter by genre
+- Show read/unread books
+- Total books
+- Books read
+- Average rating
+- Most common genre

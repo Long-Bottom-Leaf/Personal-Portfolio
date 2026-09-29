@@ -43,31 +43,13 @@ class Library:
         return None
 
     def search_by_author(self, author):
-        matching_books = []
-
-        for book in self.books:
-            if book.author == author:
-                matching_books.append(book)
-
-        return matching_books
+        return [book for book in self.books if book.author == author]
 
     def search_by_genre(self, genre):
-        matching_books = []
-
-        for book in self.books:
-            if book.genre == genre:
-                matching_books.append(book)
-
-        return matching_books
+        return [book for book in self.books if book.genre == genre]
 
     def search_by_status(self, status):
-        matching_books = []
-
-        for book in self.books:
-            if book.status == status:
-                matching_books.append(book)
-
-        return matching_books
+        return [book for book in self.books if book.status == status]
 
     def total_books(self):
         return len(self.books)
@@ -76,7 +58,7 @@ class Library:
         count = 0
 
         for book in self.books:
-            if book.status == "Y":
+            if book.status == "Read":
                 count += 1
 
         return count
