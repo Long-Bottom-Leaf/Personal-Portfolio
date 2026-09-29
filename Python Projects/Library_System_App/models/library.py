@@ -53,12 +53,3 @@ class Library:
 
     def total_books(self):
         return len(self.books)
-
-    def books_read(self):
-        count = 0
-
-        for book in self.books:
-            if book.status == "Read":
-                count += 1
-
-        return count

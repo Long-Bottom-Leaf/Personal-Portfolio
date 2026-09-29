@@ -39,9 +39,20 @@ def display_menu():
     print("\n3. View specific book")
     print("\n4. Mark book as read/unread")
     print("\n5. Update book details")
-    print("\n6. Remove a book")
+    print("\n6. View total books in library")
+    print("\n7. Search options")
+    print("\n8. Remove a book")
 
-    print("\n7. Exit\n")
+    print("\n9. Exit\n")
+
+def search_menu():
+    print("\n==== Search Menu====")
+
+    print("\nSearch by: ")
+    print("\n1. Author")
+    print("\n2. Genre")
+    print("\n3. Read/Unread")
+    print("\n4. Exit")
 
 def main():
     library, loaded = load_library()
@@ -54,7 +65,7 @@ def main():
 
         choice = input("Enter an option: ")
 
-        if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7"]):
+        if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7", "8", "9"]):
             print(INVALID_MENU_CHOICE)
             continue
 
@@ -165,6 +176,31 @@ def main():
                         print(ERROR_UPDATING_BOOK)
 
             case "6":
+                book_total = library.total_books()
+                
+                if not library.books:
+                    print(EMPTY_LIBRARY)
+                
+                else:
+                    print(book_total)
+
+            case "7":
+                while True:
+                    search_menu()
+
+                    choice = input("Enter an option: ")
+                    
+                    if not validate_menu_choice(choice, ["1", "2", "3", "4"]):
+                        print(INVALID_MENU_CHOICE)
+                        continue
+
+                    match choice:
+                        case "1":
+                            author = input("Enter the authors name: ").strip().title()
+
+
+                
+            case "8":
                 title = input("Enter the book title to be removed: ").strip().title()
             
                 if library.remove_book(title):
@@ -174,7 +210,7 @@ def main():
                 else:
                     print(INVALID_BOOK_TITLE)
 
-            case "7":
+            case "9":
                 save_library(library)
                 print("Goodbye")
                 break
