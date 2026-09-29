@@ -277,5 +277,71 @@ class TestLibrary(unittest.TestCase):
         self.assertEqual(result1, [book1])
         self.assertEqual(result2, [])
 
+    def test_total_books(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+        
+        book2 = Book(
+            "Really Cool Book",
+            "John Harris",
+            "Drama",
+            2005,
+            6,
+            "Read"
+        )
+        
+        library.add_book(book1)
+        library.add_book(book2)
+
+        result = library.total_books()
+
+        self.assertEqual(result, 2)
+
+    def test_books_read(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+        
+        book2 = Book(
+            "Really Cool Book",
+            "John Harris",
+            "Drama",
+            2005,
+            6,
+            "Read"
+        )
+
+        book3 = Book(
+            "Another Cool Book",
+            "Jane Smith",
+            "Comedy",
+            2010,
+            3,
+            "Read"
+        )
+        
+        library.add_book(book1)
+        library.add_book(book2)
+        library.add_book(book3)
+
+        result = library.books_read()
+
+        self.assertEqual(result, 2)
+
 if __name__ == '__main__':
     unittest.main()
