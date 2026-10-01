@@ -57,6 +57,17 @@ def search_menu():
     print("\n3. Read/Unread")
     print("\n4. Exit")
 
+def book_update_menu():
+    print("\n==== Update Book Details ====")
+
+    print("\n1. Title")
+    print("\n2. Author")
+    print("\n3. Genre")
+    print("\n4. Release Date (YYYY-MM-DD)")
+    print("\n5. Rating")
+    print("\n6. Status")
+    print("\n7. Exit")
+
 def main():
     library, loaded = load_library()
 
@@ -149,23 +160,8 @@ def main():
 
             case "4":
                 title = input("Enter the title of the book you wish to change the status of: ").strip().title()
-
                 status = input("Enter Y or N for read/unread: ").strip().upper()
                 
-
-                if status not in BOOK_STATUS:
-                    print(INVALID_STATUS_CHOICE)
-
-                else:
-                    if library.update_status(title, BOOK_STATUS[status]):
-                        print(BOOK_UPDATE)
-
-                    else:
-                        print(ERROR_UPDATING_BOOK)
-
-            case "5":
-                title = input("Enter the title of the book you want to update: ").strip().title()
-                status = input("Enter the new status (Y/N): ").strip().upper()
 
                 if status not in BOOK_STATUS:
                     print(INVALID_STATUS_CHOICE)
@@ -178,6 +174,27 @@ def main():
                     else:
                         print(ERROR_UPDATING_BOOK)
 
+            case "5":
+                title = input("Enter the title of the book you want to update: ").strip().title()
+                book = library.search_book(title)
+
+                if book is None:
+                    print(INVALID_BOOK_TITLE)
+
+                else:
+                    while True:
+                        book_update_menu()
+                        
+                        choice = input("Enter an option: ")
+                                            
+                        if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7"]):
+                            print(INVALID_MENU_CHOICE)
+                            continue
+
+                        match choice:
+                            case "1":
+                                
+                
             case "6":
                 book_total = library.total_books()
                 
@@ -229,19 +246,23 @@ def main():
                                         print(book)
 
                         case "3":
-                            status = input("Enter a status (Read/Unread): ").strip.title()
+                            status = input("Enter a status (Read/Unread): ").strip().title()
 
                             if not status:
                                 print(INVALID_STATUS)
 
                             else:
-                                books = library.search_by_status(genre)
+                                books = library.search_by_status(status)
                                 if not books:
                                     print(INVALID_STATUS)
 
                                 else:
                                     for book in books:
                                         print(book)
+
+                        case "4":
+                            print("Returning to main menu!")
+                            break
 
             case "8":
                 title = input("Enter the book title to be removed: ").strip().title()
