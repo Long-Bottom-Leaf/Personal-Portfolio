@@ -52,3 +52,16 @@ EMPTY_RATING = (
 INVALID_BOOK_TITLE = (
     "Error: No book was found with that title. Please enter another book title, or add the book to the library."
 )
+
+# Filter options
+INVALID_AUTHOR = (
+    "Error: No author found. Please search for another author."
+)
+
+INVALID_GENRE = (
+    "Error: Could not find books with this genre. Please enter another genre."
+)
+
+INVALID_STATUS = (
+    "Error: Could not find any books with this status. Please enter another status (Read/Unread)."
+)

@@ -23,7 +23,10 @@ from utils.error_messages import (
     RELEASE_DATE_ERROR,
     EMPTY_RATING,
     INVALID_BOOK_TITLE,
-    INVALID_LIBRARY_DATA
+    INVALID_LIBRARY_DATA,
+    INVALID_AUTHOR,
+    INVALID_GENRE,
+    INVALID_STATUS,
 )
 from utils.success_messages import (
     BOOK_ADDED,
@@ -40,7 +43,7 @@ def display_menu():
     print("\n4. Mark book as read/unread")
     print("\n5. Update book details")
     print("\n6. View total books in library")
-    print("\n7. Search options")
+    print("\n7. Search/Filter options")
     print("\n8. Remove a book")
 
     print("\n9. Exit\n")
@@ -198,8 +201,48 @@ def main():
                         case "1":
                             author = input("Enter the authors name: ").strip().title()
 
+                            if not author:
+                                print(INVALID_AUTHOR)
 
-                
+                            else:
+                                books = library.search_by_author(author)
+                                if not books:
+                                    print(INVALID_AUTHOR)
+
+                                else:
+                                    for book in books:
+                                        print(book)
+
+                        case "2":
+                            genre = input("Enter the genre: ").strip().title()
+
+                            if not genre:
+                                print(INVALID_GENRE)
+
+                            else:
+                                books = library.search_by_genre(genre)
+                                if not books:
+                                    print(INVALID_GENRE)
+
+                                else:
+                                    for book in books:
+                                        print(book)
+
+                        case "3":
+                            status = input("Enter a status (Read/Unread): ").strip.title()
+
+                            if not status:
+                                print(INVALID_STATUS)
+
+                            else:
+                                books = library.search_by_status(genre)
+                                if not books:
+                                    print(INVALID_STATUS)
+
+                                else:
+                                    for book in books:
+                                        print(book)
+
             case "8":
                 title = input("Enter the book title to be removed: ").strip().title()
             
