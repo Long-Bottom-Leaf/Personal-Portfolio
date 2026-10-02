@@ -48,15 +48,6 @@ def display_menu():
 
     print("\n9. Exit\n")
 
-def search_menu():
-    print("\n==== Search Menu====")
-
-    print("\nSearch by: ")
-    print("\n1. Author")
-    print("\n2. Genre")
-    print("\n3. Read/Unread")
-    print("\n4. Exit")
-
 def book_update_menu():
     print("\n==== Update Book Details ====")
 
@@ -67,6 +58,15 @@ def book_update_menu():
     print("\n5. Rating")
     print("\n6. Status")
     print("\n7. Exit")
+
+def search_menu():
+    print("\n==== Search Menu====")
+
+    print("\nSearch by: ")
+    print("\n1. Author")
+    print("\n2. Genre")
+    print("\n3. Read/Unread")
+    print("\n4. Exit")
 
 def main():
     library, loaded = load_library()
@@ -193,8 +193,50 @@ def main():
 
                         match choice:
                             case "1":
-                                
-                
+                                new_title = input("Enter the new title: ").strip().title()
+
+                                if not validate_non_empty(new_title):
+                                    print(EMPTY_TITLE)
+                                    continue
+
+                                if new_title != book.title and library.duplicate_book(new_title):
+                                    print(DUPLICATE_BOOK)
+                                    continue
+
+                                book.title = new_title
+                                save_library(library)
+                                print(BOOK_UPDATE)
+
+                            case "2":
+                                new_author = input("Enter the new author: ").strip().title()
+
+                                if not validate_non_empty(new_author):
+                                    print(EMPTY_AUTHOR)
+                                    continue
+
+                                if new_author != book.author:
+                                    print() # error message
+                                    continue
+
+                                book.author = new_author
+                                save_library(library)
+                                print(BOOK_UPDATE)
+
+                            case "3":
+                                new_genre = input("Enter the new genre: ").strip().title()
+
+                                if not validate_non_empty(new_genre):
+                                    print(EMPTY_GENRE)
+                                    continue
+
+                                if new_genre != book.genre:
+                                    print() # error message
+                                    continue
+
+                                book.genre = new_genre
+                                save_library(library)
+                                print(BOOK_UPDATE)
+
             case "6":
                 book_total = library.total_books()
                 

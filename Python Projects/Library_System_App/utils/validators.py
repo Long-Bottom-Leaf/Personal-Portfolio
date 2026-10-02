@@ -32,7 +32,6 @@ def validate_rating(rating):
         return False
 
 # Read/Unread
-
 BOOK_STATUS = {
     "Y" : "Read",
     "N" : "Unread"
