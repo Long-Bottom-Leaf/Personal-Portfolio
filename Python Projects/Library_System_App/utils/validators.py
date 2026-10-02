@@ -31,6 +31,9 @@ def validate_rating(rating):
     except ValueError:
         return False
 
+def validate_status(status):
+    return status.strip().upper() in BOOK_STATUS
+
 # Read/Unread
 BOOK_STATUS = {
     "Y" : "Read",

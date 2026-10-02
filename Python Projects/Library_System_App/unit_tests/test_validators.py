@@ -41,5 +41,8 @@ class TestValidators(unittest.TestCase):
         self.assertEqual(validate_rating("66"), False)
         self.assertEqual(validate_rating("Hello"), False)
 
+    def test_validate_status(self):
+        
+
 if __name__ == "__main__":
     unittest.main()

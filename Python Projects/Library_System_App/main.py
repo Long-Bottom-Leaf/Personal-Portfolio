@@ -8,6 +8,7 @@ from utils.validators import (
     validate_non_empty,
     validate_rating,
     validate_release_date,
+    validate_status,
     BOOK_STATUS,
 )
 from utils.error_messages import (
@@ -237,6 +238,52 @@ def main():
                                 save_library(library)
                                 print(BOOK_UPDATE)
 
+                            case "4":
+                                new_release_date = input("Enter the new release date (YYYY-MM-DD): ")
+
+                                if not validate_release_date(new_release_date):
+                                    print() # error message
+                                    continue
+
+                                if new_release_date != book.release_date:
+                                    print() # error message
+                                    continue
+
+                                book.release_date = new_release_date
+                                save_library(library)
+                                print(BOOK_UPDATE)
+
+                            case "5":
+                                new_rating = input("Enter a new rating (0-5): ").strip()
+
+                                if not validate_rating(new_rating):
+                                    print() # error message
+                                    continue
+
+                                if new_rating != book.rating:
+                                    print() # error message
+                                    continue
+
+                                book.rating = new_rating
+                                save_library(library)
+                                continue
+
+                            case "6":
+                                new_status = input("Enter a new status for read/unread (Y/N): ") # fix later
+
+                                if not validate_status(new_status):
+                                    print() # error message
+                                    continue
+
+                                book.status = new_status
+                                save_library(library)
+                                continue
+
+                            case "7":
+                                save_library(library)
+                                print("Returning to main menu!")
+                                break
+
             case "6":
                 book_total = library.total_books()
                 
@@ -303,6 +350,7 @@ def main():
                                         print(book)
 
                         case "4":
+                            save_library(library)
                             print("Returning to main menu!")
                             break
 
