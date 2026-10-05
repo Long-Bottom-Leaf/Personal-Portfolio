@@ -34,40 +34,11 @@ from utils.success_messages import (
     BOOK_UPDATE,
     BOOK_REMOVED,
 )
-
-def display_menu():
-    print("\n==== Library Menu ====")
-
-    print("\n1. Add new book")
-    print("\n2. View book library")
-    print("\n3. View specific book")
-    print("\n4. Mark book as read/unread")
-    print("\n5. Update book details")
-    print("\n6. View total books in library")
-    print("\n7. Search/Filter options")
-    print("\n8. Remove a book")
-
-    print("\n9. Exit\n")
-
-def book_update_menu():
-    print("\n==== Update Book Details ====")
-
-    print("\n1. Title")
-    print("\n2. Author")
-    print("\n3. Genre")
-    print("\n4. Release Date (YYYY-MM-DD)")
-    print("\n5. Rating")
-    print("\n6. Status")
-    print("\n7. Exit")
-
-def search_menu():
-    print("\n==== Search Menu====")
-
-    print("\nSearch by: ")
-    print("\n1. Author")
-    print("\n2. Genre")
-    print("\n3. Read/Unread")
-    print("\n4. Exit")
+from utils.menus import (
+    display_menu,
+    book_update_menu,
+    search_menu,
+)
 
 def main():
     library, loaded = load_library()
@@ -120,6 +91,9 @@ def main():
                 if not validate_non_empty(status) or status not in BOOK_STATUS:
                     print(INVALID_STATUS_CHOICE)
                     continue
+
+                else:
+                    status = BOOK_STATUS[status]
 
                 book = Book(
                     title,
@@ -207,6 +181,7 @@ def main():
                                 book.title = new_title
                                 save_library(library)
                                 print(BOOK_UPDATE)
+                                continue
 
                             case "2":
                                 new_author = input("Enter the new author: ").strip().title()
@@ -215,13 +190,14 @@ def main():
                                     print(EMPTY_AUTHOR)
                                     continue
 
-                                if new_author != book.author:
+                                if new_author == book.author:
                                     print() # error message
                                     continue
 
                                 book.author = new_author
                                 save_library(library)
                                 print(BOOK_UPDATE)
+                                continue
 
                             case "3":
                                 new_genre = input("Enter the new genre: ").strip().title()
@@ -230,13 +206,14 @@ def main():
                                     print(EMPTY_GENRE)
                                     continue
 
-                                if new_genre != book.genre:
+                                if new_genre == book.genre:
                                     print() # error message
                                     continue
 
                                 book.genre = new_genre
                                 save_library(library)
                                 print(BOOK_UPDATE)
+                                continue
 
                             case "4":
                                 new_release_date = input("Enter the new release date (YYYY-MM-DD): ")
@@ -245,13 +222,14 @@ def main():
                                     print() # error message
                                     continue
 
-                                if new_release_date != book.release_date:
+                                if new_release_date == book.release_date:
                                     print() # error message
                                     continue
 
                                 book.release_date = new_release_date
                                 save_library(library)
                                 print(BOOK_UPDATE)
+                                continue
 
                             case "5":
                                 new_rating = input("Enter a new rating (0-5): ").strip()
@@ -260,12 +238,13 @@ def main():
                                     print() # error message
                                     continue
 
-                                if new_rating != book.rating:
+                                if new_rating == book.rating:
                                     print() # error message
                                     continue
 
                                 book.rating = new_rating
                                 save_library(library)
+                                print(BOOK_UPDATE)
                                 continue
 
                             case "6":
@@ -275,8 +254,9 @@ def main():
                                     print() # error message
                                     continue
 
-                                book.status = new_status
+                                book.status = BOOK_STATUS[new_status]
                                 save_library(library)
+                                print(BOOK_UPDATE)
                                 continue
 
                             case "7":
