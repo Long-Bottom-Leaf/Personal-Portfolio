@@ -16,6 +16,22 @@ DUPLICATE_BOOK = (
     "Error: Book has already been added."
 )
 
+DUPLICATE_AUTHOR = (
+    "Error: The author provided is already assigned to this book."
+)
+
+DUPLICATE_GENRE = (
+    "Error: The genre provided is already assigned to this book."
+)
+
+DUPLICATE_RELEASE_DATE = (
+    "Error: The date provided is already assigned to this book."
+)
+
+DUPLICATE_RATING = (
+    "Error: The rating provided is already assigned to this book."
+)
+
 ERROR_UPDATING_BOOK = (
     "Error: Book was not updated."
 )
@@ -45,8 +61,12 @@ RELEASE_DATE_ERROR = (
     "Error: Invalid date. Please enter a valid book release date or leave empty."
 )
 
-EMPTY_RATING = (
-    "Error: Book rating cannot be empty. Please enter a valid book rating."
+INVALID_RATING = (
+    "Error: Invalid rating. Please enter a valid ratin 0-5, or leave empty."
+)
+
+INVALID_DATE = (
+    "Error: Invalid date. Please enter a valid date, or leave empty."
 )
 
 INVALID_BOOK_TITLE = (

@@ -16,13 +16,18 @@ from utils.error_messages import (
     INVALID_STATUS_CHOICE,
     ERROR_ADDING_BOOK,
     DUPLICATE_BOOK,
+    DUPLICATE_AUTHOR,
+    DUPLICATE_GENRE,
+    DUPLICATE_RELEASE_DATE,
+    DUPLICATE_RATING,
     ERROR_UPDATING_BOOK,
     EMPTY_LIBRARY,
     EMPTY_TITLE,
     EMPTY_AUTHOR,
     EMPTY_GENRE,
     RELEASE_DATE_ERROR,
-    EMPTY_RATING,
+    INVALID_RATING,
+    INVALID_DATE,
     INVALID_BOOK_TITLE,
     INVALID_LIBRARY_DATA,
     INVALID_AUTHOR,
@@ -84,7 +89,7 @@ def main():
 
                 rating = input("Enter rating out of 5, if any: ")
                 if not validate_rating(rating):
-                    print(EMPTY_RATING)
+                    print(INVALID_RATING)
                     continue
 
                 status = input("Have you read this book? (Y/N): ").strip().upper()
@@ -110,14 +115,15 @@ def main():
 
                 else:
                     print(ERROR_ADDING_BOOK)
+                    continue
 
             case "2":
                 print("\n==Library List==\n")
-
                 books = library.view_book_list()
 
                 if not books:
                     print(EMPTY_LIBRARY)
+                    continue
 
                 else:
                     for book in books:
@@ -129,17 +135,24 @@ def main():
 
                 if book is None:
                     print(INVALID_BOOK_TITLE)
+                    continue
 
                 else:
                     print(book)
 
             case "4":
                 title = input("Enter the title of the book you wish to change the status of: ").strip().title()
+                book = library.search_book(title)
+
+                if book is None:
+                    print(INVALID_BOOK_TITLE)
+                    continue
+
                 status = input("Enter Y or N for read/unread: ").strip().upper()
                 
-
                 if status not in BOOK_STATUS:
                     print(INVALID_STATUS_CHOICE)
+                    continue
 
                 else:
                     if library.update_status(title, BOOK_STATUS[status]):
@@ -148,6 +161,7 @@ def main():
 
                     else:
                         print(ERROR_UPDATING_BOOK)
+                        continue
 
             case "5":
                 title = input("Enter the title of the book you want to update: ").strip().title()
@@ -191,7 +205,7 @@ def main():
                                     continue
 
                                 if new_author == book.author:
-                                    print() # error message
+                                    print(DUPLICATE_AUTHOR)
                                     continue
 
                                 book.author = new_author
@@ -207,7 +221,7 @@ def main():
                                     continue
 
                                 if new_genre == book.genre:
-                                    print() # error message
+                                    print(DUPLICATE_GENRE)
                                     continue
 
                                 book.genre = new_genre
@@ -216,14 +230,14 @@ def main():
                                 continue
 
                             case "4":
-                                new_release_date = input("Enter the new release date (YYYY-MM-DD): ")
+                                new_release_date = input("Enter the new release date (YYYY-MM-DD) or leave empty to clear the existing date: ")
 
                                 if not validate_release_date(new_release_date):
-                                    print() # error message
+                                    print(INVALID_DATE)
                                     continue
 
                                 if new_release_date == book.release_date:
-                                    print() # error message
+                                    print(DUPLICATE_RELEASE_DATE)
                                     continue
 
                                 book.release_date = new_release_date
@@ -235,11 +249,11 @@ def main():
                                 new_rating = input("Enter a new rating (0-5): ").strip()
 
                                 if not validate_rating(new_rating):
-                                    print() # error message
+                                    print(INVALID_RATING)
                                     continue
 
                                 if new_rating == book.rating:
-                                    print() # error message
+                                    print(DUPLICATE_RATING)
                                     continue
 
                                 book.rating = new_rating
@@ -251,7 +265,7 @@ def main():
                                 new_status = input("Enter a new status for read/unread (Y/N): ") # fix later
 
                                 if not validate_status(new_status):
-                                    print() # error message
+                                    print(INVALID_STATUS_CHOICE)
                                     continue
 
                                 book.status = BOOK_STATUS[new_status]
