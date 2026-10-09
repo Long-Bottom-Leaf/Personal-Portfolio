@@ -63,39 +63,51 @@ def main():
         match choice:
             case "1":
                 print("\n==Enter book details==\n")
-                title = input("Enter title: ").strip().title()
-                if not validate_non_empty(title):
-                    print(EMPTY_TITLE)
-                    continue
+                while True:
+                    title = input("Enter title: ").strip().title()
+                    if not validate_non_empty(title):
+                        print(EMPTY_TITLE)
 
-                if library.duplicate_book(title):
-                    print(DUPLICATE_BOOK)
-                    continue
+                    elif library.duplicate_book(title):
+                        print(DUPLICATE_BOOK)
 
-                author = input("Enter author: ").strip().title()
-                if not validate_non_empty(author):
+                    else:
+                        break
+
+                while True:
+                    author = input("Enter author: ").strip().title()
+                    if validate_non_empty(author):
+                        break
+
                     print(EMPTY_AUTHOR)
-                    continue
 
-                genre = input("Enter genre: ").strip().title()
-                if not validate_non_empty(genre):
+                while True:
+                    genre = input("Enter genre: ").strip().title()
+                    if validate_non_empty(genre):
+                        break
+
                     print(EMPTY_GENRE)
-                    continue
 
-                release_date = input("Enter the release date (YYYY-MM-DD) or leave empty: ")
-                if not validate_release_date(release_date):
+                while True:
+                    release_date = input("Enter the release date (YYYY-MM-DD) or leave empty: ")
+                    if validate_release_date(release_date):
+                        break
+
                     print(RELEASE_DATE_ERROR)
-                    continue
 
-                rating = input("Enter rating out of 5, if any: ")
-                if not validate_rating(rating):
+                while True:
+                    rating = input("Enter rating out of 5, if any: ")
+                    if validate_rating(rating):
+                        break
+
                     print(INVALID_RATING)
-                    continue
 
-                status = input("Have you read this book? (Y/N): ").strip().upper()
-                if not validate_non_empty(status) or status not in BOOK_STATUS:
+                while True:
+                    status = input("Have you read this book? (Y/N): ").strip().upper()
+                    if validate_non_empty(status) and status in BOOK_STATUS:
+                        break
+                    
                     print(INVALID_STATUS_CHOICE)
-                    continue
 
                 else:
                     status = BOOK_STATUS[status]
