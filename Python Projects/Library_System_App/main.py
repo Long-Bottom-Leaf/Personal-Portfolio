@@ -20,6 +20,7 @@ from utils.error_messages import (
     DUPLICATE_GENRE,
     DUPLICATE_RELEASE_DATE,
     DUPLICATE_RATING,
+    DUPLICATE_STATUS,
     ERROR_UPDATING_BOOK,
     EMPTY_LIBRARY,
     EMPTY_TITLE,
@@ -172,22 +173,26 @@ def main():
                         if library.update_status(title, BOOK_STATUS[status]):
                             save_library(library)
                             print(BOOK_UPDATE)
+                            break
 
                         print(ERROR_UPDATING_BOOK)
 
+                    break
+
             case "5":
-                title = input("Enter the title of the book you want to update: ").strip().title()
-                book = library.search_book(title)
+                while True:
+                    title = input("Enter the title of the book you want to update: ").strip().title()
+                    book = library.search_book(title)
+                    
+                    if book is None:
+                        print(INVALID_BOOK_TITLE)
+                        continue
 
-                if book is None:
-                    print(INVALID_BOOK_TITLE)
-
-                else:
                     while True:
                         book_update_menu()
-                        
-                        choice = input("Enter an option: ")
-                                            
+
+                        choice = input("Enter an option: ").strip()
+
                         if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7"]):
                             print(INVALID_MENU_CHOICE)
                             continue
@@ -207,7 +212,6 @@ def main():
                                 book.title = new_title
                                 save_library(library)
                                 print(BOOK_UPDATE)
-                                continue
 
                             case "2":
                                 new_author = input("Enter the new author: ").strip().title()
@@ -223,7 +227,6 @@ def main():
                                 book.author = new_author
                                 save_library(library)
                                 print(BOOK_UPDATE)
-                                continue
 
                             case "3":
                                 new_genre = input("Enter the new genre: ").strip().title()
@@ -239,10 +242,11 @@ def main():
                                 book.genre = new_genre
                                 save_library(library)
                                 print(BOOK_UPDATE)
-                                continue
 
                             case "4":
-                                new_release_date = input("Enter the new release date (YYYY-MM-DD) or leave empty to clear the existing date: ")
+                                new_release_date = input(
+                                    "Enter the new release date (YYYY-MM-DD) or leave empty to clear the existing date: "
+                                ).strip()
 
                                 if not validate_release_date(new_release_date):
                                     print(INVALID_DATE)
@@ -255,7 +259,6 @@ def main():
                                 book.release_date = new_release_date
                                 save_library(library)
                                 print(BOOK_UPDATE)
-                                continue
 
                             case "5":
                                 new_rating = input("Enter a new rating (0-5): ").strip()
@@ -264,31 +267,36 @@ def main():
                                     print(INVALID_RATING)
                                     continue
 
-                                if new_rating == book.rating:
+                                if new_rating == str(book.rating).strip():
                                     print(DUPLICATE_RATING)
                                     continue
 
                                 book.rating = new_rating
                                 save_library(library)
                                 print(BOOK_UPDATE)
-                                continue
 
                             case "6":
-                                new_status = input("Enter a new status for read/unread (Y/N): ") # fix later
+                                new_status = input("Enter a new status for read/unread (Y/N): ").strip().upper()
 
                                 if not validate_status(new_status):
                                     print(INVALID_STATUS_CHOICE)
                                     continue
 
-                                book.status = BOOK_STATUS[new_status]
+                                new_status = BOOK_STATUS[new_status]
+
+                                if new_status == book.status:
+                                    print(DUPLICATE_STATUS)
+                                    continue
+
+                                book.status = new_status
                                 save_library(library)
                                 print(BOOK_UPDATE)
-                                continue
 
                             case "7":
-                                save_library(library)
                                 print("Returning to main menu!")
                                 break
+
+                    break
 
             case "6":
                 book_total = library.total_books()

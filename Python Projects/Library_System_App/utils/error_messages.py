@@ -32,6 +32,10 @@ DUPLICATE_RATING = (
     "Error: The rating provided is already assigned to this book."
 )
 
+DUPLICATE_STATUS = (
+    "Error: The status provided is already assigned to this book."
+)
+
 ERROR_UPDATING_BOOK = (
     "Error: Book was not updated."
 )
