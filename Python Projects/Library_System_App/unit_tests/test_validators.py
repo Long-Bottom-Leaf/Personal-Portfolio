@@ -9,7 +9,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.validators import (
     validate_non_empty,
     validate_release_date,
-    validate_rating
+    validate_rating,
+    validate_status,
+    validate_menu_choice
 )
 
 class TestValidators(unittest.TestCase):
@@ -41,8 +43,19 @@ class TestValidators(unittest.TestCase):
         self.assertEqual(validate_rating("66"), False)
         self.assertEqual(validate_rating("Hello"), False)
 
+    def test_validate_menu_choice(self):
+        valid_choices = ["1", "2", "3"]
+
+        self.assertTrue(validate_menu_choice("1", valid_choices))
+        self.assertTrue(validate_menu_choice("2", valid_choices))
+        self.assertFalse(validate_menu_choice("4", valid_choices))
+        self.assertFalse(validate_menu_choice("", valid_choices))
+
     def test_validate_status(self):
-        
+        self.assertTrue(validate_status("Y"))
+        self.assertTrue(validate_status("N"))
+        self.assertFalse(validate_status("X"))
+        self.assertFalse(validate_status(""))
 
 if __name__ == "__main__":
     unittest.main()

@@ -294,7 +294,7 @@ class TestLibrary(unittest.TestCase):
             "John Harris",
             "Drama",
             2005,
-            6,
+            2,
             "Read"
         )
         
@@ -322,7 +322,7 @@ class TestLibrary(unittest.TestCase):
             "John Harris",
             "Drama",
             2005,
-            6,
+            4,
             "Read"
         )
 
