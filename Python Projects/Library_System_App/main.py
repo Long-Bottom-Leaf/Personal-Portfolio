@@ -26,6 +26,7 @@ from utils.error_messages import (
     EMPTY_TITLE,
     EMPTY_AUTHOR,
     EMPTY_GENRE,
+    EMPTY_STATUS,
     RELEASE_DATE_ERROR,
     INVALID_RATING,
     INVALID_DATE,
@@ -105,13 +106,12 @@ def main():
 
                 while True:
                     status = input("Have you read this book? (Y/N): ").strip().upper()
-                    if validate_non_empty(status) and status in BOOK_STATUS:
+                    if validate_status(status):
                         break
 
                     print(INVALID_STATUS_CHOICE)
 
-                else:
-                    status = BOOK_STATUS[status]
+                status = BOOK_STATUS[status]
 
                 book = Book(
                     title,
@@ -293,6 +293,7 @@ def main():
                                 print(BOOK_UPDATE)
 
                             case "7":
+                                save_library(library)
                                 print("Returning to main menu!")
                                 break
 
@@ -319,49 +320,58 @@ def main():
 
                     match choice:
                         case "1":
-                            author = input("Enter the authors name: ").strip().title()
+                            while True:
+                                author = input("Enter the authors name: ").strip().title()
 
-                            if not author:
-                                print(INVALID_AUTHOR)
+                                if not author:
+                                    print(EMPTY_AUTHOR)
+                                    continue
 
-                            else:
                                 books = library.search_by_author(author)
                                 if not books:
                                     print(INVALID_AUTHOR)
+                                    continue
 
-                                else:
-                                    for book in books:
-                                        print(book)
+                                for book in books:
+                                    print(book)
+
+                                break
 
                         case "2":
-                            genre = input("Enter the genre: ").strip().title()
+                            while True:
+                                genre = input("Enter the genre: ").strip().title()
 
-                            if not genre:
-                                print(INVALID_GENRE)
+                                if not genre:
+                                    print(EMPTY_GENRE)
+                                    continue
 
-                            else:
                                 books = library.search_by_genre(genre)
                                 if not books:
                                     print(INVALID_GENRE)
+                                    continue
 
-                                else:
-                                    for book in books:
-                                        print(book)
+                                for book in books:
+                                    print(book)
+
+                                break
 
                         case "3":
-                            status = input("Enter a status (Read/Unread): ").strip().title()
+                            while True:
+                                status = input("Enter a status (Read/Unread): ").strip().title()
 
-                            if not status:
-                                print(INVALID_STATUS)
+                                if not status:
+                                    print(EMPTY_STATUS)
+                                    continue
 
-                            else:
                                 books = library.search_by_status(status)
                                 if not books:
                                     print(INVALID_STATUS)
+                                    continue
 
-                                else:
-                                    for book in books:
-                                        print(book)
+                                for book in books:
+                                    print(book)
+
+                                break
 
                         case "4":
                             save_library(library)
