@@ -106,7 +106,7 @@ def main():
                     status = input("Have you read this book? (Y/N): ").strip().upper()
                     if validate_non_empty(status) and status in BOOK_STATUS:
                         break
-                    
+
                     print(INVALID_STATUS_CHOICE)
 
                 else:
@@ -142,38 +142,38 @@ def main():
                         print(book)
 
             case "3":
-                title = input("\nEnter the book title you want to view: ").strip().title()
-                book = library.search_book(title)
-
-                if book is None:
-                    print(INVALID_BOOK_TITLE)
-                    continue
-
-                else:
-                    print(book)
+                while True:
+                    title = input("\nEnter the book title you want to view: ").strip().title()
+                    book = library.search_book(title)
+                    if book is None:
+                        print(INVALID_BOOK_TITLE)
+                        continue
+                    
+                    else:
+                        print(book)
+                        break
 
             case "4":
-                title = input("Enter the title of the book you wish to change the status of: ").strip().title()
-                book = library.search_book(title)
-
-                if book is None:
-                    print(INVALID_BOOK_TITLE)
-                    continue
-
-                status = input("Enter Y or N for read/unread: ").strip().upper()
-                
-                if status not in BOOK_STATUS:
-                    print(INVALID_STATUS_CHOICE)
-                    continue
-
-                else:
-                    if library.update_status(title, BOOK_STATUS[status]):
-                        save_library(library)
-                        print(BOOK_UPDATE)
-
-                    else:
-                        print(ERROR_UPDATING_BOOK)
+                while True:
+                    title = input("Enter the title of the book you wish to change the status of: ").strip().title()
+                    book = library.search_book(title)
+                    
+                    if book is None:
+                        print(INVALID_BOOK_TITLE)
                         continue
+                    
+                    while True:
+                        status = input("Enter Y or N for read/unread: ").strip().upper()
+
+                        if status not in BOOK_STATUS:
+                            print(INVALID_STATUS_CHOICE)
+                            continue
+                        
+                        if library.update_status(title, BOOK_STATUS[status]):
+                            save_library(library)
+                            print(BOOK_UPDATE)
+
+                        print(ERROR_UPDATING_BOOK)
 
             case "5":
                 title = input("Enter the title of the book you want to update: ").strip().title()
