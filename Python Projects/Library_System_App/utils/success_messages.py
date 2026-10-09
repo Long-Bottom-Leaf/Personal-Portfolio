@@ -11,3 +11,7 @@ BOOK_UPDATE = (
 BOOK_REMOVED = (
     "The book has been removed successfully!"
 )
+
+RETURN_TO_MAIN = (
+    "Returning to main menu!"
+)

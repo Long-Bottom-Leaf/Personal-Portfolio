@@ -3,8 +3,8 @@
         "title": "Cool Book",
         "author": "Sam",
         "genre": "Comedy",
-        "release_date": "1996-03-23",
-        "rating": "",
+        "release_date": "1999-03-03",
+        "rating": "3",
         "status": "Read"
     }
 ]

@@ -40,6 +40,7 @@ from utils.success_messages import (
     BOOK_ADDED,
     BOOK_UPDATE,
     BOOK_REMOVED,
+    RETURN_TO_MAIN
 )
 from utils.menus import (
     display_menu,
@@ -56,7 +57,7 @@ def main():
     while True:
         display_menu()
 
-        choice = input("Enter an option: ")
+        choice = input("Enter an option: ").strip()
 
         if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7", "8", "9"]):
             print(INVALID_MENU_CHOICE)
@@ -91,14 +92,14 @@ def main():
                     print(EMPTY_GENRE)
 
                 while True:
-                    release_date = input("Enter the release date (YYYY-MM-DD) or leave empty: ")
+                    release_date = input("Enter the release date (YYYY-MM-DD) or leave empty: ").strip()
                     if validate_release_date(release_date):
                         break
 
                     print(RELEASE_DATE_ERROR)
 
                 while True:
-                    rating = input("Enter rating out of 5, if any: ")
+                    rating = input("Enter rating out of 5, if any: ").strip()
                     if validate_rating(rating):
                         break
 
@@ -294,7 +295,7 @@ def main():
 
                             case "7":
                                 save_library(library)
-                                print("Returning to main menu!")
+                                print(RETURN_TO_MAIN)
                                 break
 
                     break
@@ -312,7 +313,7 @@ def main():
                 while True:
                     search_menu()
 
-                    choice = input("Enter an option: ")
+                    choice = input("Enter an option: ").strip()
                     
                     if not validate_menu_choice(choice, ["1", "2", "3", "4"]):
                         print(INVALID_MENU_CHOICE)
@@ -375,18 +376,24 @@ def main():
 
                         case "4":
                             save_library(library)
-                            print("Returning to main menu!")
+                            print(RETURN_TO_MAIN)
                             break
 
             case "8":
-                title = input("Enter the book title to be removed: ").strip().title()
-            
-                if library.remove_book(title):
-                    save_library(library)
-                    print(BOOK_REMOVED)
-                                
-                else:
-                    print(INVALID_BOOK_TITLE)
+                while True:
+                    title = input("Enter the book title to be removed, or 'exit' to return to main menu: ").strip().title()
+
+                    if title == "Exit":
+                        print(RETURN_TO_MAIN)
+                        break
+
+                    if library.remove_book(title):
+                        save_library(library)
+                        print(BOOK_REMOVED)
+
+                    else:
+                        print(INVALID_BOOK_TITLE)
+                        continue
 
             case "9":
                 save_library(library)
