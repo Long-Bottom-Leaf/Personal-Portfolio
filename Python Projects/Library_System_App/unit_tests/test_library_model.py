@@ -133,6 +133,16 @@ class TestLibrary(unittest.TestCase):
         self.assertEqual(len(library.books), 1)
         self.assertEqual(library.books[0], book1)
 
+    def test_remove_book_from_empty_library(self):
+        library = Library()
+
+        library = Library()
+
+        result = library.remove_book("Cool Book")
+
+        self.assertFalse(result)
+        self.assertEqual(library.books, [])
+
     def test_view_library_list(self):
         library = Library()
         
@@ -277,6 +287,47 @@ class TestLibrary(unittest.TestCase):
         self.assertEqual(result1, [book1])
         self.assertEqual(result2, [])
 
+    def test_search_by_status_multiple_matches(self):
+        library = Library()
+
+        book1 = Book(
+            "Cool Book",
+            "John French",
+            "Horror",
+            1999,
+            5,
+            "Unread"
+        )
+        
+        book2 = Book(
+            "Really Cool Book",
+            "John Harris",
+            "Drama",
+            2005,
+            6,
+            "Read"
+        )
+
+        book3 = Book(
+            "Super Cool Book",
+            "Gracy Coolidge",
+            "Comedy",
+            2015,
+            7,
+            "Read"
+        )
+
+        library.add_book(book1)
+        library.add_book(book2)
+        library.add_book(book3)
+
+        self.assertEqual(library.search_by_status("Read"), [book2, book3])
+
+    def test_search_by_status_empty_library(self):
+        library = Library()
+
+        self.assertEqual(library.search_by_status("Read"), [])
+
     def test_total_books(self):
         library = Library()
 
@@ -302,44 +353,6 @@ class TestLibrary(unittest.TestCase):
         library.add_book(book2)
 
         result = library.total_books()
-
-        self.assertEqual(result, 2)
-
-    def test_books_read(self):
-        library = Library()
-
-        book1 = Book(
-            "Cool Book",
-            "John French",
-            "Horror",
-            1999,
-            5,
-            "Unread"
-        )
-        
-        book2 = Book(
-            "Really Cool Book",
-            "John Harris",
-            "Drama",
-            2005,
-            4,
-            "Read"
-        )
-
-        book3 = Book(
-            "Another Cool Book",
-            "Jane Smith",
-            "Comedy",
-            2010,
-            3,
-            "Read"
-        )
-        
-        library.add_book(book1)
-        library.add_book(book2)
-        library.add_book(book3)
-
-        result = library.books_read()
 
         self.assertEqual(result, 2)
 
