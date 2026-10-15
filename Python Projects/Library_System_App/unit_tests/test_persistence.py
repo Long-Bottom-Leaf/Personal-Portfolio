@@ -33,7 +33,6 @@ class TestPersistence(unittest.TestCase):
         save_library(library)
 
         mock_file.assert_called_once_with(DATA_FILE, "w")
-
         mock_json_dump.assert_called_once_with(
             [
                 {
@@ -49,14 +48,18 @@ class TestPersistence(unittest.TestCase):
             indent=4
         )
 
-    def test_save_library_empty(self):
+    @patch("services.persistence.json.dump")
+    @patch("services.persistence.open", new_callable=mock_open)
+    def test_save_library_empty(self, mock_file, mock_json_dump):
         library = Library()
         save_library(library)
 
-        with open(DATA_FILE, "r") as file:
-            data = file.read()
-
-        self.assertEqual(data, "[]")
+        mock_file.assert_called_once_with(DATA_FILE, "w")
+        mock_json_dump.assert_called_once_with(
+            [],
+            mock_file(),
+            indent=4
+        )
 
     @patch("services.persistence.json.dump")
     @patch("services.persistence.open", new_callable=mock_open)
@@ -137,16 +140,6 @@ class TestPersistence(unittest.TestCase):
         self.assertEqual(book.release_date, 1999)
         self.assertEqual(book.rating, 5)
         self.assertEqual(book.status, "Unread")
-
-    @patch("services.persistence.os.path.exists")
-    def test_load_library_missing_file(self, mock_exists):
-        mock_exists.return_value = False
-
-        library, loaded = load_library()
-
-        self.assertTrue(loaded)
-        self.assertIsInstance(library, Library)
-        self.assertEqual(library.books, [])
 
     @patch("services.persistence.os.path.exists")
     def test_load_library_missing_file(self, mock_exists):
