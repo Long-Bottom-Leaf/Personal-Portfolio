@@ -1,14 +1,3 @@
-Phase 6 — Unit Test Polish
-
-- Test Book
-- Test adding/removing books
-- Test searching/filtering
-- Test read status
-- Test statistics
-- Test JSON loading/saving
-- Test validation
-- Use mocking where appropriate
-
 Phase 7 — Polish
 
 - Clean up CLI/menu
@@ -92,3 +81,12 @@ Finished
 - Books read
 - Average rating
 - Most common genre
+
+- Test Book
+- Test adding/removing books
+- Test searching/filtering
+- Test read status
+- Test statistics
+- Test JSON loading/saving
+- Test validation
+- Use mocking where appropriate

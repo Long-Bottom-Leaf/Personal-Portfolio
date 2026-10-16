@@ -1,10 +1,162 @@
 [
     {
-        "title": "Cool Book",
-        "author": "Sam",
-        "genre": "Comedy",
-        "release_date": "1999-03-03",
-        "rating": "3",
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "genre": "Fantasy",
+        "release_date": 1937,
+        "rating": 5,
+        "status": "Read"
+    },
+    {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "genre": "Science Fiction",
+        "release_date": 1965,
+        "rating": 4.5,
+        "status": "Unread"
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "genre": "Dystopian",
+        "release_date": 1949,
+        "rating": 5,
+        "status": "Read"
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genre": "Romance",
+        "release_date": 1813,
+        "rating": 4,
+        "status": "Read"
+    },
+    {
+        "title": "The Martian",
+        "author": "Andy Weir",
+        "genre": "Science Fiction",
+        "release_date": 2011,
+        "rating": 4.5,
+        "status": "Unread"
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genre": "Drama",
+        "release_date": 1960,
+        "rating": 5,
+        "status": "Read"
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genre": "Classic",
+        "release_date": 1925,
+        "rating": 3.5,
+        "status": "Unread"
+    },
+    {
+        "title": "Harry Potter and the Philosopher's Stone",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "release_date": 1997,
+        "rating": 5,
+        "status": "Read"
+    },
+    {
+        "title": "Life of Pi",
+        "author": "Yann Martel",
+        "genre": "Adventure",
+        "release_date": 2001,
+        "rating": 4,
+        "status": "Unread"
+    },
+    {
+        "title": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "genre": "Dystopian",
+        "release_date": 2008,
+        "rating": 4.5,
+        "status": "Read"
+    },
+    {
+        "title": "The Fellowship of the Ring",
+        "author": "J.R.R. Tolkien",
+        "genre": "Fantasy",
+        "release_date": 1954,
+        "rating": 5,
+        "status": "Unread"
+    },
+    {
+        "title": "The Two Towers",
+        "author": "J.R.R. Tolkien",
+        "genre": "Fantasy",
+        "release_date": 1954,
+        "rating": 4.5,
+        "status": "Read"
+    },
+    {
+        "title": "Foundation",
+        "author": "Isaac Asimov",
+        "genre": "Science Fiction",
+        "release_date": 1951,
+        "rating": 4,
+        "status": "Unread"
+    },
+    {
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "genre": "Dystopian",
+        "release_date": 1932,
+        "rating": 4,
+        "status": "Read"
+    },
+    {
+        "title": "The Shining",
+        "author": "Stephen King",
+        "genre": "Horror",
+        "release_date": 1977,
+        "rating": 4.5,
+        "status": "Unread"
+    },
+    {
+        "title": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "genre": "Thriller",
+        "release_date": 2019,
+        "rating": 4,
+        "status": "Read"
+    },
+    {
+        "title": "The Book Thief",
+        "author": "Markus Zusak",
+        "genre": "Historical Fiction",
+        "release_date": 2005,
+        "rating": 5,
+        "status": "Unread"
+    },
+    {
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "genre": "Satire",
+        "release_date": 1945,
+        "rating": 4,
+        "status": "Read"
+    },
+    {
+        "title": "The Da Vinci Code",
+        "author": "Dan Brown",
+        "genre": "Mystery",
+        "release_date": 2003,
+        "rating": 3.5,
+        "status": "Unread"
+    },
+    {
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "genre": "Science Fiction",
+        "release_date": 1953,
+        "rating": 4,
         "status": "Read"
     }
 ]

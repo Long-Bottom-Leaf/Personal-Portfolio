@@ -152,6 +152,7 @@ def main():
                         continue
                     
                     else:
+                        print()
                         print(book)
                         break
 
