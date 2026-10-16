@@ -33,7 +33,7 @@ from utils.error_messages import (
     INVALID_LIBRARY_DATA,
     INVALID_AUTHOR,
     INVALID_GENRE,
-    INVALID_STATUS,
+    INVALID_STATUS_SEARCH,
 )
 from utils.success_messages import (
     BOOK_ADDED,
@@ -309,7 +309,8 @@ def main():
                     print(EMPTY_LIBRARY)
                 
                 else:
-                    print(book_total)
+                    print()
+                    print(f"Total number of books in library = {book_total}")
 
             case "7": # search options
                 while True:
@@ -336,6 +337,7 @@ def main():
                                     continue
 
                                 for book in books:
+                                    print()
                                     print(book)
 
                                 break
@@ -354,6 +356,7 @@ def main():
                                     continue
 
                                 for book in books:
+                                    print()
                                     print(book)
 
                                 break
@@ -368,10 +371,11 @@ def main():
 
                                 books = library.search_by_status(status)
                                 if not books:
-                                    print(INVALID_STATUS)
+                                    print(INVALID_STATUS_SEARCH)
                                     continue
 
                                 for book in books:
+                                    print()
                                     print(book)
 
                                 break

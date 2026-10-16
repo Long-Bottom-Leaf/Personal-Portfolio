@@ -1,17 +1,17 @@
 # Program success messages
 
 BOOK_ADDED = (
-    "The new book has been added successfully!"
+    "\nThe new book has been added successfully!\n"
 )
 
 BOOK_UPDATE = (
-    "The book has been updated successfully!"
+    "\nThe book has been updated successfully!\n"
 )
 
 BOOK_REMOVED = (
-    "The book has been removed successfully!"
+    "\nThe book has been removed successfully!\n"
 )
 
 RETURN_TO_MAIN = (
-    "Returning to main menu!"
+    "\nReturning to main menu!\n"
 )

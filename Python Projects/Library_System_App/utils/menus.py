@@ -5,7 +5,7 @@ def display_menu(): # main menu
 
     print("\n1. Add new book")
     print("\n2. View book library")
-    print("\n3. View specific book")
+    print("\n3. Search book title")
     print("\n4. Mark book as read/unread")
     print("\n5. Update book details")
     print("\n6. View total books in library")
@@ -14,7 +14,7 @@ def display_menu(): # main menu
 
     print("\n9. Exit\n")
 
-def book_update_menu(): # udate book details
+def book_update_menu(): # update book details
     print("\n==== Update Book Details ====")
 
     print("\n1. Title")

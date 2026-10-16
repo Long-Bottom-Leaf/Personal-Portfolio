@@ -158,5 +158,13 @@
         "release_date": 1953,
         "rating": 4,
         "status": "Read"
+    },
+    {
+        "title": "Test Book 1",
+        "author": "Stephen",
+        "genre": "Horror",
+        "release_date": "1993-07-08",
+        "rating": "5",
+        "status": "Unread"
     }
 ]
