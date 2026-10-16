@@ -13,7 +13,6 @@ DATA_FILE = os.path.join(
     "library.json"
 )
 
-
 def save_library(library):
     books_data = []
 

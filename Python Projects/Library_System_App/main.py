@@ -29,7 +29,6 @@ from utils.error_messages import (
     EMPTY_STATUS,
     RELEASE_DATE_ERROR,
     INVALID_RATING,
-    INVALID_DATE,
     INVALID_BOOK_TITLE,
     INVALID_LIBRARY_DATA,
     INVALID_AUTHOR,
@@ -55,7 +54,7 @@ def main():
         print(INVALID_LIBRARY_DATA)
 
     while True:
-        display_menu()
+        display_menu() # main menu
 
         choice = input("Enter an option: ").strip()
 
@@ -64,7 +63,7 @@ def main():
             continue
 
         match choice:
-            case "1":
+            case "1": # add book
                 print("\n==Enter book details==\n")
                 while True:
                     title = input("Enter title: ").strip().title()
@@ -77,6 +76,7 @@ def main():
                     else:
                         break
 
+                # book details
                 while True:
                     author = input("Enter author: ").strip().title()
                     if validate_non_empty(author):
@@ -123,6 +123,7 @@ def main():
                     status
                 )
 
+                # add book and save library
                 if library.add_book(book):
                     save_library(library)
                     print(BOOK_ADDED)
@@ -131,7 +132,7 @@ def main():
                     print(ERROR_ADDING_BOOK)
                     continue
 
-            case "2":
+            case "2": # view all books
                 print("\n==Library List==\n")
                 books = library.view_book_list()
 
@@ -143,7 +144,7 @@ def main():
                     for book in books:
                         print(book)
 
-            case "3":
+            case "3": # search for specific book
                 while True:
                     title = input("\nEnter the book title you want to view: ").strip().title()
                     book = library.search_book(title)
@@ -156,7 +157,7 @@ def main():
                         print(book)
                         break
 
-            case "4":
+            case "4": # update read/unread status
                 while True:
                     title = input("Enter the title of the book you wish to change the status of: ").strip().title()
                     book = library.search_book(title)
@@ -181,7 +182,7 @@ def main():
 
                     break
 
-            case "5":
+            case "5": # update book all details
                 while True:
                     title = input("Enter the title of the book you want to update: ").strip().title()
                     book = library.search_book(title)
@@ -251,7 +252,7 @@ def main():
                                 ).strip()
 
                                 if not validate_release_date(new_release_date):
-                                    print(INVALID_DATE)
+                                    print(RELEASE_DATE_ERROR)
                                     continue
 
                                 if new_release_date == book.release_date:
@@ -301,7 +302,7 @@ def main():
 
                     break
 
-            case "6":
+            case "6": # view total books
                 book_total = library.total_books()
                 
                 if not library.books:
@@ -310,7 +311,7 @@ def main():
                 else:
                     print(book_total)
 
-            case "7":
+            case "7": # search options
                 while True:
                     search_menu()
 
@@ -380,7 +381,7 @@ def main():
                             print(RETURN_TO_MAIN)
                             break
 
-            case "8":
+            case "8": # remove book
                 while True:
                     title = input("Enter the book title to be removed, or 'exit' to return to main menu: ").strip().title()
 
@@ -396,9 +397,9 @@ def main():
                         print(INVALID_BOOK_TITLE)
                         continue
 
-            case "9":
+            case "9": # exit program
                 save_library(library)
-                print("Goodbye")
+                print("Goodbye!")
                 break
 
 if __name__ == "__main__":

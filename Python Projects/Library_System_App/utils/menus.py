@@ -1,6 +1,6 @@
-# Menus for main
+# Menus for main.py
 
-def display_menu():
+def display_menu(): # main menu
     print("\n==== Library Menu ====")
 
     print("\n1. Add new book")
@@ -14,7 +14,7 @@ def display_menu():
 
     print("\n9. Exit\n")
 
-def book_update_menu():
+def book_update_menu(): # udate book details
     print("\n==== Update Book Details ====")
 
     print("\n1. Title")
@@ -25,7 +25,7 @@ def book_update_menu():
     print("\n6. Status")
     print("\n7. Exit")
 
-def search_menu():
+def search_menu(): # book search
     print("\n==== Search Menu====")
 
     print("\nSearch by: ")
