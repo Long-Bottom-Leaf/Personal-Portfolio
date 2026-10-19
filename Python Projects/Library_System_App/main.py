@@ -11,6 +11,7 @@ from utils.validators import (
     validate_status,
     BOOK_STATUS,
 )
+from utils.input_helper import (is_return_previous)
 from utils.error_messages import (
     INVALID_MENU_CHOICE,
     INVALID_STATUS_CHOICE,
@@ -64,9 +65,15 @@ def main():
 
         match choice:
             case "1": # add book
+                return_previous = False
+
                 print("\n==Enter book details==\n")
                 while True:
                     title = input("Enter title: ").strip().title()
+                    if is_return_previous(title):
+                        return_previous = True
+                        break
+
                     if not validate_non_empty(title):
                         print(EMPTY_TITLE)
 
@@ -79,6 +86,14 @@ def main():
                 # book details
                 while True:
                     author = input("Enter author: ").strip().title()
+                    if is_return_previous(author):
+                        return_previous = True
+                        break
+
+                    if is_return_previous(author):
+                        return_previous = True
+                        break
+
                     if validate_non_empty(author):
                         break
 
@@ -86,6 +101,10 @@ def main():
 
                 while True:
                     genre = input("Enter genre: ").strip().title()
+                    if is_return_previous(genre):
+                        return_previous = True
+                        break
+
                     if validate_non_empty(genre):
                         break
 
@@ -93,6 +112,10 @@ def main():
 
                 while True:
                     release_date = input("Enter the release date (YYYY-MM-DD) or leave empty: ").strip()
+                    if is_return_previous(release_date):
+                        return_previous = True
+                        break
+
                     if validate_release_date(release_date):
                         break
 
@@ -100,6 +123,10 @@ def main():
 
                 while True:
                     rating = input("Enter rating out of 5, if any: ").strip()
+                    if is_return_previous(rating):
+                        return_previous = True
+                        break
+
                     if validate_rating(rating):
                         break
 
@@ -107,6 +134,10 @@ def main():
 
                 while True:
                     status = input("Have you read this book? (Y/N): ").strip().upper()
+                    if is_return_previous(status):
+                        return_previous = True
+                        break
+
                     if validate_status(status):
                         break
 
@@ -145,8 +176,14 @@ def main():
                         print(book)
 
             case "3": # search for specific book
+                return_previous = False
+
                 while True:
                     title = input("\nEnter the book title you want to view: ").strip().title()
+                    if is_return_previous(title):
+                        return_previous = True
+                        break
+
                     book = library.search_book(title)
                     if book is None:
                         print(INVALID_BOOK_TITLE)
@@ -158,8 +195,14 @@ def main():
                         break
 
             case "4": # update read/unread status
+                return_previous = False
+
                 while True:
                     title = input("Enter the title of the book you wish to change the status of: ").strip().title()
+                    if is_return_previous(title):
+                        return_previous = True
+                        break
+
                     book = library.search_book(title)
                     
                     if book is None:
@@ -168,6 +211,9 @@ def main():
                     
                     while True:
                         status = input("Enter Y or N for read/unread: ").strip().upper()
+                        if is_return_previous(status):
+                            return_previous = True
+                            break
 
                         if status not in BOOK_STATUS:
                             print(INVALID_STATUS_CHOICE)
@@ -183,8 +229,14 @@ def main():
                     break
 
             case "5": # update book all details
+                return_previous = False
+
                 while True:
                     title = input("Enter the title of the book you want to update: ").strip().title()
+                    if is_return_previous(title):
+                        return_previous = True
+                        break
+
                     book = library.search_book(title)
                     
                     if book is None:
@@ -195,6 +247,9 @@ def main():
                         book_update_menu()
 
                         choice = input("Enter an option: ").strip()
+                        if is_return_previous(choice):
+                            return_previous = True
+                            break
 
                         if not validate_menu_choice(choice, ["1", "2", "3", "4", "5", "6", "7"]):
                             print(INVALID_MENU_CHOICE)
@@ -202,7 +257,12 @@ def main():
 
                         match choice:
                             case "1":
+                                return_previous = False
+
                                 new_title = input("Enter the new title: ").strip().title()
+                                if is_return_previous(new_title):
+                                    return_previous = True
+                                    break
 
                                 if not validate_non_empty(new_title):
                                     print(EMPTY_TITLE)
@@ -217,7 +277,12 @@ def main():
                                 print(BOOK_UPDATE)
 
                             case "2":
+                                return_previous = False
+
                                 new_author = input("Enter the new author: ").strip().title()
+                                if is_return_previous(new_author):
+                                    return_previous = True
+                                    break
 
                                 if not validate_non_empty(new_author):
                                     print(EMPTY_AUTHOR)
@@ -232,7 +297,12 @@ def main():
                                 print(BOOK_UPDATE)
 
                             case "3":
+                                return_previous = False
+
                                 new_genre = input("Enter the new genre: ").strip().title()
+                                if is_return_previous(new_genre):
+                                    return_previous = True
+                                    break
 
                                 if not validate_non_empty(new_genre):
                                     print(EMPTY_GENRE)
@@ -247,9 +317,14 @@ def main():
                                 print(BOOK_UPDATE)
 
                             case "4":
+                                return_previous = False
+
                                 new_release_date = input(
                                     "Enter the new release date (YYYY-MM-DD) or leave empty to clear the existing date: "
                                 ).strip()
+                                if is_return_previous(new_release_date):
+                                    return_previous = True
+                                    break
 
                                 if not validate_release_date(new_release_date):
                                     print(RELEASE_DATE_ERROR)
@@ -264,7 +339,12 @@ def main():
                                 print(BOOK_UPDATE)
 
                             case "5":
+                                return_previous = False
+
                                 new_rating = input("Enter a new rating (0-5): ").strip()
+                                if is_return_previous(new_rating):
+                                    return_previous = True
+                                    break
 
                                 if not validate_rating(new_rating):
                                     print(INVALID_RATING)
@@ -279,7 +359,12 @@ def main():
                                 print(BOOK_UPDATE)
 
                             case "6":
+                                return_previous = False
+
                                 new_status = input("Enter a new status for read/unread (Y/N): ").strip().upper()
+                                if is_return_previous(new_status):
+                                    return_previous = True
+                                    break
 
                                 if not validate_status(new_status):
                                     print(INVALID_STATUS_CHOICE)
@@ -313,10 +398,15 @@ def main():
                     print(f"Total number of books in library = {book_total}")
 
             case "7": # search options
+                return_previous = False
+
                 while True:
                     search_menu()
 
                     choice = input("Enter an option: ").strip()
+                    if is_return_previous(choice):
+                        return_previous = True
+                        break
                     
                     if not validate_menu_choice(choice, ["1", "2", "3", "4"]):
                         print(INVALID_MENU_CHOICE)
@@ -324,8 +414,13 @@ def main():
 
                     match choice:
                         case "1":
+                            return_previous = False
+
                             while True:
                                 author = input("Enter the authors name: ").strip().title()
+                                if is_return_previous(author):
+                                    return_previous = True
+                                    break
 
                                 if not author:
                                     print(EMPTY_AUTHOR)
@@ -343,8 +438,13 @@ def main():
                                 break
 
                         case "2":
+                            return_previous = False
+
                             while True:
                                 genre = input("Enter the genre: ").strip().title()
+                                if is_return_previous(genre):
+                                    return_previous = True
+                                    break
 
                                 if not genre:
                                     print(EMPTY_GENRE)
@@ -362,8 +462,13 @@ def main():
                                 break
 
                         case "3":
+                            return_previous = False
+
                             while True:
                                 status = input("Enter a status (Read/Unread): ").strip().title()
+                                if is_return_previous(status):
+                                    return_previous = True
+                                    break
 
                                 if not status:
                                     print(EMPTY_STATUS)
@@ -386,11 +491,12 @@ def main():
                             break
 
             case "8": # remove book
+                return_previous = False
+                
                 while True:
-                    title = input("Enter the book title to be removed, or 'exit' to return to main menu: ").strip().title()
-
-                    if title == "Exit":
-                        print(RETURN_TO_MAIN)
+                    title = input("Enter the book title to be removed: ").strip().title()
+                    if is_return_previous(title):
+                        return_previous = True
                         break
 
                     if library.remove_book(title):
