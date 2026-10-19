@@ -139,6 +139,8 @@ Potential improvements include:
 
 ---
 
-**Status:** In development
+## Author
 
-**Language:** Python
+**Stephen Fennelly**
+
+This project was created as part of my Python learning and portfolio development.

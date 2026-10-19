@@ -33,6 +33,6 @@ Independent applications and experiments built outside coursework.
 
 # Python
 
-Fitness Tracker App
-
-Calculator App
+- Fitness Tracker App
+- Calculator App
+- Library System App
