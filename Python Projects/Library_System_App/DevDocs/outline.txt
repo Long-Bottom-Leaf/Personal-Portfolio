@@ -1,8 +1,5 @@
 Phase 7 — Polish
 
-- Clean up CLI/menu
-- Improve output formatting
-- Improve error/success messages
 - Refactor repetitive code
 - Improve menu interaction
 - Fix status printout for book
@@ -90,3 +87,7 @@ Finished
 - Test JSON loading/saving
 - Test validation
 - Use mocking where appropriate
+
+- Clean up CLI/menu
+- Improve output formatting
+- Improve error/success messages
