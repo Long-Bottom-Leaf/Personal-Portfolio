@@ -47,3 +47,6 @@ class TestBook(unittest.TestCase):
         )
 
         self.assertEqual(str(book), expected)
+
+if __name__ == '__main__':
+    unittest.main()

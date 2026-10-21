@@ -1,11 +1,3 @@
-Phase 7 — Polish
-
-- Refactor repetitive code
-- Improve menu interaction
-- Fix status printout for book
-- README
-- Final project review
-
 Program Flow
              PROGRAM RUNNING
                     │
@@ -91,3 +83,8 @@ Finished
 - Clean up CLI/menu
 - Improve output formatting
 - Improve error/success messages
+- Refactor repetitive code
+- Improve menu interaction
+- Fix status printout for book
+- README
+- Final project review
