@@ -12,6 +12,6 @@ BOOK_REMOVED = (
     "\nThe book has been removed successfully!\n"
 )
 
-RETURN_TO_MAIN = (
-    "\nReturning to main menu!\n"
+RETURN_TO_PREVIOUS = (
+    "\nReturning to previous menu!\n"
 )
