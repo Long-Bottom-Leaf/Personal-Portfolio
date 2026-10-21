@@ -287,7 +287,7 @@ def main():
                                 if is_return_previous(new_title):
                                     return_previous = True
                                     print(RETURN_TO_PREVIOUS)
-                                    break
+                                    continue
 
                                 if not validate_non_empty(new_title):
                                     print(EMPTY_TITLE)
@@ -308,7 +308,7 @@ def main():
                                 if is_return_previous(new_author):
                                     return_previous = True
                                     print(RETURN_TO_PREVIOUS)
-                                    break
+                                    continue
 
                                 if not validate_non_empty(new_author):
                                     print(EMPTY_AUTHOR)
@@ -329,7 +329,7 @@ def main():
                                 if is_return_previous(new_genre):
                                     return_previous = True
                                     print(RETURN_TO_PREVIOUS)
-                                    break
+                                    continue
 
                                 if not validate_non_empty(new_genre):
                                     print(EMPTY_GENRE)
@@ -352,7 +352,7 @@ def main():
                                 if is_return_previous(new_release_date):
                                     return_previous = True
                                     print(RETURN_TO_PREVIOUS)
-                                    break
+                                    continue
 
                                 if not validate_release_date(new_release_date):
                                     print(RELEASE_DATE_ERROR)
@@ -373,7 +373,7 @@ def main():
                                 if is_return_previous(new_rating):
                                     return_previous = True
                                     print(RETURN_TO_PREVIOUS)
-                                    break
+                                    continue
 
                                 if not validate_rating(new_rating):
                                     print(INVALID_RATING)
@@ -394,7 +394,7 @@ def main():
                                 if is_return_previous(new_status):
                                     return_previous = True
                                     print(RETURN_TO_PREVIOUS)
-                                    break
+                                    continue
 
                                 if not validate_status(new_status):
                                     print(INVALID_STATUS_CHOICE)
