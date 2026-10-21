@@ -83,13 +83,11 @@ def main():
                     else:
                         break
 
-                # book details
+                if return_previous:
+                    continue
+
                 while True:
                     author = input("Enter author: ").strip().title()
-                    if is_return_previous(author):
-                        return_previous = True
-                        break
-
                     if is_return_previous(author):
                         return_previous = True
                         break
@@ -98,6 +96,9 @@ def main():
                         break
 
                     print(EMPTY_AUTHOR)
+
+                if return_previous:
+                    continue
 
                 while True:
                     genre = input("Enter genre: ").strip().title()
@@ -110,6 +111,9 @@ def main():
 
                     print(EMPTY_GENRE)
 
+                if return_previous:
+                    continue
+
                 while True:
                     release_date = input("Enter the release date (YYYY-MM-DD) or leave empty: ").strip()
                     if is_return_previous(release_date):
@@ -120,6 +124,9 @@ def main():
                         break
 
                     print(RELEASE_DATE_ERROR)
+
+                if return_previous:
+                    continue
 
                 while True:
                     rating = input("Enter rating out of 5, if any: ").strip()
@@ -132,6 +139,9 @@ def main():
 
                     print(INVALID_RATING)
 
+                if return_previous:
+                    continue
+
                 while True:
                     status = input("Have you read this book? (Y/N): ").strip().upper()
                     if is_return_previous(status):
@@ -142,6 +152,9 @@ def main():
                         break
 
                     print(INVALID_STATUS_CHOICE)
+
+                if return_previous:
+                    continue
 
                 status = BOOK_STATUS[status]
 

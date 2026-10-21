@@ -4,10 +4,6 @@ INVALID_MENU_CHOICE = (
     "\nError: Invalid menu choice. Please select a valid option.\n"
 )
 
-INVALID_STATUS_CHOICE = (
-    "\nError: Invalid status. Please enter Y/N for read or unread.\n"
-)
-
 # Adding book error messages
 ERROR_ADDING_BOOK = (
     "\nError: Unable to add book, please ensure book details are input correctly.\n"
@@ -74,6 +70,10 @@ RELEASE_DATE_ERROR = (
 
 INVALID_RATING = (
     "\nError: Invalid rating. Please enter a valid rating 0-5, or leave empty.\n"
+)
+
+INVALID_STATUS_CHOICE = (
+    "\nError: Invalid status. Please enter Y/N for read or unread.\n"
 )
 
 # Filter options
