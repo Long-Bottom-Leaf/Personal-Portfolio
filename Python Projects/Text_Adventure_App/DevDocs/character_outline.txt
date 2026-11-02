@@ -18,4 +18,8 @@ Weapon/Damage
 Armor
 Drop item/loot, if any
 
-===  ===
+=== NPC shop character ===
+
+Name
+Race/Type
+Inventory
