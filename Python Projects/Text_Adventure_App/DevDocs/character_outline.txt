@@ -1,0 +1,21 @@
+=== Player character outline ===
+
+Name
+Health
+Armor
+Weapon/Damage
+Luck
+Gold
+Misc items (ex: rope)
+Loot
+
+=== NPC combat character outline ===
+
+Name
+Race/Type (ex animal or orc)
+Health
+Weapon/Damage
+Armor
+Drop item/loot, if any
+
+===  ===
