@@ -1,25 +1,18 @@
-=== Player character outline ===
+=== Parent - Character Class ===
 
 Name
-Health
+Race
+Current Health
+Max Health
 Armor
-Weapon/Damage
+Weapon
+
+== Child - Player Charcater Class ==
+
 Luck
 Gold
-Misc items (ex: rope)
-Loot
+Misc inventory (rope, ladder, shovel, etc)
+Valuables (collectables, story items)
 
-=== NPC combat character outline ===
+== Child - NPC Class ==
 
-Name
-Race/Type (ex animal or orc)
-Health
-Weapon/Damage
-Armor
-Drop item/loot, if any
-
-=== NPC shop character ===
-
-Name
-Race/Type
-Inventory

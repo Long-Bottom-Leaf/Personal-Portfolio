@@ -1,5 +1,6 @@
 Phase 1
 - Set up folder structure.
+- Create Parent Character class
 - Create Player class.
 - Create StoryNode class.
 - Create GameState class.
