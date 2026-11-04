@@ -16,3 +16,16 @@ Valuables (collectables, story items)
 
 == Child - NPC Class ==
 
+Dialogue
+Interaction type
+Disposition (friendly, neutral, hostile)
+Unique identifier (optional for tracking NPC's)
+
+== Child - Combatant ==
+
+Loot drops
+
+== Child - Shopkeeper ==
+
+Shop inventory
+Buying/selling functionality
