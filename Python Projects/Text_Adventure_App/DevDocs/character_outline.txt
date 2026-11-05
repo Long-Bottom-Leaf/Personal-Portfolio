@@ -12,12 +12,19 @@ Weapon
 Luck
 Gold
 Misc inventory (rope, ladder, shovel, etc)
+Provisions (starting amount)
 Valuables (collectables, story items)
+
+Stats that are rolled
+
+Strength
+Max Health
+Luck
 
 == Child - NPC Class ==
 
 Dialogue
-Interaction type
+Interaction type (combat, dialogue, trade)
 Disposition (friendly, neutral, hostile)
 Unique identifier (optional for tracking NPC's)
 

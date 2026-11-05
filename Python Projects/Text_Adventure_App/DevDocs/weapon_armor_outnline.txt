@@ -1,0 +1,11 @@
+=== Weapon ===
+
+Name
+Damage
+Gold Value
+
+=== Armor ===
+
+Name
+Armor Value
+Gold Value

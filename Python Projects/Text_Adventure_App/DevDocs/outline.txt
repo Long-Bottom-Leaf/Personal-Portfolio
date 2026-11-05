@@ -1,4 +1,6 @@
 Phase 1
+- Outlines (character, weapon, story, etc)
+
 - Set up folder structure.
 - Create Parent Character class
 - Create Player class.
