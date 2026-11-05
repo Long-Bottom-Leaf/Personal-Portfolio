@@ -1,0 +1,55 @@
+=== Weapon ===
+
+Name
+Damage Bonus
+Damage Type (if applicable)
+Gold Value
+
+Player character will start with a basic weapon, providing no bonus
+Weapons will give a small bonus and/or different damage type when applicable
+Ex sword is slashing, mace is bludgeoning
+
+=== Armor ===
+
+Name
+Armor Value
+Damage Protection Type (if applicable)
+Gold Value
+
+Player character will start with basic armor providing no bonus
+Armor will protect against some damage and/or different damage types when applicable
+Ex light armor provides less protection than heavy, metal provides different damage reduction than leather
+
+== Stat Rolls ==
+
+Strength = 1d6 + 6
+HP = 1d6 + 12
+Luck = 1d6 + 6
+
+Strength is overall damage dealt by weapons, weapons will give a small bonus and/or different damage type when applicable
+Max Health is the maximum health available, base value cannot be increased
+Luck can be used in battle and when asked to Test Your Lock. Each use decreases the luck score by 1. To use luck, roll 2d6 and if the players
+    luck score is higher, than they succeed. In combat, when dealing damage or taking damage, the player can test their luck to increase or reduce
+    the damage
+
+== Provisions ==
+
+Begin with 10 provisions, may rest when given the chance (for now) and eat 1 meal, each meal restores 4 HP
+
+== Potions ==
+
+Start with 1 of 3 potions, Health/Strength/Luck
+
+- Health Potion: restores health to initial max HP
+- Strength Potion: restores strength to initial max STR
+- Luck Potion: restores luck to initial max Luck + 1 to max
+
+Starting potions can be used twice
+
+== Combat ==
+
+Player character/NPC combatant each roll 2d6 + the player/NPC Strength
+Add any increases/decreases from weapon, armor, and damage type resistance if applicable
+Formula = 2d6 + STR + WeapBonus - Armor - DmgRes
+The higher value wins and deals 2 damage
+When dealing/taking damage, we can now use luck to increase/decrease the damage
