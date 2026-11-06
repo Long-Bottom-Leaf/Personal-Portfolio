@@ -1,40 +1,61 @@
 === Weapon ===
 
 Name
-Damage Bonus
-Damage Type (if applicable)
+Attack success/damage dealt bonus
 Gold Value
 
 Player character will start with a basic weapon, providing no bonus
-Weapons will give a small bonus and/or different damage type when applicable
-Ex sword is slashing, mace is bludgeoning
+Weapons will give a small attack hit and/or damage dealt bonus
 
 === Armor ===
 
 Name
 Armor Value
-Damage Protection Type (if applicable)
 Gold Value
 
 Player character will start with basic armor providing no bonus
-Armor will protect against some damage and/or different damage types when applicable
-Ex light armor provides less protection than heavy, metal provides different damage reduction than leather
+Armor will reduce damage received
+
+== Potential Values == 
+
+Equipment       Success Bonus   Damage Bonus    Armor Value
+
+Basic Sword	        0	            0	            -
+Iron Sword	        +1	            0	            -
+Steel Sword         +2              0               -
+
+Refined Sword       0               +1              -
+Tempered Sword      0               +2              -
+
+Balanced Sword	    +1	            +1	            -
+
+Heavy Axe	        +3	            -1	            -
+Steel Flail         -1              +3              -
+
+Basic Armor         -               -               0
+Leather Armor	    -	            -	            1
+Chainmail	        -	            -	            2
+Plate Armor	        -	            -	            3
 
 == Stat Rolls ==
 
-Strength = 1d6 + 6
-HP = 1d6 + 12
-Luck = 1d6 + 6
+Strength = 1d6 + 8 // range 9 - 14
+HP = 1d6 + 12 // range 13 - 18
+Luck = 1d6 + 6 // range 7 - 12
 
-Strength is overall damage dealt by weapons, weapons will give a small bonus and/or different damage type when applicable
-Max Health is the maximum health available, base value cannot be increased
-Luck can be used in battle and when asked to Test Your Lock. Each use decreases the luck score by 1. To use luck, roll 2d6 and if the players
-    luck score is higher, than they succeed. In combat, when dealing damage or taking damage, the player can test their luck to increase or reduce
-    the damage
+(these rolls may be changed to account for armor values)
+
+Strength is used to calculate if an attack hits vs the opps hit
+Max Health is the maximum health available
+Luck can be used in battle and when asked to Test Your Luck. To use luck, roll 2d6 and if the players
+    luck score is higher than the roll, they succeed. In combat, when dealing damage or taking damage, the player can test their luck to increase or reduce
+    the damage. Each use decreases the luck score by 1
+
+Initial max values cannot be increased or exceeded (besides luck potion)
 
 == Provisions ==
 
-Begin with 10 provisions, may rest when given the chance (for now) and eat 1 meal, each meal restores 4 HP
+Begin with 10 provisions, may rest when given the chance (for now) and eat 1 meal, each meal restores 5 HP
 
 == Potions ==
 
@@ -49,7 +70,28 @@ Starting potions can be used twice
 == Combat ==
 
 Player character/NPC combatant each roll 2d6 + the player/NPC Strength
-Add any increases/decreases from weapon, armor, and damage type resistance if applicable
-Formula = 2d6 + STR + WeapBonus - Armor - DmgRes
-The higher value wins and deals 2 damage
+Add any increases/decreases from weapon
+Winner then deals damage
+
+Attack success formula = 2d6 + STR + WeapSuccessBonus
+Damage dealt = 1d4 + WeapDamageBonus - OppArmor
+
 When dealing/taking damage, we can now use luck to increase/decrease the damage
+
+Attack success ties means nobody deals damage
+Minimum damage is 0
+Combat ends when a character reaches 0 remaining health
+
+== Traps ==
+
+Some rooms/locations may have some traps and/or tests of strength or luck
+Ex: a surprise pit trap would require a test of strength or luck
+    strength/luck check is basically just a stat check to avoid damage
+
+Failing the check will incure health damage and reduce the Player Character strength value by 1 or luck stat by an additional 1
+Or possibly instant death other than the players health reduced to 0
+Ex: the player didn't find a rope to cross a deep pit, so they try a jump and failed
+
+== Notes ==
+
+current stat rolls, weapon/armor values, and damage dealt will likely change

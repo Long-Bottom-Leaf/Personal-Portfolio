@@ -1,6 +1,16 @@
 Phase 1
 - Outlines (character, weapon, story, etc)
 
+- Character
+- Weapon
+- Armor
+- Combat
+- Inventory
+- World / Story
+- Quest
+- Game State
+
+Phase 2
 - Set up folder structure.
 - Create Parent Character class
 - Create Player class.
@@ -8,38 +18,38 @@ Phase 1
 - Create GameState class.
 - Understand how story nodes connect.
 
-Phase 2
+Phase 3
 - Load story nodes.
 - Display story descriptions.
 - Display available choices.
 - Process player decisions.
 - Move between story nodes.
 
-Phase 3
+Phase 4
 - Health and character attributes.
 - Inventory system.
 - Collecting and using items.
 - Basic item effects.
 
-Phase 4
+Phase 5
 - Random encounter generation.
 - Basic enemy encounters.
 - Random loot drops.
 - Simple combat mechanics.
 
-Phase 5
+Phase 6
 - Track important decisions.
 - Conditional story choices.
 - Multiple endings.
 - Outcomes based on player progress.
 
-Phase 6
+Phase 7
 - Save player progress.
 - Load existing games.
 - Save inventory and attributes.
 - Restore story progress and decisions.
 
-Phase 7
+Phase 8
 - Test Player.
 - Test GameEngine.
 - Test choices and branching.
@@ -48,9 +58,9 @@ Phase 7
 - Test JSON loading and saving.
 - Mock random events where necessary.
 
-Phase 8
+Phase 9
 - Improve CLI presentation.
 - Clean up repetitive code.
 - Improve error handling.
 - Create a complete short adventure.
-- Write project documentation.
+- Write readme
