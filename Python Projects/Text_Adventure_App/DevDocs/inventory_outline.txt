@@ -1,0 +1,46 @@
+== Player Inventory ==
+
+Player
+  |
+  |-- Inventory
+        |
+        |-- Weapons
+        |     |-- Iron Sword
+        |     |-- Steel Mace
+        |
+        |-- Armor
+        |     |-- Leather Armor
+        |     |-- Chainmail
+        |
+        |-- Consumables
+        |     |-- Health Potion
+        |     |-- Provisions
+        |
+        |-- Misc Items
+        |     |-- Rope
+        |     |-- Shovel
+        |
+        |-- Valuables
+              |-- Golden Statue
+              |-- Ancient Necklace
+
+== Functions ==
+
+Add item
+Search inventory
+Equip item -- boolean
+Unequip item -- boolean
+Sell item (remove item)
+Check item quantity
+Show equpped item/s
+
+             Item
+              |
+   -----------------------
+   |          |          |
+Weapon     Armor     Consumable
+   |        |            |
+   ------------------------
+   |        |            |
+Health   Strength       Luck
+Potion   Potion         Potion
