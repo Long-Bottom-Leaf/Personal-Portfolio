@@ -39,8 +39,8 @@ Show equpped item/s
    -----------------------
    |          |          |
 Weapon     Armor     Consumable
-   |        |            |
-   ------------------------
-   |        |            |
-Health   Strength       Luck
-Potion   Potion         Potion
+                         |
+                ------------------------
+                |        |            |
+             Health   Strength       Luck
+             Potion   Potion         Potion
