@@ -1,8 +1,8 @@
 # Basic Story Outline
 
 == Overall Story ==
-A goup of monsters attacked your small villages a few nights ago, killing some of the townsfolk and kidnapping others, including your sister.
-The townsfolk, mainly hunters and some adventurers who were passing through, managed to make the monsters retreat and tracked them to a previously
+A goup of monsters attacked your small villages a few nights ago, killing some of the townsfolk and kidnapping some others alive, including your sister.
+The townsfolk, mainly hunters and some adventurers who were passing through, managed to force the monsters to retreat, and tracked them to a previously
 undiscovered dungeon in the mountain range nearby.
 
 The villagers are worried but unwilling to go into the dungeon, at least until help arrives. As for the adventurers, they are now traveling to the
@@ -11,16 +11,40 @@ closest city of Agracia to bring aid, however that will take at least a week.
 Taking up your fathers sword, you boldly declare that you shall venture into the dungeon and save the villagers, including your sister, and defeat
 whoever, or whatever, drove them forth.
 
+== Overall Theme ==
+Ancient ruined city that was sealed away and a mountain raised on top of the city, due to the king performing unholy magic.
+100 years later he finally managed to break the seal and break open an exit from the mountain.
+
+
 == Starting Point ==
-The town of (make up name) is relatively large for a mountain village. Some tall walls to keep out monsters, a guild hall, homes and shops.
+The town of Stonewatch is relatively large for a mountain village. Some tall walls to keep out monsters, a guild hall, homes and shops.
 The townsfolk gather some supplies for your adventure. Along with your fathers sword, you are equiped with basic lether armor and helm, and a
 backpack with provisions for 10 meals. The local merchant also wants to pitch in but he cannot give *everything* away for free, so you have
-the option of a grappling hook, a shovel, or a (makeup new item). He also has a choice of three potions: Potion of Strength, Health, or Luck.
+the option of a grappling hook, a shovel, or a lantern. He also has a choice of three potions: Potion of Strength, Health, or Luck.
 
-== Start of Adventure ==
+== Floors ==
+At least 3 floors
 
+1st Level:
+Entrance - Choice of turning left or right initially, both halls look the same. One path has a trap but if you pass through you bypass a bit of
+           the first floor, the other path has more rooms.
 
-== Rooms ==
+Upper Caverns - Goblins, traps (both HP mins and instant death), 1-2 mini bosses (manticore lair for ex).
+                If player has shovel in inventory, can dig to find a magic item in some room/s
+                A room or two the player can "explore" for items/traps/trigger encounter.
 
+                A pit that skips the Upper Caverns, the player can use rope to get across or jump, if they fail they fall to their death, but can
+                test luck to survive the fall.
+
+2nd Level:
+Prison Area - Can save some townsfolk, informed your sister was taken below earlier today, nobody has returned.
+              2-3 higher tier monsters as guards, possibly a mini boss.
+
+3rd Level:
+Throne Room - Final area, the skelatal king sits on his throne. Boss monster
+              Maybe some sort of conversation, maybe some skill checks (failure debuffs the player)
 
 == Layout ==
+                Entrance
+                    |
+        ----left        right----
