@@ -1,6 +1,5 @@
 # Character Parent
 class Character:
-
     def __init__(self, name, race, current_health, max_health, armor=None, weapon=None):
         self.name = name
         self.race = race

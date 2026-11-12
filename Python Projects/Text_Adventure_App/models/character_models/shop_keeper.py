@@ -1,11 +1,11 @@
 # Shop NPC
-from models.character_models.character import Character
+from models.character_models.npc import NPC
 
-class Shop_Keeper(Character):
-    def __initi__(self, name, race, current_health, max_health, inventory, armor=None, weapon=None):
+class ShopKeeper(NPC):
+    def __init__(self, name, race, current_health, max_health, dialogue, disposition, npc_identifier, inventory, armor=None, weapon=None):
     
         super().__init__(
-            name, race, current_health, max_health, armor, weapon
+            name, race, current_health, max_health, dialogue, disposition, npc_identifier, armor, weapon
         )
     
         self.inventory = inventory
