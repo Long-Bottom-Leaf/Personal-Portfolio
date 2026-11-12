@@ -1,6 +1,5 @@
-# Player Character
-
-from models.character import Character
+# NPC Parent
+from models.character_models.character import Character
 
 class Player_Character(Character):
 
@@ -9,6 +8,3 @@ class Player_Character(Character):
         super().__init__(
             name, race, current_health, max_health, armor, weapon
         )
-
-        self.luck = luck
-        self.gold = gold
