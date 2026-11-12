@@ -18,29 +18,29 @@ Armor will reduce damage received
 
 == Potential Values == 
 
-Equipment       Success Bonus   Damage Bonus    Armor Value
+Equipment       Success Bonus   Damage Bonus    Armor Value     Gold Value
 
-Basic Sword	        0	            0	            -
-Iron Sword	        +1	            0	            -
-Steel Sword         +2              0               -
+Basic Sword	        0	            0	            -               3
+Iron Sword	        +1	            0	            -               5
+Steel Sword         +2              0               -               8
 
-Refined Sword       0               +1              -
-Tempered Sword      0               +2              -
+Refined Sword       0               +1              -               5
+Tempered Sword      0               +2              -               8
 
-Balanced Sword	    +1	            +1	            -
+Balanced Sword	    +1	            +1	            -               10
 
-Heavy Axe	        +3	            -1	            -
-Steel Flail         -1              +3              -
+Heavy Axe	        -1	            +3	            -               15
+Steel Flail         +3              -1              -               15
 
-Basic Armor         -               -               0
-Leather Armor	    -	            -	            1
-Chainmail	        -	            -	            2
-Plate Armor	        -	            -	            3
+Basic Armor         -               -               0               3
+Leather Armor	    -	            -	            1               6
+Chainmail	        -	            -	            2               10
+Plate Armor	        -	            -	            3               15
 
 == Stat Rolls ==
 
 Strength = 1d6 + 8 // range 9 - 14
-HP = 1d6 + 12 // range 13 - 18
+HP = 1d8 + 12 // range 13 - 20
 Luck = 1d6 + 6 // range 7 - 12
 
 (these rolls may be changed to account for armor values)
@@ -48,8 +48,9 @@ Luck = 1d6 + 6 // range 7 - 12
 Strength is used to calculate if an attack hits vs the opps hit
 Max Health is the maximum health available
 Luck can be used in battle and when asked to Test Your Luck. To use luck, roll 2d6 and if the players
-    luck score is higher than the roll, they succeed. In combat, when dealing damage or taking damage, the player can test their luck to increase or reduce
-    the damage. Each use decreases the luck score by 1
+    luck score is higher than the roll, they succeed. In combat, when dealing damage or taking damage, the player can test their luck to increase or
+    reduce the damage.
+    Each use decreases the luck score by 1
 
 Initial max values cannot be increased or exceeded (besides luck potion)
 
