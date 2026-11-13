@@ -35,5 +35,25 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(player_character.inventory, [])
         self.assertEqual(player_character.gold, 20)
 
+    def test_player_default_inventory(self):
+        player_character = PlayerCharacter(
+            name="Bilbo",
+            race="Hobbit",
+            current_health=15,
+            max_health=20,
+            luck=15
+        )
+
+        self.assertEqual(player_character.inventory, [])
+
+    def test_player_inventory_independence(self):
+        player1 = PlayerCharacter("Bilbo", "Hobbit", 15, 20, 15)
+        player2 = PlayerCharacter("Frodo", "Hobbit", 15, 20, 15)
+
+        player1.inventory.append("Iron Sword")
+
+        self.assertEqual(player1.inventory, ["Iron Sword"])
+        self.assertEqual(player2.inventory, [])
+
 if __name__ == '__main__':
     unittest.main()
