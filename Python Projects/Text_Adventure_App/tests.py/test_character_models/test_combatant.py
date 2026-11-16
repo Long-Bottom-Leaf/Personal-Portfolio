@@ -25,7 +25,7 @@ class TestCombatant(unittest.TestCase):
             weapon=None
         )
 
-        # Character attributes
+        # Inherited attributes
         self.assertEqual(character.name, "Gorbo")
         self.assertEqual(character.race, "Goblin")
         self.assertEqual(character.current_health, 15)

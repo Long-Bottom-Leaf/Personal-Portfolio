@@ -1,9 +1,4 @@
 Phase 1
-- Outlines (character, weapon, story, etc)
-
-- Character
-- Weapon
-- Armor
 - Combat
 - Inventory
 - World / Story
@@ -64,3 +59,9 @@ Phase 9
 - Improve error handling.
 - Create a complete short adventure.
 - Write readme
+
+Finished
+Outlines
+- Character
+- Weapon
+- Armor
